@@ -1,0 +1,10 @@
+
+# added by kzl
+192.168.1.194	docker-registry
+192.168.1.194	master
+192.168.1.194	etcd
+
+192.168.1.201	minion1
+192.168.1.202	minion2
+192.168.1.203	minion3
+

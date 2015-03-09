@@ -1,0 +1,41 @@
+{
+  "id": "apache-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": {"name": "apache-pod"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "apache-pod",
+	   "volumes": [  
+             {"name":"apache-volumes", "source":{"hostDir":{"path":"/volumes/var/www"}}}
+            ],  
+           "containers": [{
+             "name": "apache",
+             "image": "docker-registry:5000/ubuntu:apache",
+	     "command": ["/bin/bash", "/home/start_apache.sh"],
+	     "volumeMounts": [  
+               {"name":"apache-volumes", "mountPath":"/var/www", "readOnly":true}  
+              ],  
+             "cpu": 200,
+             //"memory": 128000000,
+	     "env": [
+			{"name": "XXX_PATH","value": "/xxx/to/path"},
+			{"name": "XXX_PATH2","value": "/xxx/to/path2"}
+	      ],
+             "ports": [
+			{"containerPort": 880, "hostPort": 880, "protocol": "TCP"}
+	      ]
+           }]
+         }
+      },
+      "labels": {
+        "name": "apache-pod"
+      }
+    }
+  },
+  "labels": {"name": "apache-controller"}
+}

@@ -1,0 +1,41 @@
+{
+  "id": "cassandraController",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": {"name": "cassandra"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "cassandraController",
+           "containers": [{
+             "name": "cassandra",
+             "image": "kubernetes/cassandra",
+             "command": [ "/run.sh" ],
+             "cpu": 1000,
+             "ports": [
+               {"containerPort": 9042},
+               {"containerPort": 9160}
+             ],
+             "env": [{
+	       "key": "MAX_HEAP_SIZE",
+               "value": "512M"
+             }, {
+               "key": "HEAP_NEWSIZE",
+               "value": "100M"
+             }, {
+               "key": "KUBERNETES_API_PROTOCOL",
+               "value": "http"
+             }]
+           }]
+         }
+       },
+       "labels": {
+         "name": "cassandra"
+       }
+     }
+  },
+  "labels": {"name": "cassandra"}
+}

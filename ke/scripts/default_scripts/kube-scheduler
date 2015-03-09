@@ -1,0 +1,2 @@
+KUBE_SCHEDULER_OPTS="--logtostderr=true \
+	--master=http://master:8080"

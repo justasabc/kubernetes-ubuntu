@@ -1,0 +1,44 @@
+<table id="users" class="users">
+	<thead>
+		<tr class="bodytext">
+			<th class="username">用户名</th>
+			<th class="usertitle">标题</th>
+			<th class="userlevel">权限等级</th>
+			<th class="date">创建时间</th>
+			<th class="command">&nbsp;</th>
+			<th class="command">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- #include file=userlistcontent.html -->
+	</tbody>
+</table>
+<script>
+var now = new Date();
+var sep = [
+	{span: 60, suff: '分钟', lim: 60},
+	{span: 60, suff: '小时', lim: 24},
+	{span: 24, suff: '天', lim: 30},
+	{span: 30, suff: '月', lim: 12},
+	{span: 12, suff: '年', lim: Infinity}
+];
+$('.datei').each(function(){
+	var diff = (now - new Date($(this).html())) / 60000;
+	if (diff <= 1)
+		$(this).html('刚刚');
+	else
+	{
+		var i = 0;
+		while (diff > sep[i].lim)
+			diff /= sep[i++].span;
+		$(this).html(Math.round(diff) + ' ' + sep[i].suff + '前');
+	}
+});
+$('.userleveli').each(function(){
+	if (parseInt($(this).html()) > 50)
+	{
+		$('td.commandi#edit' + $(this).attr('id')).empty();
+		$('td.commandi#delete' + $(this).attr('id')).empty();
+	}
+});
+</script>

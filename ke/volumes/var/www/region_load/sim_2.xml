@@ -1,0 +1,22 @@
+<Nini>
+  <Section Name="newregion00" >
+	<Key Name ="RegionUUID" Value = "6c3cd424-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1010,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9100" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="newregion01" >
+	<Key Name ="RegionUUID" Value = "6c3cd8b6-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1010,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9101" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+</Nini>

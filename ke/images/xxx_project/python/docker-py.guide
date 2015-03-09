@@ -1,0 +1,4 @@
+# http://docker-py.readthedocs.org/en/latest/
+apt-get install python-pip
+# install 
+pip install docker-py

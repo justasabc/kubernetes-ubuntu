@@ -1,0 +1,282 @@
+<Nini>
+  <Section Name="huyu00" >
+	<Key Name ="RegionUUID" Value = "6c3c3e42-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9000" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu01" >
+	<Key Name ="RegionUUID" Value = "6c3c4428-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9001" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu02" >
+	<Key Name ="RegionUUID" Value = "6c3c49a0-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1002" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9002" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu03" >
+	<Key Name ="RegionUUID" Value = "6c3c4ee6-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1003" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9003" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu04" >
+	<Key Name ="RegionUUID" Value = "6c3c540e-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1004" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9004" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu05" >
+	<Key Name ="RegionUUID" Value = "6c3c597c-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1005" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9005" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu06" >
+	<Key Name ="RegionUUID" Value = "6c3c5eae-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1000,1006" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9006" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu10" >
+	<Key Name ="RegionUUID" Value = "6c3c6412-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9010" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu11" >
+	<Key Name ="RegionUUID" Value = "6c3c699e-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9011" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu12" >
+	<Key Name ="RegionUUID" Value = "6c3c6eda-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1002" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9012" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu13" >
+	<Key Name ="RegionUUID" Value = "6c3c745c-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1003" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9013" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu14" >
+	<Key Name ="RegionUUID" Value = "6c3c7998-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1004" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9014" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu15" >
+	<Key Name ="RegionUUID" Value = "6c3c7f10-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1005" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9015" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu16" >
+	<Key Name ="RegionUUID" Value = "6c3c8460-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1001,1006" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9016" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu20" >
+	<Key Name ="RegionUUID" Value = "6c3c89b0-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9020" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu21" >
+	<Key Name ="RegionUUID" Value = "6c3c8f78-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9021" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu22" >
+	<Key Name ="RegionUUID" Value = "6c3c94dc-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1002" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9022" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu23" >
+	<Key Name ="RegionUUID" Value = "6c3c9a22-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1003" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9023" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu24" >
+	<Key Name ="RegionUUID" Value = "6c3c9f9a-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1004" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9024" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu25" >
+	<Key Name ="RegionUUID" Value = "6c3ca4d6-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1005" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9025" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu26" >
+	<Key Name ="RegionUUID" Value = "6c3caa1c-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1002,1006" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9026" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu30" >
+	<Key Name ="RegionUUID" Value = "6c3cafc6-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9030" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu31" >
+	<Key Name ="RegionUUID" Value = "6c3cb55c-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9031" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu32" >
+	<Key Name ="RegionUUID" Value = "6c3cbd9a-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1002" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9032" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu33" >
+	<Key Name ="RegionUUID" Value = "6c3cc29a-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1003" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9033" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu34" >
+	<Key Name ="RegionUUID" Value = "6c3cc74a-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1004" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9034" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu35" >
+	<Key Name ="RegionUUID" Value = "6c3ccb78-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1005" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9035" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="huyu36" >
+	<Key Name ="RegionUUID" Value = "6c3ccf9c-95ab-11e4-80b6-40f2e9302aa4" />
+	<Key Name ="Location" Value = "1003,1006" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9036" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "222.29.118.40" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+</Nini>

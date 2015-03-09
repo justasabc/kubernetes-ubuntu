@@ -1,0 +1,28 @@
+#/bin/sh
+CONF_FILENAME=config.yml
+
+HOST_FOLDER=/opt/docker-image
+CONTAINER_FOLDER=/opt/docker-image
+
+HOST_REGISTRY=$HOST_FOLDER/registry
+HOST_CONF=$HOST_FOLDER/config
+
+! test -d $HOST_FOLDER && mkdir -p $HOST_FOLDER
+! test -d $HOST_REGISTRY && mkdir -p $HOST_REGISTRY
+! test -d $HOST_CONF && mkdir -p $HOST_CONF
+
+cp $CONF_FILENAME $HOST_CONF
+
+E_CONFIG_PATH=$CONTAINER_FOLDER/config/$CONF_FILENAME
+
+E_DATABASE_PATH=sqlite:///$CONTAINER_FOLDER/docker-registry.db
+E_STORAGE_PATH=$CONTAINER_FOLDER/registry
+
+NAME=docker-registry
+IMAGE=registry
+
+docker stop $NAME
+docker rm $NAME
+docker run -d --name $NAME -p 5000:5000 -v $HOST_FOLDER:$CONTAINER_FOLDER -e DOCKER_REGISTRY_CONFIG=$E_CONFIG_PATH -e SQLALCHEMY_INDEX_DATABASE=$E_DATABASE_PATH -e STORAGE_PATH=$E_STORAGE_PATH $IMAGE 
+
+#docker run -p 5000:5000 registry

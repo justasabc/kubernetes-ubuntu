@@ -1,0 +1,15 @@
+{
+  "id": "mysql-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 3306,
+  "containerPort": 3306,
+  "protocol": "TCP",
+  "selector": {
+    "name": "mysql-pod"
+  },
+  "labels": {
+    "name": "mysql-service",
+    "provider": "virgeo"
+  }
+}

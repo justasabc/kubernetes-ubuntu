@@ -1,0 +1,1 @@
+FLANNELD_OPTS="--etcd-endpoints=http://etcd:4001 --etcd-prefix=/coreos.com/network --subnet-file=/run/flannel/subnet.env"

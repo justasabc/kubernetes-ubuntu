@@ -1,0 +1,14 @@
+#/bin/sh
+
+# add minion here
+minions=(minion1 minion2 minion3)
+kube_root=/root
+
+for m in "${minions[@]}" ;do
+	echo "====================================="
+	echo "cleaning $m..."
+	# manually run scripts
+	scp clean_minion.sh $m:$kube_root
+
+	ssh $m  "cd $kube_root && ./clean_minion.sh"
+done

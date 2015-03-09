@@ -1,0 +1,1045 @@
+2015-01-13 16:07:25,131 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Starting in /home/opensim80/bin
+2015-01-13 16:07:25,152 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: OpenSimulator version: OpenSim 0.8.0.3 Release          
+2015-01-13 16:07:25,153 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Operating system version: Unix 3.13.0.43, .NET platform Unix, 64-bit
+2015-01-13 16:07:25,157 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Logging started to file /home/opensim80/bin/ke/grid/services/robust.log
+2015-01-13 16:07:25,159 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Created pid file /home/opensim80/bin/ke/grid/services/robust.pid
+2015-01-13 16:07:25,193 INFO  - OpenSim.Framework.Servers.HttpServer.BaseHttpServer [BASE HTTP SERVER]: Starting HTTP server on port 8003
+2015-01-13 16:07:25,232 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread0:8003, ID 7
+2015-01-13 16:07:25,234 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread1:8003, ID 8
+2015-01-13 16:07:25,235 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread2:8003, ID 9
+2015-01-13 16:07:25,236 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread LongPollServiceWatcherThread:8003, ID 10
+2015-01-13 16:07:25,239 INFO  - OpenSim.Framework.Servers.HttpServer.BaseHttpServer [BASE HTTP SERVER]: Starting HTTP server on port 8002
+2015-01-13 16:07:25,240 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread0:8002, ID 13
+2015-01-13 16:07:25,241 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread1:8002, ID 14
+2015-01-13 16:07:25,241 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread2:8002, ID 15
+2015-01-13 16:07:25,242 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread LongPollServiceWatcherThread:8002, ID 16
+2015-01-13 16:07:25,242 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading WifiServerConnector on port 8002
+2015-01-13 16:07:25,253 DEBUG - Diva.Wifi.WifiServerConnector [Wifi]: WifiServerConnector starting
+2015-01-13 16:07:25,260 DEBUG - Diva.Wifi.WebApp [Wifi]: WebApp configs loaded. Admin account is Wifi Admin. Localization is disabled.
+2015-01-13 16:07:25,273 DEBUG - Diva.Wifi.Services [Wifi]: Services Starting...
+2015-01-13 16:07:25,634 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:25,638 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:25,643 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:25,644 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:25,644 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:25,651 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:25,654 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:25,655 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:25,655 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:25,659 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:25,662 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:25,662 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:25,664 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:25,666 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:25,670 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AssetStore data tables already up to date at revision 8
+2015-01-13 16:07:25,671 DEBUG - OpenSim.Services.AssetService.AssetService [ASSET SERVICE]: Loading default asset set from ./assets/AssetSets.xml
+2015-01-13 16:07:26,665 DEBUG - OpenSim.Services.AssetService.AssetService [ASSET SERVICE]: Local asset service enabled
+2015-01-13 16:07:26,668 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,669 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,669 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,671 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,673 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,673 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,701 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,701 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,706 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-13 16:07:26,706 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-13 16:07:26,712 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: os_groups_Store data tables already up to date at revision 2
+2015-01-13 16:07:26,748 DEBUG - Diva.Wifi.Services [Wifi]: Administrator account Wifi Admin exists.
+2015-01-13 16:07:26,756 DEBUG - Diva.Wifi.WifiScriptFace [WifiScriptFace]: Starting...
+2015-01-13 16:07:26,757 DEBUG - Diva.Wifi.WebApp [Wifi]: Starting with extension methods type Diva.Wifi.ExtensionMethods
+2015-01-13 16:07:26,766 INFO  - Diva.Wifi.WifiGetHandler [Wifi]: Serving local path data via resource path /bin/data
+2015-01-13 16:07:26,766 INFO  - OpenSim.Server.OpenSimServer [SERVER]: WifiServerConnector loaded successfully
+2015-01-13 16:07:26,766 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AssetServiceConnector on port 8003
+2015-01-13 16:07:26,770 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AssetStore data tables already up to date at revision 8
+2015-01-13 16:07:26,772 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AssetServiceConnector loaded successfully
+2015-01-13 16:07:26,772 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading XInventoryInConnector on port 8003
+2015-01-13 16:07:26,773 DEBUG - OpenSim.Server.Handlers.Asset.XInventoryInConnector [XInventoryInConnector]: Starting with config name InventoryService
+2015-01-13 16:07:26,775 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:26,776 INFO  - OpenSim.Server.OpenSimServer [SERVER]: XInventoryInConnector loaded successfully
+2015-01-13 16:07:26,776 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridServiceConnector on port 8003
+2015-01-13 16:07:26,778 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,779 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,779 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,780 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridServiceConnector loaded successfully
+2015-01-13 16:07:26,780 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridInfoServerInConnector on port 8002
+2015-01-13 16:07:26,781 DEBUG - OpenSim.Server.Handlers.Grid.GridInfoHandlers [GRID INFO SERVICE]: Grid info service initialized with 10 keys
+2015-01-13 16:07:26,783 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridInfoServerInConnector loaded successfully
+2015-01-13 16:07:26,783 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AuthenticationServiceConnector on port 8003
+2015-01-13 16:07:26,785 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,786 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AuthenticationServiceConnector loaded successfully
+2015-01-13 16:07:26,786 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading OpenIdServerConnector on port 8002
+2015-01-13 16:07:26,788 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,790 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,791 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,793 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,795 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,795 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,796 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,797 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,799 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,799 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,800 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:26,802 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,802 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,805 INFO  - OpenSim.Server.Handlers.Authentication.OpenIdServerConnector [OPENID]: OpenId service enabled
+2015-01-13 16:07:26,805 INFO  - OpenSim.Server.OpenSimServer [SERVER]: OpenIdServerConnector loaded successfully
+2015-01-13 16:07:26,805 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AvatarServiceConnector on port 8003
+2015-01-13 16:07:26,807 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,807 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,808 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AvatarServiceConnector loaded successfully
+2015-01-13 16:07:26,808 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading LLLoginServiceInConnector on port 8002
+2015-01-13 16:07:26,813 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,814 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,816 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,821 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,822 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,823 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,824 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,826 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,826 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,827 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:26,829 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,829 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,830 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,831 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,831 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,833 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,835 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:26,837 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,838 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,839 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,841 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-13 16:07:26,841 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-13 16:07:26,843 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,843 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,847 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: FriendsStore data tables already up to date at revision 3
+2015-01-13 16:07:26,849 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Using instantiated LibraryService
+2015-01-13 16:07:26,851 DEBUG - OpenSim.Services.InventoryService.LibraryService [LIBRARY]: Starting library service...
+2015-01-13 16:07:26,854 INFO  - OpenSim.Services.InventoryService.LibraryService [LIBRARY INVENTORY]: Loading library control file ./inventory/Libraries.xml
+2015-01-13 16:07:26,879 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Starting...
+2015-01-13 16:07:26,883 INFO  - OpenSim.Server.OpenSimServer [SERVER]: LLLoginServiceInConnector loaded successfully
+2015-01-13 16:07:26,883 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading PresenceServiceConnector on port 8003
+2015-01-13 16:07:26,885 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-13 16:07:26,885 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-13 16:07:26,886 INFO  - OpenSim.Server.OpenSimServer [SERVER]: PresenceServiceConnector loaded successfully
+2015-01-13 16:07:26,886 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading UserAccountServiceConnector on port 8003
+2015-01-13 16:07:26,889 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,890 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-13 16:07:26,891 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,893 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-13 16:07:26,893 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-13 16:07:26,894 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-13 16:07:26,896 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,897 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,897 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,899 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-13 16:07:26,901 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-13 16:07:26,901 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-13 16:07:26,901 INFO  - OpenSim.Server.OpenSimServer [SERVER]: UserAccountServiceConnector loaded successfully
+2015-01-13 16:07:26,902 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridUserServiceConnector on port 8003
+2015-01-13 16:07:26,903 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,907 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-13 16:07:26,907 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-13 16:07:26,908 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridUserServiceConnector loaded successfully
+2015-01-13 16:07:26,908 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading FriendsServiceConnector on port 8003
+2015-01-13 16:07:26,910 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: FriendsStore data tables already up to date at revision 3
+2015-01-13 16:07:26,911 INFO  - OpenSim.Server.OpenSimServer [SERVER]: FriendsServiceConnector loaded successfully
+2015-01-13 16:07:26,911 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading MapAddServiceConnector on port 8003
+2015-01-13 16:07:26,914 DEBUG - OpenSim.Services.MapImageService.MapImageService [MAP IMAGE SERVICE]: Starting MapImage service
+2015-01-13 16:07:27,011 INFO  - OpenSim.Server.Handlers.MapImage.MapAddServiceConnector [MAP IMAGE HANDLER]: GridService check is OFF
+2015-01-13 16:07:27,012 INFO  - OpenSim.Server.OpenSimServer [SERVER]: MapAddServiceConnector loaded successfully
+2015-01-13 16:07:27,012 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading MapGetServiceConnector on port 8002
+2015-01-13 16:07:27,013 INFO  - OpenSim.Server.OpenSimServer [SERVER]: MapGetServiceConnector loaded successfully
+2015-01-13 16:07:33,866 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu00 (6c3c3e42-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1000 with flags RegionOnline
+2015-01-13 16:07:34,433 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu01 (6c3c4428-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1001 with flags RegionOnline
+2015-01-13 16:07:34,896 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu02 (6c3c49a0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1002 with flags RegionOnline
+2015-01-13 16:07:34,932 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE] FindAnyConflictingRegion: re-register of newregion00/6c3cd424-95ab-11e4-80b6-40f2e9302aa4 at <1010,1000>
+2015-01-13 16:07:34,960 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region newregion00 (6c3cd424-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1010-1000 with flags RegionOnline
+2015-01-13 16:07:35,275 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region newregion01 (6c3cd8b6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1010-1001 with flags RegionOnline
+2015-01-13 16:07:35,338 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu03 (6c3c4ee6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1003 with flags RegionOnline
+2015-01-13 16:07:35,786 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu04 (6c3c540e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1004 with flags RegionOnline
+2015-01-13 16:07:36,386 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu05 (6c3c597c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1005 with flags RegionOnline
+2015-01-13 16:07:36,799 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu06 (6c3c5eae-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1006 with flags RegionOnline
+2015-01-13 16:07:36,823 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1000 with flags RegionOnline
+2015-01-13 16:07:37,045 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1010-1000
+2015-01-13 16:07:37,045 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1010-1001
+2015-01-13 16:07:37,241 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu10 (6c3c6412-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1000 with flags RegionOnline
+2015-01-13 16:07:37,367 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1001 with flags RegionOnline
+2015-01-13 16:07:37,647 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu11 (6c3c699e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1001 with flags RegionOnline
+2015-01-13 16:07:37,820 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1002 with flags RegionOnline
+2015-01-13 16:07:38,095 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu12 (6c3c6eda-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1002 with flags RegionOnline
+2015-01-13 16:07:38,261 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1003 with flags RegionOnline
+2015-01-13 16:07:38,536 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu13 (6c3c745c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1003 with flags RegionOnline
+2015-01-13 16:07:38,707 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1004 with flags RegionOnline
+2015-01-13 16:07:38,932 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu14 (6c3c7998-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1004 with flags RegionOnline
+2015-01-13 16:07:39,248 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1005 with flags RegionOnline
+2015-01-13 16:07:39,351 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu15 (6c3c7f10-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1005 with flags RegionOnline
+2015-01-13 16:07:39,723 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1006 with flags RegionOnline
+2015-01-13 16:07:39,787 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu16 (6c3c8460-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1006 with flags RegionOnline
+2015-01-13 16:07:40,177 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1000 with flags RegionOnline
+2015-01-13 16:07:40,274 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu20 (6c3c89b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1000 with flags RegionOnline
+2015-01-13 16:07:40,601 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1001 with flags RegionOnline
+2015-01-13 16:07:40,727 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu21 (6c3c8f78-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1001 with flags RegionOnline
+2015-01-13 16:07:41,340 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1002 with flags RegionOnline
+2015-01-13 16:07:41,403 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu22 (6c3c94dc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1002 with flags RegionOnline
+2015-01-13 16:07:41,770 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1003 with flags RegionOnline
+2015-01-13 16:07:41,913 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu23 (6c3c9a22-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1003 with flags RegionOnline
+2015-01-13 16:07:42,297 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1004 with flags RegionOnline
+2015-01-13 16:07:42,367 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu24 (6c3c9f9a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1004 with flags RegionOnline
+2015-01-13 16:07:42,802 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1005 with flags RegionOnline
+2015-01-13 16:07:42,842 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu25 (6c3ca4d6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1005 with flags RegionOnline
+2015-01-13 16:07:43,243 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1006 with flags RegionOnline
+2015-01-13 16:07:43,335 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu26 (6c3caa1c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1006 with flags RegionOnline
+2015-01-13 16:07:43,656 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1000 with flags RegionOnline
+2015-01-13 16:07:43,771 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu30 (6c3cafc6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1000 with flags RegionOnline
+2015-01-13 16:07:44,138 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1001 with flags RegionOnline
+2015-01-13 16:07:44,201 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu31 (6c3cb55c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1001 with flags RegionOnline
+2015-01-13 16:07:44,591 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1002 with flags RegionOnline
+2015-01-13 16:07:44,654 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu32 (6c3cbd9a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1002 with flags RegionOnline
+2015-01-13 16:07:45,113 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu33 (6c3cc29a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1003 with flags RegionOnline
+2015-01-13 16:07:45,135 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1003 with flags RegionOnline
+2015-01-13 16:07:45,531 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu34 (6c3cc74a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1004 with flags RegionOnline
+2015-01-13 16:07:45,600 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1004 with flags RegionOnline
+2015-01-13 16:07:46,115 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu35 (6c3ccb78-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1005 with flags RegionOnline
+2015-01-13 16:07:46,305 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1005 with flags RegionOnline
+2015-01-13 16:07:46,941 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu36 (6c3ccf9c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1006 with flags RegionOnline
+2015-01-13 16:07:47,056 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1006 with flags RegionOnline
+2015-01-13 16:07:47,491 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1000 with flags RegionOnline
+2015-01-13 16:07:47,955 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1001 with flags RegionOnline
+2015-01-13 16:07:48,533 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1002 with flags RegionOnline
+2015-01-13 16:07:48,986 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1003 with flags RegionOnline
+2015-01-13 16:07:49,489 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1004 with flags RegionOnline
+2015-01-13 16:07:49,854 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1003
+2015-01-13 16:07:49,867 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1002
+2015-01-13 16:07:49,927 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1006
+2015-01-13 16:07:49,941 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1005
+2015-01-13 16:07:49,948 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1004
+2015-01-13 16:07:50,014 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1005
+2015-01-13 16:07:50,081 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1006
+2015-01-13 16:07:50,150 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1000
+2015-01-13 16:07:50,220 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1004
+2015-01-13 16:07:50,292 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1001
+2015-01-13 16:07:50,367 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1001
+2015-01-13 16:07:50,444 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1003
+2015-01-13 16:07:50,451 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1006
+2015-01-13 16:07:50,519 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1001
+2015-01-13 16:07:50,615 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1001
+2015-01-13 16:07:50,688 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1006
+2015-01-13 16:07:50,764 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1002
+2015-01-13 16:07:50,841 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1003
+2015-01-13 16:07:50,920 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1002
+2015-01-13 16:07:50,957 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1000
+2015-01-13 16:07:51,003 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1003
+2015-01-13 16:07:51,089 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1000
+2015-01-13 16:07:51,172 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1005
+2015-01-13 16:07:51,255 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1004
+2015-01-13 16:07:51,338 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1002
+2015-01-13 16:07:51,419 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1004
+2015-01-13 16:07:51,503 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1005 with flags RegionOnline
+2015-01-13 16:07:51,505 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1005
+2015-01-13 16:07:52,008 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1006 with flags RegionOnline
+2015-01-13 16:07:52,455 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1000 with flags RegionOnline
+2015-01-13 16:07:52,918 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1001 with flags RegionOnline
+2015-01-13 16:07:53,405 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1002 with flags RegionOnline
+2015-01-13 16:07:53,886 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1003 with flags RegionOnline
+2015-01-13 16:07:54,355 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1004 with flags RegionOnline
+2015-01-13 16:07:54,842 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1005 with flags RegionOnline
+2015-01-13 16:07:55,311 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1006 with flags RegionOnline
+2015-01-13 16:07:58,849 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:07:58,934 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:13,062 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1003
+2015-01-13 16:08:13,154 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1006
+2015-01-13 16:08:13,169 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1005
+2015-01-13 16:08:13,276 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1001
+2015-01-13 16:08:13,278 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1001
+2015-01-13 16:08:13,281 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1000
+2015-01-13 16:08:13,281 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1004
+2015-01-13 16:08:13,283 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1004
+2015-01-13 16:08:13,300 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1006
+2015-01-13 16:08:13,341 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1006
+2015-01-13 16:08:13,465 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1002
+2015-01-13 16:08:13,525 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1000
+2015-01-13 16:08:13,534 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1001
+2015-01-13 16:08:13,617 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1002
+2015-01-13 16:08:13,679 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1003
+2015-01-13 16:08:13,750 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1003
+2015-01-13 16:08:13,829 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1000
+2015-01-13 16:08:13,911 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1005
+2015-01-13 16:08:13,989 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1005
+2015-01-13 16:08:14,037 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1006
+2015-01-13 16:08:14,075 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1004
+2015-01-13 16:08:14,166 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1002
+2015-01-13 16:08:14,254 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1000
+2015-01-13 16:08:14,328 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1001
+2015-01-13 16:08:14,418 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1005
+2015-01-13 16:08:14,498 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1002
+2015-01-13 16:08:14,532 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1006
+2015-01-13 16:08:14,589 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1001
+2015-01-13 16:08:14,672 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1004
+2015-01-13 16:08:14,760 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1002
+2015-01-13 16:08:14,838 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1005
+2015-01-13 16:08:14,910 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1003
+2015-01-13 16:08:14,992 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1003
+2015-01-13 16:08:15,049 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1000
+2015-01-13 16:08:15,064 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1004
+2015-01-13 16:08:21,478 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1000
+2015-01-13 16:08:24,853 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login request for Wifi Admin at last using viewer Second Life Developer 3.3.3.0, channel Second Life Developer, IP 162.105.17.48, Mac 79df7c5696d0212b950feb1eb1edd733, Id0 26fc49456c177f7f54b10c30934ef668
+2015-01-13 16:08:24,863 DEBUG - OpenSim.Services.AuthenticationService.PasswordAuthenticationService [PASS AUTH]: got 81dc9bdb52d04dc20036dbd8313ed055; hashed = 25b37291507df0182e394ab7a538e8cd; stored = 25b37291507df0182e394ab7a538e8cd
+2015-01-13 16:08:24,951 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: LoginAgent: session 26d75955-6446-42e5-9d0d-d8de1b4eb58c, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 00000000-0000-0000-0000-000000000000, secure session e016fa2f-f89c-4a24-bfb1-6bb6a3c030b8
+2015-01-13 16:08:24,952 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: User 98f4a5cb-4483-477d-827e-ad0e8117dfcb is online
+2015-01-13 16:08:24,991 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Finding destination matching start location last for Wifi Admin
+2015-01-13 16:08:24,994 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Found destination xwd14, endpoint 222.29.118.40:9064 for Wifi Admin
+2015-01-13 16:08:25,282 DEBUG - OpenSim.Services.Connectors.Simulation.SimulationServiceConnector [REMOTE SIMULATION CONNECTOR]: QueryAccess to http://222.29.118.40:8801/agent/98f4a5cb-4483-477d-827e-ad0e8117dfcb/6c3bba26-95ab-11e4-80b6-40f2e9302aa4/ returned True, reason , version SIMULATION/0.3 (SIMULATION/0.3)
+2015-01-13 16:08:25,284 DEBUG - OpenSim.Services.Connectors.Simulation.SimulationServiceConnector [REMOTE SIMULATION CONNECTOR]: Creating agent at http://222.29.118.40:8801/
+2015-01-13 16:08:25,393 DEBUG - OpenSim.Services.LLLoginService.LLLoginResponse [LOGIN RESPONSE] LLLoginResponse create. sizeX=256, sizeY=256
+2015-01-13 16:08:25,399 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: All clear. Sending login response to Wifi Admin
+2015-01-13 16:08:25,401 DEBUG - OpenSim.Services.LLLoginService.LLLoginResponse [LOGIN RESPONSE] returning sizeX=256, sizeY=256
+2015-01-13 16:08:26,839 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:26,938 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:29,232 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:29,237 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:29,257 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:29,256 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:08:29,368 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: ReportAgent: session 26d75955-6446-42e5-9d0d-d8de1b4eb58c, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 6c3bba26-95ab-11e4-80b6-40f2e9302aa4. Previously: region 00000000-0000-0000-0000-000000000000
+2015-01-13 16:14:01,465 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:14:15,998 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-13 16:14:45,157 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: User 98f4a5cb-4483-477d-827e-ad0e8117dfcb is offline
+2015-01-13 16:14:45,191 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: LogoutAgent: session 26d75955-6446-42e5-9d0d-d8de1b4eb58c, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 6c3bba26-95ab-11e4-80b6-40f2e9302aa4
+2015-01-13 16:23:29,533 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login request for Test User at last using viewer  0.6.3 (LL 1.23.5), channel Unknown, IP 162.105.17.48, Mac 79df7c5696d0212b950feb1eb1edd733, Id0 26fc49456c177f7f54b10c30934ef668
+2015-01-13 16:23:29,535 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login failed for Test User, reason: user not found
+2015-01-13 16:23:34,867 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login request for Test User at last using viewer  0.6.3 (LL 1.23.5), channel Unknown, IP 162.105.17.48, Mac 79df7c5696d0212b950feb1eb1edd733, Id0 26fc49456c177f7f54b10c30934ef668
+2015-01-13 16:23:34,869 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login failed for Test User, reason: user not found
+2015-01-15 15:40:01,199 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-19 11:48:16,555 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-19 22:00:45,858 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 09:33:11,444 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 14:50:35,952 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) at 1005-1000
+2015-01-20 14:50:36,738 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) at 1005-1001
+2015-01-20 14:50:37,322 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) at 1005-1002
+2015-01-20 14:50:37,934 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) at 1005-1003
+2015-01-20 14:50:38,513 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) at 1005-1004
+2015-01-20 14:50:39,099 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) at 1005-1005
+2015-01-20 14:50:39,682 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) at 1005-1006
+2015-01-20 14:50:40,263 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) at 1006-1000
+2015-01-20 14:50:40,846 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) at 1006-1001
+2015-01-20 14:50:41,430 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) at 1006-1002
+2015-01-20 14:50:42,050 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) at 1006-1003
+2015-01-20 14:50:42,632 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) at 1006-1004
+2015-01-20 14:50:43,223 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) at 1006-1005
+2015-01-20 14:50:43,807 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) at 1006-1006
+2015-01-20 14:50:44,393 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) at 1007-1000
+2015-01-20 14:50:44,980 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) at 1007-1001
+2015-01-20 14:50:45,567 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) at 1007-1002
+2015-01-20 14:50:46,153 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) at 1007-1003
+2015-01-20 14:50:46,840 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) at 1007-1004
+2015-01-20 14:50:47,294 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu00 (6c3c3e42-95ab-11e4-80b6-40f2e9302aa4) at 1000-1000
+2015-01-20 14:50:47,438 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) at 1007-1005
+2015-01-20 14:50:47,957 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu01 (6c3c4428-95ab-11e4-80b6-40f2e9302aa4) at 1000-1001
+2015-01-20 14:50:48,021 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) at 1007-1006
+2015-01-20 14:50:48,496 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu02 (6c3c49a0-95ab-11e4-80b6-40f2e9302aa4) at 1000-1002
+2015-01-20 14:50:48,708 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) at 1008-1000
+2015-01-20 14:50:49,037 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu03 (6c3c4ee6-95ab-11e4-80b6-40f2e9302aa4) at 1000-1003
+2015-01-20 14:50:49,290 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) at 1008-1001
+2015-01-20 14:50:49,580 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu04 (6c3c540e-95ab-11e4-80b6-40f2e9302aa4) at 1000-1004
+2015-01-20 14:50:49,869 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) at 1008-1002
+2015-01-20 14:50:50,124 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu05 (6c3c597c-95ab-11e4-80b6-40f2e9302aa4) at 1000-1005
+2015-01-20 14:50:50,454 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) at 1008-1003
+2015-01-20 14:50:50,667 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu06 (6c3c5eae-95ab-11e4-80b6-40f2e9302aa4) at 1000-1006
+2015-01-20 14:50:51,040 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) at 1008-1004
+2015-01-20 14:50:51,213 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu10 (6c3c6412-95ab-11e4-80b6-40f2e9302aa4) at 1001-1000
+2015-01-20 14:50:51,624 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) at 1008-1005
+2015-01-20 14:50:51,754 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu11 (6c3c699e-95ab-11e4-80b6-40f2e9302aa4) at 1001-1001
+2015-01-20 14:50:52,270 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) at 1008-1006
+2015-01-20 14:50:52,307 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu12 (6c3c6eda-95ab-11e4-80b6-40f2e9302aa4) at 1001-1002
+2015-01-20 14:50:52,848 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu13 (6c3c745c-95ab-11e4-80b6-40f2e9302aa4) at 1001-1003
+2015-01-20 14:50:52,852 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) at 1009-1000
+2015-01-20 14:50:53,351 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region water (6c3cd424-95ab-11e4-80b6-40f2e9302aa4) at 1010-1000
+2015-01-20 14:50:53,393 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu14 (6c3c7998-95ab-11e4-80b6-40f2e9302aa4) at 1001-1004
+2015-01-20 14:50:53,455 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) at 1009-1001
+2015-01-20 14:50:53,935 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu15 (6c3c7f10-95ab-11e4-80b6-40f2e9302aa4) at 1001-1005
+2015-01-20 14:50:53,936 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region newregion01 (6c3cd8b6-95ab-11e4-80b6-40f2e9302aa4) at 1010-1001
+2015-01-20 14:50:54,039 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1002
+2015-01-20 14:50:54,481 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu16 (6c3c8460-95ab-11e4-80b6-40f2e9302aa4) at 1001-1006
+2015-01-20 14:50:54,626 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) at 1009-1003
+2015-01-20 14:50:55,020 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu20 (6c3c89b0-95ab-11e4-80b6-40f2e9302aa4) at 1002-1000
+2015-01-20 14:50:55,206 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) at 1009-1004
+2015-01-20 14:50:55,563 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu21 (6c3c8f78-95ab-11e4-80b6-40f2e9302aa4) at 1002-1001
+2015-01-20 14:50:55,789 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1005
+2015-01-20 14:50:56,105 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu22 (6c3c94dc-95ab-11e4-80b6-40f2e9302aa4) at 1002-1002
+2015-01-20 14:50:56,365 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) at 1009-1006
+2015-01-20 14:50:56,644 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu23 (6c3c9a22-95ab-11e4-80b6-40f2e9302aa4) at 1002-1003
+2015-01-20 14:50:57,184 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu24 (6c3c9f9a-95ab-11e4-80b6-40f2e9302aa4) at 1002-1004
+2015-01-20 14:50:57,734 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu25 (6c3ca4d6-95ab-11e4-80b6-40f2e9302aa4) at 1002-1005
+2015-01-20 14:50:58,278 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu26 (6c3caa1c-95ab-11e4-80b6-40f2e9302aa4) at 1002-1006
+2015-01-20 14:50:58,896 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu30 (6c3cafc6-95ab-11e4-80b6-40f2e9302aa4) at 1003-1000
+2015-01-20 14:50:59,443 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu31 (6c3cb55c-95ab-11e4-80b6-40f2e9302aa4) at 1003-1001
+2015-01-20 14:50:59,988 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu32 (6c3cbd9a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1002
+2015-01-20 14:51:00,527 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu33 (6c3cc29a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1003
+2015-01-20 14:51:01,226 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu34 (6c3cc74a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1004
+2015-01-20 14:51:01,769 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu35 (6c3ccb78-95ab-11e4-80b6-40f2e9302aa4) at 1003-1005
+2015-01-20 14:51:02,311 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu36 (6c3ccf9c-95ab-11e4-80b6-40f2e9302aa4) at 1003-1006
+2015-01-20 14:51:34,385 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu00 (6c3c3e42-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1000 with flags RegionOnline
+2015-01-20 14:51:34,848 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu01 (6c3c4428-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1001 with flags RegionOnline
+2015-01-20 14:51:34,888 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region newregion00 (6c3cd424-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1010-1000 with flags RegionOnline
+2015-01-20 14:51:35,186 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region newregion01 (6c3cd8b6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1010-1001 with flags RegionOnline
+2015-01-20 14:51:35,261 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu02 (6c3c49a0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1002 with flags RegionOnline
+2015-01-20 14:51:35,673 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu03 (6c3c4ee6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1003 with flags RegionOnline
+2015-01-20 14:51:36,131 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu04 (6c3c540e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1004 with flags RegionOnline
+2015-01-20 14:51:36,511 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu05 (6c3c597c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1005 with flags RegionOnline
+2015-01-20 14:51:36,958 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu06 (6c3c5eae-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1000-1006 with flags RegionOnline
+2015-01-20 14:51:36,972 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1010-1001
+2015-01-20 14:51:36,972 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1010-1000
+2015-01-20 14:51:37,091 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1000 with flags RegionOnline
+2015-01-20 14:51:37,390 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu10 (6c3c6412-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1000 with flags RegionOnline
+2015-01-20 14:51:37,583 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1001 with flags RegionOnline
+2015-01-20 14:51:37,826 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu11 (6c3c699e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1001 with flags RegionOnline
+2015-01-20 14:51:37,930 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1002 with flags RegionOnline
+2015-01-20 14:51:38,363 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1003 with flags RegionOnline
+2015-01-20 14:51:38,387 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu12 (6c3c6eda-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1002 with flags RegionOnline
+2015-01-20 14:51:38,703 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1004 with flags RegionOnline
+2015-01-20 14:51:38,829 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu13 (6c3c745c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1003 with flags RegionOnline
+2015-01-20 14:51:39,062 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1005 with flags RegionOnline
+2015-01-20 14:51:39,171 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 14:51:39,247 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu14 (6c3c7998-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1004 with flags RegionOnline
+2015-01-20 14:51:39,396 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1006 with flags RegionOnline
+2015-01-20 14:51:39,658 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu15 (6c3c7f10-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1005 with flags RegionOnline
+2015-01-20 14:51:39,786 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1000 with flags RegionOnline
+2015-01-20 14:51:40,089 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu16 (6c3c8460-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1001-1006 with flags RegionOnline
+2015-01-20 14:51:40,164 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1001 with flags RegionOnline
+2015-01-20 14:51:40,490 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1002 with flags RegionOnline
+2015-01-20 14:51:40,610 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu20 (6c3c89b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1000 with flags RegionOnline
+2015-01-20 14:51:40,845 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1003 with flags RegionOnline
+2015-01-20 14:51:41,075 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu21 (6c3c8f78-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1001 with flags RegionOnline
+2015-01-20 14:51:41,206 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1004 with flags RegionOnline
+2015-01-20 14:51:41,525 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu22 (6c3c94dc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1002 with flags RegionOnline
+2015-01-20 14:51:41,677 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1005 with flags RegionOnline
+2015-01-20 14:51:41,958 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu23 (6c3c9a22-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1003 with flags RegionOnline
+2015-01-20 14:51:42,027 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1006 with flags RegionOnline
+2015-01-20 14:51:42,376 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1000 with flags RegionOnline
+2015-01-20 14:51:42,399 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu24 (6c3c9f9a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1004 with flags RegionOnline
+2015-01-20 14:51:42,834 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1001 with flags RegionOnline
+2015-01-20 14:51:42,915 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu25 (6c3ca4d6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1005 with flags RegionOnline
+2015-01-20 14:51:43,213 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1002 with flags RegionOnline
+2015-01-20 14:51:43,396 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu26 (6c3caa1c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1002-1006 with flags RegionOnline
+2015-01-20 14:51:43,556 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1003 with flags RegionOnline
+2015-01-20 14:51:43,851 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu30 (6c3cafc6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1000 with flags RegionOnline
+2015-01-20 14:51:43,912 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1004 with flags RegionOnline
+2015-01-20 14:51:44,262 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1005 with flags RegionOnline
+2015-01-20 14:51:44,331 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu31 (6c3cb55c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1001 with flags RegionOnline
+2015-01-20 14:51:44,628 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1006 with flags RegionOnline
+2015-01-20 14:51:44,777 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu32 (6c3cbd9a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1002 with flags RegionOnline
+2015-01-20 14:51:44,989 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1000 with flags RegionOnline
+2015-01-20 14:51:45,213 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu33 (6c3cc29a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1003 with flags RegionOnline
+2015-01-20 14:51:45,356 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1001 with flags RegionOnline
+2015-01-20 14:51:45,694 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu34 (6c3cc74a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1004 with flags RegionOnline
+2015-01-20 14:51:45,717 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1002 with flags RegionOnline
+2015-01-20 14:51:46,278 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1003 with flags RegionOnline
+2015-01-20 14:51:46,307 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu35 (6c3ccb78-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1005 with flags RegionOnline
+2015-01-20 14:51:46,622 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1004 with flags RegionOnline
+2015-01-20 14:51:46,788 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region huyu36 (6c3ccf9c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1003-1006 with flags RegionOnline
+2015-01-20 14:51:46,966 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1005 with flags RegionOnline
+2015-01-20 14:51:47,419 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1006 with flags RegionOnline
+2015-01-20 14:51:47,769 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1000 with flags RegionOnline
+2015-01-20 14:51:48,129 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1001 with flags RegionOnline
+2015-01-20 14:51:48,507 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1002 with flags RegionOnline
+2015-01-20 14:51:48,862 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1003 with flags RegionOnline
+2015-01-20 14:51:49,206 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1004 with flags RegionOnline
+2015-01-20 14:51:49,555 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1005 with flags RegionOnline
+2015-01-20 14:51:49,833 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1006
+2015-01-20 14:51:49,848 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1004
+2015-01-20 14:51:49,851 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1001
+2015-01-20 14:51:49,870 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1003
+2015-01-20 14:51:49,870 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1002
+2015-01-20 14:51:49,875 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1005
+2015-01-20 14:51:49,877 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1000
+2015-01-20 14:51:49,892 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1006
+2015-01-20 14:51:49,899 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1006
+2015-01-20 14:51:49,900 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1000
+2015-01-20 14:51:49,933 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1006 with flags RegionOnline
+2015-01-20 14:51:49,935 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1004
+2015-01-20 14:51:49,958 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1003
+2015-01-20 14:51:50,065 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1005
+2015-01-20 14:51:50,158 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1000
+2015-01-20 14:51:50,260 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1001
+2015-01-20 14:51:50,339 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1001-1002
+2015-01-20 14:51:50,363 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1002
+2015-01-20 14:51:50,434 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1001
+2015-01-20 14:51:50,577 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1002
+2015-01-20 14:51:50,628 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1005
+2015-01-20 14:51:50,756 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1005
+2015-01-20 14:51:50,814 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1003
+2015-01-20 14:51:50,905 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1002-1004
+2015-01-20 14:51:51,056 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1006
+2015-01-20 14:51:51,148 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1001
+2015-01-20 14:51:51,210 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1004
+2015-01-20 14:51:51,305 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1003-1003
+2015-01-20 14:51:54,022 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1005
+2015-01-20 14:51:54,929 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1006
+2015-01-20 14:51:54,937 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1002
+2015-01-20 14:51:54,943 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1000
+2015-01-20 14:51:54,948 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1006
+2015-01-20 14:51:54,948 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1000
+2015-01-20 14:51:54,949 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1005
+2015-01-20 14:51:54,951 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1004
+2015-01-20 14:51:54,956 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1001
+2015-01-20 14:51:54,956 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1003
+2015-01-20 14:51:55,446 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1002
+2015-01-20 14:51:55,447 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1005
+2015-01-20 14:51:55,448 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1000
+2015-01-20 14:51:55,449 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1002
+2015-01-20 14:51:55,449 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1003
+2015-01-20 14:51:56,449 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1006
+2015-01-20 14:51:56,450 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1004
+2015-01-20 14:51:56,455 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1000
+2015-01-20 14:51:56,456 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1006
+2015-01-20 14:51:56,457 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1003
+2015-01-20 14:51:56,457 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1001
+2015-01-20 14:51:56,458 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1005
+2015-01-20 14:51:56,458 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1001
+2015-01-20 14:51:56,460 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1006
+2015-01-20 14:51:56,466 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1002
+2015-01-20 14:51:56,471 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1004
+2015-01-20 14:51:56,471 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1005
+2015-01-20 14:51:56,533 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1001
+2015-01-20 14:51:56,612 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1002
+2015-01-20 14:51:56,705 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1004
+2015-01-20 14:51:56,789 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1003
+2015-01-20 14:51:56,951 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1001
+2015-01-20 14:51:56,995 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1003
+2015-01-20 14:51:57,039 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1004
+2015-01-20 14:52:06,340 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1000-1000
+2015-01-20 14:52:10,274 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1000
+2015-01-20 14:53:22,815 INFO  - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Login request for Wifi Admin at last using viewer  0.6.3 (LL 1.23.5), channel Unknown, IP 162.105.17.48, Mac 79df7c5696d0212b950feb1eb1edd733, Id0 26fc49456c177f7f54b10c30934ef668
+2015-01-20 14:53:22,819 DEBUG - OpenSim.Services.AuthenticationService.PasswordAuthenticationService [PASS AUTH]: got 81dc9bdb52d04dc20036dbd8313ed055; hashed = 25b37291507df0182e394ab7a538e8cd; stored = 25b37291507df0182e394ab7a538e8cd
+2015-01-20 14:53:22,991 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: LoginAgent: session 0e24ebe6-b9fb-4712-b8da-35fd0b72bf12, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 00000000-0000-0000-0000-000000000000, secure session 519166bf-47d5-4149-9117-14949be331b3
+2015-01-20 14:53:22,991 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: User 98f4a5cb-4483-477d-827e-ad0e8117dfcb is online
+2015-01-20 14:53:23,022 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Finding destination matching start location last for Wifi Admin
+2015-01-20 14:53:23,025 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Found destination xwd14, endpoint 222.29.118.40:9064 for Wifi Admin
+2015-01-20 14:53:23,096 DEBUG - OpenSim.Services.Connectors.Simulation.SimulationServiceConnector [REMOTE SIMULATION CONNECTOR]: QueryAccess to http://222.29.118.40:8801/agent/98f4a5cb-4483-477d-827e-ad0e8117dfcb/6c3bba26-95ab-11e4-80b6-40f2e9302aa4/ returned True, reason , version SIMULATION/0.3 (SIMULATION/0.3)
+2015-01-20 14:53:23,096 DEBUG - OpenSim.Services.Connectors.Simulation.SimulationServiceConnector [REMOTE SIMULATION CONNECTOR]: Creating agent at http://222.29.118.40:8801/
+2015-01-20 14:53:23,181 DEBUG - OpenSim.Services.LLLoginService.LLLoginResponse [LOGIN RESPONSE] LLLoginResponse create. sizeX=256, sizeY=256
+2015-01-20 14:53:23,182 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: All clear. Sending login response to Wifi Admin
+2015-01-20 14:53:23,182 DEBUG - OpenSim.Services.LLLoginService.LLLoginResponse [LOGIN RESPONSE] returning sizeX=256, sizeY=256
+2015-01-20 14:53:26,711 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: ReportAgent: session 0e24ebe6-b9fb-4712-b8da-35fd0b72bf12, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 6c3bba26-95ab-11e4-80b6-40f2e9302aa4. Previously: region 00000000-0000-0000-0000-000000000000
+2015-01-20 14:54:16,192 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: User 98f4a5cb-4483-477d-827e-ad0e8117dfcb is offline
+2015-01-20 14:54:16,320 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: LogoutAgent: session 0e24ebe6-b9fb-4712-b8da-35fd0b72bf12, user 98f4a5cb-4483-477d-827e-ad0e8117dfcb, region 6c3bba26-95ab-11e4-80b6-40f2e9302aa4
+2015-01-20 14:57:03,729 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 17:47:30,565 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu00 (6c3c3e42-95ab-11e4-80b6-40f2e9302aa4) at 1000-1000
+2015-01-20 17:47:31,409 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu01 (6c3c4428-95ab-11e4-80b6-40f2e9302aa4) at 1000-1001
+2015-01-20 17:47:31,953 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu02 (6c3c49a0-95ab-11e4-80b6-40f2e9302aa4) at 1000-1002
+2015-01-20 17:47:32,597 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu03 (6c3c4ee6-95ab-11e4-80b6-40f2e9302aa4) at 1000-1003
+2015-01-20 17:47:33,155 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu04 (6c3c540e-95ab-11e4-80b6-40f2e9302aa4) at 1000-1004
+2015-01-20 17:47:33,810 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu05 (6c3c597c-95ab-11e4-80b6-40f2e9302aa4) at 1000-1005
+2015-01-20 17:47:34,355 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu06 (6c3c5eae-95ab-11e4-80b6-40f2e9302aa4) at 1000-1006
+2015-01-20 17:47:34,897 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu10 (6c3c6412-95ab-11e4-80b6-40f2e9302aa4) at 1001-1000
+2015-01-20 17:47:35,439 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu11 (6c3c699e-95ab-11e4-80b6-40f2e9302aa4) at 1001-1001
+2015-01-20 17:47:35,616 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) at 1005-1000
+2015-01-20 17:47:35,980 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu12 (6c3c6eda-95ab-11e4-80b6-40f2e9302aa4) at 1001-1002
+2015-01-20 17:47:36,310 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) at 1005-1001
+2015-01-20 17:47:36,530 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu13 (6c3c745c-95ab-11e4-80b6-40f2e9302aa4) at 1001-1003
+2015-01-20 17:47:36,891 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) at 1005-1002
+2015-01-20 17:47:37,074 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu14 (6c3c7998-95ab-11e4-80b6-40f2e9302aa4) at 1001-1004
+2015-01-20 17:47:37,489 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) at 1005-1003
+2015-01-20 17:47:37,617 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu15 (6c3c7f10-95ab-11e4-80b6-40f2e9302aa4) at 1001-1005
+2015-01-20 17:47:38,069 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) at 1005-1004
+2015-01-20 17:47:38,160 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu16 (6c3c8460-95ab-11e4-80b6-40f2e9302aa4) at 1001-1006
+2015-01-20 17:47:38,648 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) at 1005-1005
+2015-01-20 17:47:38,704 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu20 (6c3c89b0-95ab-11e4-80b6-40f2e9302aa4) at 1002-1000
+2015-01-20 17:47:39,235 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) at 1005-1006
+2015-01-20 17:47:39,255 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu21 (6c3c8f78-95ab-11e4-80b6-40f2e9302aa4) at 1002-1001
+2015-01-20 17:47:39,821 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) at 1006-1000
+2015-01-20 17:47:39,901 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu22 (6c3c94dc-95ab-11e4-80b6-40f2e9302aa4) at 1002-1002
+2015-01-20 17:47:40,404 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) at 1006-1001
+2015-01-20 17:47:40,443 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu23 (6c3c9a22-95ab-11e4-80b6-40f2e9302aa4) at 1002-1003
+2015-01-20 17:47:40,642 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region newregion00 (6c3cd424-95ab-11e4-80b6-40f2e9302aa4) at 1010-1000
+2015-01-20 17:47:40,985 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu24 (6c3c9f9a-95ab-11e4-80b6-40f2e9302aa4) at 1002-1004
+2015-01-20 17:47:40,987 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) at 1006-1002
+2015-01-20 17:47:41,278 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region newregion01 (6c3cd8b6-95ab-11e4-80b6-40f2e9302aa4) at 1010-1001
+2015-01-20 17:47:41,531 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu25 (6c3ca4d6-95ab-11e4-80b6-40f2e9302aa4) at 1002-1005
+2015-01-20 17:47:41,625 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) at 1006-1003
+2015-01-20 17:47:42,075 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu26 (6c3caa1c-95ab-11e4-80b6-40f2e9302aa4) at 1002-1006
+2015-01-20 17:47:42,210 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) at 1006-1004
+2015-01-20 17:47:42,617 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu30 (6c3cafc6-95ab-11e4-80b6-40f2e9302aa4) at 1003-1000
+2015-01-20 17:47:42,892 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) at 1006-1005
+2015-01-20 17:47:43,366 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu31 (6c3cb55c-95ab-11e4-80b6-40f2e9302aa4) at 1003-1001
+2015-01-20 17:47:43,475 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) at 1006-1006
+2015-01-20 17:47:43,910 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu32 (6c3cbd9a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1002
+2015-01-20 17:47:44,058 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) at 1007-1000
+2015-01-20 17:47:44,459 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu33 (6c3cc29a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1003
+2015-01-20 17:47:44,646 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) at 1007-1001
+2015-01-20 17:47:45,002 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu34 (6c3cc74a-95ab-11e4-80b6-40f2e9302aa4) at 1003-1004
+2015-01-20 17:47:45,228 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) at 1007-1002
+2015-01-20 17:47:45,544 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu35 (6c3ccb78-95ab-11e4-80b6-40f2e9302aa4) at 1003-1005
+2015-01-20 17:47:45,832 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) at 1007-1003
+2015-01-20 17:47:46,081 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region huyu36 (6c3ccf9c-95ab-11e4-80b6-40f2e9302aa4) at 1003-1006
+2015-01-20 17:47:46,412 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) at 1007-1004
+2015-01-20 17:47:46,988 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) at 1007-1005
+2015-01-20 17:47:47,573 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) at 1007-1006
+2015-01-20 17:47:48,158 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) at 1008-1000
+2015-01-20 17:47:48,743 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) at 1008-1001
+2015-01-20 17:47:49,323 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) at 1008-1002
+2015-01-20 17:47:49,907 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) at 1008-1003
+2015-01-20 17:47:50,489 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) at 1008-1004
+2015-01-20 17:47:51,087 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) at 1008-1005
+2015-01-20 17:47:51,671 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) at 1008-1006
+2015-01-20 17:47:52,253 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) at 1009-1000
+2015-01-20 17:47:52,840 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) at 1009-1001
+2015-01-20 17:47:53,423 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1002
+2015-01-20 17:47:54,003 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) at 1009-1003
+2015-01-20 17:47:54,588 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) at 1009-1004
+2015-01-20 17:47:55,169 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1005
+2015-01-20 17:47:55,775 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) at 1009-1006
+2015-01-20 17:48:17,820 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1000 with flags RegionOnline
+2015-01-20 17:48:18,244 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1001 with flags RegionOnline
+2015-01-20 17:48:18,610 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1002 with flags RegionOnline
+2015-01-20 17:48:18,767 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 17:48:18,987 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1003 with flags RegionOnline
+2015-01-20 17:48:19,359 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1004 with flags RegionOnline
+2015-01-20 17:48:19,754 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1005 with flags RegionOnline
+2015-01-20 17:48:20,200 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1006 with flags RegionOnline
+2015-01-20 17:48:20,595 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1000 with flags RegionOnline
+2015-01-20 17:48:20,973 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1001 with flags RegionOnline
+2015-01-20 17:48:21,379 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1002 with flags RegionOnline
+2015-01-20 17:48:21,861 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1003 with flags RegionOnline
+2015-01-20 17:48:22,261 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1004 with flags RegionOnline
+2015-01-20 17:48:22,765 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1005 with flags RegionOnline
+2015-01-20 17:48:23,194 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1006 with flags RegionOnline
+2015-01-20 17:48:23,704 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1000 with flags RegionOnline
+2015-01-20 17:48:24,139 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1001 with flags RegionOnline
+2015-01-20 17:48:24,540 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1002 with flags RegionOnline
+2015-01-20 17:48:24,940 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1003 with flags RegionOnline
+2015-01-20 17:48:25,352 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1004 with flags RegionOnline
+2015-01-20 17:48:25,856 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1005 with flags RegionOnline
+2015-01-20 17:48:26,273 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1006 with flags RegionOnline
+2015-01-20 17:48:26,674 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1000 with flags RegionOnline
+2015-01-20 17:48:27,097 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1001 with flags RegionOnline
+2015-01-20 17:48:27,493 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1002 with flags RegionOnline
+2015-01-20 17:48:27,905 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1003 with flags RegionOnline
+2015-01-20 17:48:28,317 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1004 with flags RegionOnline
+2015-01-20 17:48:28,740 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1005 with flags RegionOnline
+2015-01-20 17:48:29,221 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1006 with flags RegionOnline
+2015-01-20 17:48:29,667 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1000 with flags RegionOnline
+2015-01-20 17:48:30,091 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1001 with flags RegionOnline
+2015-01-20 17:48:30,503 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1002 with flags RegionOnline
+2015-01-20 17:48:30,932 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1003 with flags RegionOnline
+2015-01-20 17:48:31,464 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1004 with flags RegionOnline
+2015-01-20 17:48:31,899 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1005 with flags RegionOnline
+2015-01-20 17:48:32,328 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1006 with flags RegionOnline
+2015-01-20 17:48:36,445 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1006
+2015-01-20 17:48:36,452 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1005
+2015-01-20 17:48:36,452 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1000
+2015-01-20 17:48:36,470 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1003
+2015-01-20 17:48:36,471 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1002
+2015-01-20 17:48:36,471 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1001
+2015-01-20 17:48:36,499 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1004
+2015-01-20 17:48:36,510 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1001
+2015-01-20 17:48:36,511 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1002
+2015-01-20 17:48:36,513 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1006
+2015-01-20 17:48:36,512 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1000
+2015-01-20 17:48:36,536 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1006
+2015-01-20 17:48:36,542 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1002
+2015-01-20 17:48:36,628 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1005
+2015-01-20 17:48:36,756 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1001
+2015-01-20 17:48:36,806 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1003
+2015-01-20 17:48:36,928 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1003
+2015-01-20 17:48:37,016 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1005
+2015-01-20 17:48:37,108 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1004
+2015-01-20 17:48:37,237 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1000
+2015-01-20 17:48:37,238 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1006
+2015-01-20 17:48:37,331 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1000
+2015-01-20 17:48:37,456 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1001
+2015-01-20 17:48:37,533 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1001
+2015-01-20 17:48:37,587 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1002
+2015-01-20 17:48:37,675 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1004
+2015-01-20 17:48:37,805 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1005
+2015-01-20 17:48:37,851 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1003
+2015-01-20 17:48:37,972 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1006
+2015-01-20 17:48:38,025 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1004
+2015-01-20 17:48:38,151 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1002
+2015-01-20 17:48:38,246 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1004
+2015-01-20 17:48:38,295 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1005
+2015-01-20 17:48:38,371 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1003
+2015-01-20 17:48:52,690 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1000
+2015-01-20 17:53:35,772 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) at 1005-1000
+2015-01-20 17:53:36,561 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) at 1005-1001
+2015-01-20 17:53:37,111 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) at 1005-1002
+2015-01-20 17:53:37,662 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) at 1005-1003
+2015-01-20 17:53:38,215 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) at 1005-1004
+2015-01-20 17:53:38,759 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) at 1005-1005
+2015-01-20 17:53:39,315 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) at 1005-1006
+2015-01-20 17:53:39,863 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) at 1006-1000
+2015-01-20 17:53:40,409 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) at 1006-1001
+2015-01-20 17:53:40,951 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) at 1006-1002
+2015-01-20 17:53:41,499 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) at 1006-1003
+2015-01-20 17:53:42,044 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) at 1006-1004
+2015-01-20 17:53:42,586 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) at 1006-1005
+2015-01-20 17:53:43,131 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) at 1006-1006
+2015-01-20 17:53:43,673 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) at 1007-1000
+2015-01-20 17:53:44,215 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) at 1007-1001
+2015-01-20 17:53:44,757 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) at 1007-1002
+2015-01-20 17:53:45,297 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) at 1007-1003
+2015-01-20 17:53:45,840 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) at 1007-1004
+2015-01-20 17:53:46,390 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) at 1007-1005
+2015-01-20 17:53:46,935 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) at 1007-1006
+2015-01-20 17:53:47,476 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) at 1008-1000
+2015-01-20 17:53:48,019 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) at 1008-1001
+2015-01-20 17:53:48,629 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) at 1008-1002
+2015-01-20 17:53:49,171 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) at 1008-1003
+2015-01-20 17:53:49,718 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) at 1008-1004
+2015-01-20 17:53:50,261 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) at 1008-1005
+2015-01-20 17:53:50,809 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) at 1008-1006
+2015-01-20 17:53:51,354 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) at 1009-1000
+2015-01-20 17:53:51,901 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) at 1009-1001
+2015-01-20 17:53:52,447 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1002
+2015-01-20 17:53:52,991 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) at 1009-1003
+2015-01-20 17:53:53,535 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) at 1009-1004
+2015-01-20 17:53:54,080 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1005
+2015-01-20 17:53:54,626 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) at 1009-1006
+2015-01-20 17:55:01,549 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1000 with flags RegionOnline
+2015-01-20 17:55:01,985 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1001 with flags RegionOnline
+2015-01-20 17:55:02,396 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1002 with flags RegionOnline
+2015-01-20 17:55:02,641 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 17:55:02,791 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1003 with flags RegionOnline
+2015-01-20 17:55:03,181 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1004 with flags RegionOnline
+2015-01-20 17:55:03,576 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1005 with flags RegionOnline
+2015-01-20 17:55:04,033 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1006 with flags RegionOnline
+2015-01-20 17:55:04,417 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1000 with flags RegionOnline
+2015-01-20 17:55:04,812 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1001 with flags RegionOnline
+2015-01-20 17:55:05,224 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1002 with flags RegionOnline
+2015-01-20 17:55:05,619 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1003 with flags RegionOnline
+2015-01-20 17:55:06,072 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1004 with flags RegionOnline
+2015-01-20 17:55:06,507 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1005 with flags RegionOnline
+2015-01-20 17:55:07,165 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1006 with flags RegionOnline
+2015-01-20 17:55:07,566 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1000 with flags RegionOnline
+2015-01-20 17:55:07,973 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1001 with flags RegionOnline
+2015-01-20 17:55:08,360 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1002 with flags RegionOnline
+2015-01-20 17:55:08,772 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1003 with flags RegionOnline
+2015-01-20 17:55:09,241 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1004 with flags RegionOnline
+2015-01-20 17:55:09,659 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1005 with flags RegionOnline
+2015-01-20 17:55:10,088 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1006 with flags RegionOnline
+2015-01-20 17:55:10,489 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1000 with flags RegionOnline
+2015-01-20 17:55:10,907 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1001 with flags RegionOnline
+2015-01-20 17:55:11,314 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1002 with flags RegionOnline
+2015-01-20 17:55:11,737 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1003 with flags RegionOnline
+2015-01-20 17:55:12,160 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1004 with flags RegionOnline
+2015-01-20 17:55:12,677 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1005 with flags RegionOnline
+2015-01-20 17:55:13,134 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1006 with flags RegionOnline
+2015-01-20 17:55:13,650 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1000 with flags RegionOnline
+2015-01-20 17:55:14,090 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1001 with flags RegionOnline
+2015-01-20 17:55:14,520 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1002 with flags RegionOnline
+2015-01-20 17:55:14,949 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1003 with flags RegionOnline
+2015-01-20 17:55:15,384 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1004 with flags RegionOnline
+2015-01-20 17:55:15,824 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1005 with flags RegionOnline
+2015-01-20 17:55:16,253 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1006 with flags RegionOnline
+2015-01-20 17:55:19,943 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1001
+2015-01-20 17:55:19,946 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1000
+2015-01-20 17:55:19,951 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1004
+2015-01-20 17:55:19,963 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1006
+2015-01-20 17:55:19,966 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1000
+2015-01-20 17:55:19,968 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1003
+2015-01-20 17:55:19,978 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1002
+2015-01-20 17:55:19,987 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1003
+2015-01-20 17:55:19,990 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1002
+2015-01-20 17:55:19,990 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1001
+2015-01-20 17:55:19,994 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1006
+2015-01-20 17:55:19,995 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1005
+2015-01-20 17:55:20,084 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1004
+2015-01-20 17:55:20,128 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1000
+2015-01-20 17:55:20,218 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1001
+2015-01-20 17:55:20,301 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1002
+2015-01-20 17:55:20,390 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1003
+2015-01-20 17:55:20,511 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1004
+2015-01-20 17:55:20,570 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1005
+2015-01-20 17:55:20,663 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1001
+2015-01-20 17:55:20,767 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1005
+2015-01-20 17:55:20,875 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1003
+2015-01-20 17:55:20,926 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1000
+2015-01-20 17:55:21,019 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1004
+2015-01-20 17:55:21,140 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1002
+2015-01-20 17:55:21,199 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1005
+2015-01-20 17:55:21,280 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1005
+2015-01-20 17:55:21,412 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1006
+2015-01-20 17:55:21,508 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1006
+2015-01-20 17:55:21,567 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1006
+2015-01-20 17:55:21,684 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1003
+2015-01-20 17:55:21,731 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1001
+2015-01-20 17:55:21,816 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1002
+2015-01-20 17:55:21,947 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1004
+2015-01-20 17:55:36,534 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1000
+2015-01-20 18:00:18,405 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-20 18:19:07,852 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) at 1005-1000
+2015-01-20 18:19:08,767 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) at 1005-1001
+2015-01-20 18:19:09,345 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) at 1005-1002
+2015-01-20 18:19:09,930 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) at 1005-1003
+2015-01-20 18:19:10,515 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) at 1005-1004
+2015-01-20 18:19:11,099 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) at 1005-1005
+2015-01-20 18:19:11,681 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) at 1005-1006
+2015-01-20 18:19:12,290 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) at 1006-1000
+2015-01-20 18:19:12,878 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) at 1006-1001
+2015-01-20 18:19:13,457 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) at 1006-1002
+2015-01-20 18:19:14,043 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) at 1006-1003
+2015-01-20 18:19:14,624 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) at 1006-1004
+2015-01-20 18:19:15,211 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) at 1006-1005
+2015-01-20 18:19:15,793 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) at 1006-1006
+2015-01-20 18:19:16,383 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) at 1007-1000
+2015-01-20 18:19:16,995 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) at 1007-1001
+2015-01-20 18:19:17,579 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) at 1007-1002
+2015-01-20 18:19:18,166 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) at 1007-1003
+2015-01-20 18:19:18,764 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) at 1007-1004
+2015-01-20 18:19:19,346 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) at 1007-1005
+2015-01-20 18:19:19,922 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) at 1007-1006
+2015-01-20 18:19:20,597 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) at 1008-1000
+2015-01-20 18:19:21,170 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) at 1008-1001
+2015-01-20 18:19:21,742 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) at 1008-1002
+2015-01-20 18:19:22,332 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) at 1008-1003
+2015-01-20 18:19:22,905 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) at 1008-1004
+2015-01-20 18:19:23,477 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) at 1008-1005
+2015-01-20 18:19:24,050 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) at 1008-1006
+2015-01-20 18:19:24,631 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) at 1009-1000
+2015-01-20 18:19:25,207 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) at 1009-1001
+2015-01-20 18:19:25,796 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1002
+2015-01-20 18:19:26,370 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) at 1009-1003
+2015-01-20 18:19:26,951 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) at 1009-1004
+2015-01-20 18:19:27,533 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) at 1009-1005
+2015-01-20 18:19:28,118 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Deregistering region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) at 1009-1006
+2015-01-20 18:19:33,571 INFO  - OpenSim.Server.Base.ServicesServerBase [CONSOLE] Quitting
+2015-01-20 18:20:22,762 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Starting in /home/opensim80/bin
+2015-01-20 18:20:22,784 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: OpenSimulator version: OpenSim 0.8.0.3 Release          
+2015-01-20 18:20:22,784 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Operating system version: Unix 3.13.0.43, .NET platform Unix, 64-bit
+2015-01-20 18:20:22,788 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Logging started to file /home/opensim80/bin/ke/grid/services/robust.log
+2015-01-20 18:20:22,790 INFO  - OpenSim.Framework.Servers.ServerBase [SERVER BASE]: Created pid file /home/opensim80/bin/ke/grid/services/robust.pid
+2015-01-20 18:20:22,824 INFO  - OpenSim.Framework.Servers.HttpServer.BaseHttpServer [BASE HTTP SERVER]: Starting HTTP server on port 8003
+2015-01-20 18:20:22,863 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread0:8003, ID 7
+2015-01-20 18:20:22,864 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread1:8003, ID 8
+2015-01-20 18:20:22,865 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread2:8003, ID 9
+2015-01-20 18:20:22,866 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread LongPollServiceWatcherThread:8003, ID 10
+2015-01-20 18:20:22,870 INFO  - OpenSim.Framework.Servers.HttpServer.BaseHttpServer [BASE HTTP SERVER]: Starting HTTP server on port 8002
+2015-01-20 18:20:22,870 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread0:8002, ID 13
+2015-01-20 18:20:22,871 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread1:8002, ID 14
+2015-01-20 18:20:22,871 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread PollServiceWorkerThread2:8002, ID 15
+2015-01-20 18:20:22,872 DEBUG - OpenSim.Framework.Monitoring.Watchdog [WATCHDOG]: Started tracking thread LongPollServiceWatcherThread:8002, ID 16
+2015-01-20 18:20:22,873 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading WifiServerConnector on port 8002
+2015-01-20 18:20:22,884 DEBUG - Diva.Wifi.WifiServerConnector [Wifi]: WifiServerConnector starting
+2015-01-20 18:20:22,892 DEBUG - Diva.Wifi.WebApp [Wifi]: WebApp configs loaded. Admin account is Wifi Admin. Localization is disabled.
+2015-01-20 18:20:22,905 DEBUG - Diva.Wifi.Services [Wifi]: Services Starting...
+2015-01-20 18:20:23,251 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:23,255 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:23,259 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:23,261 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:23,261 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:23,267 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:23,269 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:23,271 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:23,271 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:23,274 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:23,278 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:23,278 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:23,280 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:23,281 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:23,285 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AssetStore data tables already up to date at revision 8
+2015-01-20 18:20:23,286 DEBUG - OpenSim.Services.AssetService.AssetService [ASSET SERVICE]: Loading default asset set from ./assets/AssetSets.xml
+2015-01-20 18:20:24,276 DEBUG - OpenSim.Services.AssetService.AssetService [ASSET SERVICE]: Local asset service enabled
+2015-01-20 18:20:24,280 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,281 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,281 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,283 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,285 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,285 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,312 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,312 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,317 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-20 18:20:24,317 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-20 18:20:24,323 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: os_groups_Store data tables already up to date at revision 2
+2015-01-20 18:20:24,360 DEBUG - Diva.Wifi.Services [Wifi]: Administrator account Wifi Admin exists.
+2015-01-20 18:20:24,368 DEBUG - Diva.Wifi.WifiScriptFace [WifiScriptFace]: Starting...
+2015-01-20 18:20:24,369 DEBUG - Diva.Wifi.WebApp [Wifi]: Starting with extension methods type Diva.Wifi.ExtensionMethods
+2015-01-20 18:20:24,378 INFO  - Diva.Wifi.WifiGetHandler [Wifi]: Serving local path data via resource path /bin/data
+2015-01-20 18:20:24,378 INFO  - OpenSim.Server.OpenSimServer [SERVER]: WifiServerConnector loaded successfully
+2015-01-20 18:20:24,378 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AssetServiceConnector on port 8003
+2015-01-20 18:20:24,381 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AssetStore data tables already up to date at revision 8
+2015-01-20 18:20:24,384 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AssetServiceConnector loaded successfully
+2015-01-20 18:20:24,384 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading XInventoryInConnector on port 8003
+2015-01-20 18:20:24,385 DEBUG - OpenSim.Server.Handlers.Asset.XInventoryInConnector [XInventoryInConnector]: Starting with config name InventoryService
+2015-01-20 18:20:24,387 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:24,387 INFO  - OpenSim.Server.OpenSimServer [SERVER]: XInventoryInConnector loaded successfully
+2015-01-20 18:20:24,387 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridServiceConnector on port 8003
+2015-01-20 18:20:24,389 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,391 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,391 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,391 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridServiceConnector loaded successfully
+2015-01-20 18:20:24,391 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridInfoServerInConnector on port 8002
+2015-01-20 18:20:24,393 DEBUG - OpenSim.Server.Handlers.Grid.GridInfoHandlers [GRID INFO SERVICE]: Grid info service initialized with 10 keys
+2015-01-20 18:20:24,395 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridInfoServerInConnector loaded successfully
+2015-01-20 18:20:24,395 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AuthenticationServiceConnector on port 8003
+2015-01-20 18:20:24,397 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,397 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AuthenticationServiceConnector loaded successfully
+2015-01-20 18:20:24,397 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading OpenIdServerConnector on port 8002
+2015-01-20 18:20:24,400 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,401 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,403 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,404 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,405 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,405 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,407 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,408 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,409 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,409 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,411 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:24,413 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,413 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,416 INFO  - OpenSim.Server.Handlers.Authentication.OpenIdServerConnector [OPENID]: OpenId service enabled
+2015-01-20 18:20:24,416 INFO  - OpenSim.Server.OpenSimServer [SERVER]: OpenIdServerConnector loaded successfully
+2015-01-20 18:20:24,416 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading AvatarServiceConnector on port 8003
+2015-01-20 18:20:24,418 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,418 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,419 INFO  - OpenSim.Server.OpenSimServer [SERVER]: AvatarServiceConnector loaded successfully
+2015-01-20 18:20:24,419 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading LLLoginServiceInConnector on port 8002
+2015-01-20 18:20:24,424 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,425 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,427 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,431 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,431 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,432 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,434 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,435 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,435 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,437 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:24,438 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,438 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,440 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,441 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,441 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,443 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,444 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:24,446 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,447 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,447 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,449 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-20 18:20:24,449 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-20 18:20:24,451 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,451 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,454 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: FriendsStore data tables already up to date at revision 3
+2015-01-20 18:20:24,457 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Using instantiated LibraryService
+2015-01-20 18:20:24,459 DEBUG - OpenSim.Services.InventoryService.LibraryService [LIBRARY]: Starting library service...
+2015-01-20 18:20:24,461 INFO  - OpenSim.Services.InventoryService.LibraryService [LIBRARY INVENTORY]: Loading library control file ./inventory/Libraries.xml
+2015-01-20 18:20:24,488 DEBUG - OpenSim.Services.LLLoginService.LLLoginService [LLOGIN SERVICE]: Starting...
+2015-01-20 18:20:24,491 INFO  - OpenSim.Server.OpenSimServer [SERVER]: LLLoginServiceInConnector loaded successfully
+2015-01-20 18:20:24,492 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading PresenceServiceConnector on port 8003
+2015-01-20 18:20:24,493 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Presence data tables already up to date at revision 3
+2015-01-20 18:20:24,493 DEBUG - OpenSim.Services.PresenceService.PresenceService [PRESENCE SERVICE]: Starting presence service
+2015-01-20 18:20:24,494 INFO  - OpenSim.Server.OpenSimServer [SERVER]: PresenceServiceConnector loaded successfully
+2015-01-20 18:20:24,494 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading UserAccountServiceConnector on port 8003
+2015-01-20 18:20:24,496 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,498 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: UserAccount data tables already up to date at revision 4
+2015-01-20 18:20:24,499 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,501 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridStore data tables already up to date at revision 9
+2015-01-20 18:20:24,501 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Starting...
+2015-01-20 18:20:24,502 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: AuthStore data tables already up to date at revision 3
+2015-01-20 18:20:24,503 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,504 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,505 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,506 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: InventoryStore data tables already up to date at revision 6
+2015-01-20 18:20:24,508 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: Avatar data tables already up to date at revision 2
+2015-01-20 18:20:24,508 DEBUG - OpenSim.Services.AvatarService.AvatarService [AVATAR SERVICE]: Starting avatar service
+2015-01-20 18:20:24,509 INFO  - OpenSim.Server.OpenSimServer [SERVER]: UserAccountServiceConnector loaded successfully
+2015-01-20 18:20:24,509 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading GridUserServiceConnector on port 8003
+2015-01-20 18:20:24,511 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,514 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: GridUserStore data tables already up to date at revision 2
+2015-01-20 18:20:24,515 DEBUG - OpenSim.Services.UserAccountService.GridUserService [GRID USER SERVICE]: Starting user grid service
+2015-01-20 18:20:24,516 INFO  - OpenSim.Server.OpenSimServer [SERVER]: GridUserServiceConnector loaded successfully
+2015-01-20 18:20:24,516 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading FriendsServiceConnector on port 8003
+2015-01-20 18:20:24,518 DEBUG - OpenSim.Data.Migration [MIGRATIONS]: FriendsStore data tables already up to date at revision 3
+2015-01-20 18:20:24,519 INFO  - OpenSim.Server.OpenSimServer [SERVER]: FriendsServiceConnector loaded successfully
+2015-01-20 18:20:24,519 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading MapAddServiceConnector on port 8003
+2015-01-20 18:20:24,522 DEBUG - OpenSim.Services.MapImageService.MapImageService [MAP IMAGE SERVICE]: Starting MapImage service
+2015-01-20 18:20:24,522 INFO  - OpenSim.Server.Handlers.MapImage.MapAddServiceConnector [MAP IMAGE HANDLER]: GridService check is OFF
+2015-01-20 18:20:24,523 INFO  - OpenSim.Server.OpenSimServer [SERVER]: MapAddServiceConnector loaded successfully
+2015-01-20 18:20:24,523 INFO  - OpenSim.Server.OpenSimServer [SERVER]: Loading MapGetServiceConnector on port 8002
+2015-01-20 18:20:24,524 INFO  - OpenSim.Server.OpenSimServer [SERVER]: MapGetServiceConnector loaded successfully
+2015-01-20 18:20:34,764 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd00 (6c3a0a82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1000 with flags RegionOnline
+2015-01-20 18:20:35,193 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd01 (6c3a6c5c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1001 with flags RegionOnline
+2015-01-20 18:20:35,577 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd02 (6c3aca9e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1002 with flags RegionOnline
+2015-01-20 18:20:35,972 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd03 (6c3b2a34-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1003 with flags RegionOnline
+2015-01-20 18:20:36,366 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd04 (6c3b8984-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1004 with flags RegionOnline
+2015-01-20 18:20:36,830 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd05 (6c3b9780-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1005 with flags RegionOnline
+2015-01-20 18:20:37,208 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd06 (6c3b9dde-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1005-1006 with flags RegionOnline
+2015-01-20 18:20:37,574 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd10 (6c3ba400-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1000 with flags RegionOnline
+2015-01-20 18:20:37,980 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd11 (6c3ba9e6-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1001 with flags RegionOnline
+2015-01-20 18:20:38,358 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd12 (6c3baf86-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1002 with flags RegionOnline
+2015-01-20 18:20:38,868 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd13 (6c3bb4e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1003 with flags RegionOnline
+2015-01-20 18:20:39,326 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd14 (6c3bba26-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1004 with flags RegionOnline
+2015-01-20 18:20:39,739 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd15 (6c3bbfbc-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1005 with flags RegionOnline
+2015-01-20 18:20:40,145 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd16 (6c3bc50c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1006-1006 with flags RegionOnline
+2015-01-20 18:20:40,545 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd20 (6c3bca66-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1000 with flags RegionOnline
+2015-01-20 18:20:40,946 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd21 (6c3bd006-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1001 with flags RegionOnline
+2015-01-20 18:20:41,341 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd22 (6c3bd560-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1002 with flags RegionOnline
+2015-01-20 18:20:41,753 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd23 (6c3bdb64-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1003 with flags RegionOnline
+2015-01-20 18:20:42,216 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd24 (6c3be0b4-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1004 with flags RegionOnline
+2015-01-20 18:20:42,651 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd25 (6c3be5f0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1005 with flags RegionOnline
+2015-01-20 18:20:43,063 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd26 (6c3beb2c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1007-1006 with flags RegionOnline
+2015-01-20 18:20:43,481 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd30 (6c3bf0e0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1000 with flags RegionOnline
+2015-01-20 18:20:43,905 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd31 (6c3bf69e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1001 with flags RegionOnline
+2015-01-20 18:20:44,431 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd32 (6c3bfbee-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1002 with flags RegionOnline
+2015-01-20 18:20:45,084 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd33 (6c3c012a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1003 with flags RegionOnline
+2015-01-20 18:20:45,518 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd34 (6c3c065c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1004 with flags RegionOnline
+2015-01-20 18:20:46,005 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd35 (6c3c0bca-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1005 with flags RegionOnline
+2015-01-20 18:20:46,423 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd36 (6c3c1156-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1008-1006 with flags RegionOnline
+2015-01-20 18:20:46,840 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd40 (6c3c16b0-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1000 with flags RegionOnline
+2015-01-20 18:20:47,270 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd41 (6c3c1c82-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1001 with flags RegionOnline
+2015-01-20 18:20:47,682 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd42 (6c3c236c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1002 with flags RegionOnline
+2015-01-20 18:20:48,094 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd43 (6c3c28b2-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1003 with flags RegionOnline
+2015-01-20 18:20:48,500 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd44 (6c3c2e2a-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1004 with flags RegionOnline
+2015-01-20 18:20:49,021 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd45 (6c3c335c-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1005 with flags RegionOnline
+2015-01-20 18:20:49,490 DEBUG - OpenSim.Services.GridService.GridService [GRID SERVICE]: Region xwd46 (6c3c388e-95ab-11e4-80b6-40f2e9302aa4) registered successfully at 1009-1006 with flags RegionOnline
+2015-01-20 18:20:53,250 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1000
+2015-01-20 18:20:53,250 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1002
+2015-01-20 18:20:53,373 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1004
+2015-01-20 18:20:53,458 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1005
+2015-01-20 18:20:53,468 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1006
+2015-01-20 18:20:53,556 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1003
+2015-01-20 18:20:53,658 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1006
+2015-01-20 18:20:53,727 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1000
+2015-01-20 18:20:53,811 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1001
+2015-01-20 18:20:53,897 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1001
+2015-01-20 18:20:53,969 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1006
+2015-01-20 18:20:54,013 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1005
+2015-01-20 18:20:54,103 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1002
+2015-01-20 18:20:54,231 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1003
+2015-01-20 18:20:54,321 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1000
+2015-01-20 18:20:54,412 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1002
+2015-01-20 18:20:54,475 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1001
+2015-01-20 18:20:54,505 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1001
+2015-01-20 18:20:54,586 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1005
+2015-01-20 18:20:54,678 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1006
+2015-01-20 18:20:54,770 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1003
+2015-01-20 18:20:54,867 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1007-1004
+2015-01-20 18:20:54,947 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1003
+2015-01-20 18:20:54,977 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1004
+2015-01-20 18:20:55,026 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1000
+2015-01-20 18:20:55,116 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1003
+2015-01-20 18:20:55,227 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1001
+2015-01-20 18:20:55,323 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1002
+2015-01-20 18:20:55,412 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1005
+2015-01-20 18:20:55,479 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1008-1002
+2015-01-20 18:20:55,503 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1006-1004
+2015-01-20 18:20:55,591 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1004
+2015-01-20 18:20:55,674 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1006
+2015-01-20 18:20:55,753 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1009-1005
+2015-01-20 18:21:09,432 DEBUG - OpenSim.Server.Handlers.MapImage.MapServerPostHandler [MAP ADD SERVER CONNECTOR]: Received map data for region at 1005-1000
+2015-01-20 18:22:54,844 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-21 13:51:19,966 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-21 14:26:07,852 DEBUG - Diva.Wifi.Services [Wifi]: DefaultRequest
+2015-01-21 15:07:44,340 ERROR - OpenSim.Server.Base.ServicesServerBase Command error: System.IO.IOException: Invalid handle to path "/home/opensim80/bin/[Unknown]"
+  at System.IO.FileStream.ReadData (IntPtr handle, System.Byte[] buf, Int32 offset, Int32 count) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream.ReadInternal (System.Byte[] dest, Int32 offset, Int32 count) [0x00000] in <filename unknown>:0 
+  at System.IO.FileStream.Read (System.Byte[] array, Int32 offset, Int32 count) [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader.ReadBuffer () [0x00000] in <filename unknown>:0 
+  at System.IO.StreamReader.Read () [0x00000] in <filename unknown>:0 
+  at System.TermInfoDriver.ReadKeyInternal (System.Boolean& fresh) [0x00000] in <filename unknown>:0 
+  at System.TermInfoDriver.ReadLine () [0x00000] in <filename unknown>:0 
+  at System.ConsoleDriver.ReadLine () [0x00000] in <filename unknown>:0 
+  at System.Console.ReadLine () [0x00000] in <filename unknown>:0 
+  at OpenSim.Framework.Console.CommandConsole.ReadLine (System.String p, Boolean isCommand, Boolean e) [0x00000] in <filename unknown>:0 
+  at OpenSim.Framework.Console.CommandConsole.Prompt () [0x00000] in <filename unknown>:0 
+  at OpenSim.Server.Base.ServicesServerBase.Run () [0x00000] in <filename unknown>:0 

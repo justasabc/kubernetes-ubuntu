@@ -1,0 +1,6 @@
+ETCD_OPTS="--name=etcd \
+	--peer-addr=etcd:7001 \
+	--addr=etcd:4001 \
+	--peer-bind-addr=etcd:7001 \
+	--bind-addr=etcd:4001 \
+	--data-dir=/opt/etcd"

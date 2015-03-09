@@ -1,0 +1,26 @@
+# Etcd Upstart and SysVinit configuration file
+
+# Customize etcd location 
+# ETCD="/opt/bin/etcd"
+
+# Use ETCD_OPTS to modify the start/restart options
+#ETCD_OPTS="-listen-client-urls=http://127.0.0.1:4001"
+
+#ETCD_OPTS="-name=etcd \
+#-addr=127.0.0.1:4001 \
+#-bind-addr=0.0.0.0 \
+#-peer-addr=127.0.0.1:7001 \
+#-peer-bind-addr=0.0.0.0 \
+#-cluster-active-size=1 \
+#-data-dir=/var/lib/etcd \
+#-http-read-timeout=86400 \
+#-snapshot=true"
+
+ETCD_OPTS="--name=etcd \
+--addr=127.0.0.1:4001 \
+--bind-addr=0.0.0.0 \
+--peer-addr=127.0.0.1:7001 \
+--peer-bind-addr=0.0.0.0 \
+--data-dir=/var/lib/etcd"
+
+# Add more envionrment settings used by etcd here

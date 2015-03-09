@@ -1,0 +1,11 @@
+#==================================================================================
+#https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
+#http://www.fwolf.com/blog/post/329
+#==================================================================================
+
+apt-get -y install sshfs
+
+mkdir -p /var/www
+sshfs root@master:/root/docker/base/apache/var/www /var/www
+umount /var/www
+

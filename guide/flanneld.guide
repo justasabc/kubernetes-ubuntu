@@ -1,0 +1,19 @@
+#===================================================================
+# https://coreos.com/blog/introducing-rudder/
+# https://github.com/coreos/flannel
+# http://www.it-coffee.com/kubernetesji-qun-zhong-jie-jue-kua-zhu-ji-tong-xun/
+# https://coreos.com/docs/cluster-management/setup/flannel-config/
+# https://coreos.com/blog/running-kubernetes-example-on-CoreOS-part-2/
+# https://github.com/kelseyhightower/kubernetes-fleet-tutorial#configure-flannel
+# https://docs.docker.com/articles/networking/
+# https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/design/networking.md
+# https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/ubuntu_multinodes_cluster.md
+#===================================================================
+
+config='{ "Network": "10.10.0.0/16", "Backend": { "Type": "udp", "Port": 8285 }' 
+
+etcdctl --peers http://etcd:4001 set /coreos.com/network/config '{ "Network": "10.10.0.0/16" }' 
+
+flanneld --etcd-endpoints=http://etcd:4001 --etcd-prefix="/coreos.com/network" ---subnet-file="/run/flannel/subnet.env"
+
+# flannel uses UDP port 8285 for sending encapsulated IP packets. Make sure to enable this traffic to pass between the hosts. If you find that you can't ping containers across hosts, this port is probably not open.

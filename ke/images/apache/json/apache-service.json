@@ -1,0 +1,15 @@
+{
+  "id": "apache-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 880,
+  "containerPort": 880,
+  "protocol": "TCP",
+  "selector": {
+    "name": "apache-pod"
+  },
+  "labels": {
+    "name": "apache-service",
+    "provider": "virgeo"
+  }
+}

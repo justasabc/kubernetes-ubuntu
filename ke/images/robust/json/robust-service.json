@@ -1,0 +1,15 @@
+{
+  "id": "robust-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8002,
+  "containerPort": 8002,
+  "protocol": "TCP",
+  "selector": {
+    "name": "robust-pod"
+  },
+  "labels": {
+    "name": "robust-service",
+    "provider": "virgeo"
+  }
+}

@@ -1,0 +1,36 @@
+<h2>注册新用户</h2>
+<form action="/wifi/user/account" method="POST">
+	<table>
+		<tbody>
+			<tr>
+				<td>First Name</td>
+				<td style="text-align: left"><input name="first" type="text" /> 必须为英文字母组合</td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td style="text-align: left"><input name="last" type="text" /> 必须为英文字母组合</td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td style="text-align: left"><input name="password" type="password" />
+			</tr>
+			<tr>
+				<td>确认密码</td>
+				<td style="text-align: left"><input name="password2" type="password" placeholder="" /></td>
+			</tr>
+			<tr>
+				<td>角色形象</td>
+				<td>
+					<!-- #include file=avatarselect.html -->
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="submit" value="注册" />
+	<div style="width: 360px; text-align: left; font-size: 10px">
+		<p>提示：如果您是老师注册，请注册成功后发送“用户名”至zunlin1234@gmail.com，以便能够将您加入老师列表，使用系统中的传送功能。此外，普通学生则不具备传送功能。</p>
+	</div>
+	
+	<br />
+	
+</form>

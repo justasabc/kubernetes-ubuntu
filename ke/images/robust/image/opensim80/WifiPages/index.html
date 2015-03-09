@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<!-- #call method=GetRefresh -->
+		<link rel="stylesheet" media="screen" type="text/css" href="/wifi/style.css" />
+		<script type="text/javascript" src="/wifi/scripts/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				if (!$.trim($('#menu').html()))
+				{
+					var menu = $('#menu')[0];
+					menu.style.borderStyle = "none";
+					menu.style.minWidth = 0;
+				}
+				if (!$.trim($('#content').html()))
+				{
+					$.ajax({
+						url: "/wifi/default.html",
+						complete: function(xhr) {$('#content').html(xhr.responseText);}
+					});
+				}
+			});
+		</script>
+		<title><!-- #get var=GridName --></title>
+	</head>
+	<body">
+		<div class="mainbody">
+			<div class="header">
+				<a href="/wifi" style="float:left; display: block; width: 600px; height: 100%"></a>
+				<div style="float: right; margin-top: 15px; margin-right: 20px">
+					<a href="http://virgeo.pku.edu.cn:880/VirtualGeology_grid.zip"><img src="/wifi/images/download.png" style="padding-bottom:5px"/></a><br />
+					<a href="http://virgeo.pku.edu.cn:880/virgeo_guide.pdf"><img src="/wifi/images/manual.jpg" /></a>
+				</div>
+			</div>
+			<div class="userinfo">
+				<!-- #call method=GetLoginLogout -->
+			</div>
+			<table cellpadding="0" cellspacing="0" class="main" style="padding: 0px">
+				<tbody>
+					<tr>
+						<td id="menu" class="menu">
+							<!-- #call method=GetMainMenu -->
+						</td>
+						<td id="content" class="content">
+							<!-- #call method=GetContent -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="footer">
+				<div class="stats"><!-- #include file=xxx_stats.html --></div>
+				powered by virgeo
+			</div>
+		</div>
+	</body>
+</html>
+</html>

@@ -1,0 +1,41 @@
+#===========================================================================================================================
+# http://www.infoworld.com/article/2847718/application-virtualization/container-monitoring-is-dockers-next-big-frontier.html
+# http://www.eweek.com/virtualization/laying-the-groundwork-to-monitor-docker-containers.html
+#===========================================================================================================================
+
+monitoring and collecting statistics from running Docker containers
+
+Basic monitoring
+(1) Docker client sports a few native functions for seeing what containers are running, getting basic statistics about behavior and performance, and generating a running view of container resource consumption akin to the "top" command in Linux. 
+(2) Other container monitoring solutions -- such as the Docker monitoring plug-in for the Scout server monitoring framework -- provide similarly basic detail.
+
+For closer monitoring, though, third parties have started to step up and provide tools to fit the bill. Not all of them were specifically created for container monitoring, though.
+(3) The Host sFlow project, for instance, is a general-purpose monitoring framework for multiple operating systems and hypervisors; as of June this year, when Docker 1.0 was released, Host sFlow released an agent for Docker. 
+(4) Datadog, a monitoring service supporting a wide range of integrations, added Docker monitoring around the same time.
+
+But what about a more native option -- that is, a monitoring solution built specifically to deal with the issues created by containers? 
+(5) To that end, Google created cAdvisor,  a project originally designed for monitoring Google's own container system, but works well with Docker containers. It generates detailed stats about a container's behavior, such as "resource isolation parameters, historical resource usage, histograms of complete historical resource usage, and network statistics" (as stated on the project GitHub page).
+
+(6) Similarly, the open source cAdvisor has been put to use as the base for another project, Groundwork's BoxSpy. In contrast to other solutions, BoxSpy uses a container to monitor other containers, and it can monitor the applications running within containers.
+
+The BoxSpy project is based on the Google cAdvisor effort that enables the analysis of container performance and resource utilization. However, GroundWork made a number of improvements to cAdvisor. Those improvements transform the cAdvisor application from a technology that is intended to be used as a small-environment, developer-centric monitoring tool to one that can work in large-scale production environments. 
+
+Conventional mechanisms for monitoring don't work well in container environments, primarily due to security, naming and networking reasons. BoxSpy itself is run as a container to enable monitoring of other containers. 
+
+
+Docker client native functions
+Docker monitoring plug-in
+Host sFlow's agent for Docker
+Datadog
+Google's cAdvisor (Developer mode)
+Groundwork's BoxSpy based on cAdvisor (Production mode)
+
+#===========================================================================================================================
+# http://blog.docker.com/2013/10/gathering-lxc-docker-containers-metrics/
+# http://www.labouisse.com/how-to/2014/11/17/simple-monitoring-for-docker-part-1/
+# http://www.labouisse.com/how-to/2014/11/18/simple-monitoring-for-docker-part-2/ 
+# http://segmentfault.com/blog/yexiaobai/1190000002362911
+# https://github.com/google/cadvisor/
+# https://github.com/gwos/boxspy
+# https://docs.docker.com/articles/runmetrics/
+#===========================================================================================================================

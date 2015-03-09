@@ -1,0 +1,10 @@
+#/bin/sh
+
+# add minion here
+minions=(minion1 minion2 minion3)
+
+for m in "${minions[@]}" ;do
+	echo "==============================="
+	echo "stopping $m..."
+	ssh $m service flanneld stop
+done

@@ -1,0 +1,270 @@
+#============================================================
+# http://docs.docker.com/installation/ubuntulinux/#ubuntu-precise-1204-lts-64-bit
+# https://log.qingcloud.com/?p=129
+# http://docker.widuu.com/
+# http://www.dockerpool.com/docs
+# https://docker.cn/p/create-your-first-docker-container
+# http://www.cnblogs.com/linjiqin/p/3625609.html
+#============================================================
+
+#**************************************************
+# ubuntu-12.04 LTS x84_64  64bit
+# linux kernel 3.8.0
+# docker-1.3.2
+#**************************************************
+
+vim /etc/apt/sources.list
+# replace mirrors.163.com
+rm /etc/apt/sources.list.d/*
+
+#**************************************************
+# Part 1. Install
+#**************************************************
+# Upgrade kernel to 3.8
+apt-get install linux-image-3.8.0-25-generic
+apt-get install linux-headers-3.8.0-25-generic
+
+# Add the Docker repository key to your local keychain
+# Add the Docker repository to your apt sources list, update and install the lxc-docker package.
+
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+sh -c "echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+
+apt-get update
+
+apt-cache search docker
+#lxc-docker-1.0.0 - Linux container runtime
+#lxc-docker-1.0.1 - Linux container runtime
+#lxc-docker-1.1.0 - Linux container runtime
+#lxc-docker-1.1.1 - Linux container runtime
+#lxc-docker-1.1.2 - Linux container runtime
+#lxc-docker-1.2.0 - Linux container runtime
+#lxc-docker-1.3.0 - Linux container runtime
+#lxc-docker-1.3.1 - Linux container runtime
+#lxc-docker-1.3.2 - Linux container runtime
+#lxc-docker-1.3.3 - Linux container runtime
+#lxc-docker-1.4.0 - Linux container runtime
+#lxc-docker-1.4.1 - Linux container runtime
+
+apt-get install lxc-docker-1.3.2
+
+
+# verify that the installation has worked by 'docker'
+docker
+docker version
+
+# download images from index.docker.io
+docker search ubuntu
+docker pull ubuntu
+docker images
+
+# avalialbe sites
+# site 1
+docker pull docker.cn/docker/ubuntu
+docker images
+docker tag docker.cn/docker/ubuntu:14.04 ubuntu:14.04
+# site 2
+docker pull dl.dockerpool.com:5000/ubuntu:12.04
+
+# save/load tar
+docker save mynewimage > /tmp/mynewimage.tar
+docker load < /tmp/mynewimage.tar
+
+# run docker
+# (1) temp
+docker run -i -t ubuntu:14.04 /bin/echo "hello world"
+# (2) interactive  (ctrl+p/ctrl+q)
+docker run -i -t ubuntu:14.04 /bin/bash
+root@2255c76c91c3:/# exit
+# exit   CTRL+D
+exit
+# (3) daemonized
+# -d means detached (container running in background)
+docker run -d ubuntu:14.04 /bin/sh -c "while true; do echo hello world; sleep 1; done"
+docker logs <container_id>
+docker stop <container_id>
+
+# advanced params
+# name host
+docker run --name mycontainer -h myhost -i -t ubuntu:14.04 /bin/bash
+# volume mapping (host:container)
+docker run --name mycontainer2 -h myhost -v /home/virgeo/ke/:/home/ke/ -i -t ubuntu:14.04 
+# port mapping (host:container) (outside:inside)
+# -p outside:inside
+# -P  (mapping all inside ports to range 49153-65535 )
+docker run --name mycontainer2 -h myhost -p 8888:80 -i -t ubuntu:14.04 
+docker run --name mycontainer2 -h myhost -p 127.0.0.1:8888:80 -i -t ubuntu:14.04 
+# bind udp ports by  adding xxx/udp
+docker run --name mycontainer2 -h myhost -p 127.0.0.1:8888:80/udp -i -t ubuntu:14.04 
+
+# The -p flag can be used multiple times to configure multiple ports.
+docker run --name mycontainer2 -h myhost -p 8888:80 -p 7777:77 -i -t ubuntu:14.04 
+
+docker port <container_id> 80
+# list container processes
+docker top <container_id>
+
+docker port 7c7d59381962
+#80/tcp -> 0.0.0.0:8888
+
+# inspect container  (JSON output)
+docker inspect 922451f25b56
+docker inspect -f '{{ .Name }}' mycontainer
+docker inspect -f '{{ .NetworkSettings.IPAddress }}' mycontainer
+
+# terminal 1
+docker start mycontainer
+docker attach mycontainer
+# terminal 2
+docker stop mycontainer
+
+
+# screen detach CTRL+a+d
+# container interactive shell detach Ctrl-p + Ctrl-q
+
+# list running containers
+docker ps
+# list all containers (running + stopped)
+docker ps -a -q
+# list last container
+docker ps -l 
+
+# container and images info
+docker info
+# list container info
+docker inspect <container_id>
+docker port <container_id>
+
+# remove container
+docker rm <container_id>
+# remove all containers
+docker rm `docker ps -a -q`
+docker rm $(docker ps -a -q)
+
+# remove image
+docker rmi  <image_id>
+
+# start/stop/restart container
+docker start <container_id>
+docker logs <container_id>
+docker attach <container_id>
+docker stop <container_id>
+docker restart <container_id>
+
+
+# how to make user-defined images?
+# (1) update and commit
+docker run --name mycontainer -h myhost -i -t ubuntu:14.04 /bin/bash
+#root@myhost:/ apt-get install vim git apache2
+#root@myhost:/ exit
+docker commit -a "Zunlin Ke" -m "install vim,git,apache2" mycontainer ubuntu:base
+docker commit -a "Zunlin Ke" -m "install mysql" mycontainer ubuntu:db
+
+# (2) Dockerfile
+FROM ubuntu:14.04
+MAINTAINER Zunlin Ke <zunlinke@example.com>
+RUN apt-get update 
+RUN apt-get upgrade -y
+RUN apt-get install -y git vim tree apache2 wget python
+
+# build dockerfile
+# --rm  (remove intermediate containers after a sucessful build)
+docker build -t "ubuntu:base" .
+
+
+#**************************************************
+# Part 2. Linking containers together
+#**************************************************
+docker run -d --name db ubuntu:db /bin/sh -c "while true; do echo this is db; sleep 2; done"
+
+# --name dst_container_name --link  src_container_name:link_name
+docker run -d -P --name web --link db:webdb ubuntu:base /bin/sh -c "while true; do echo this is web; sleep 2; done"
+
+# inspect links
+docker inspect -f "{{.HostConfig.Links}}" web
+#[/db:/web/webdb]
+
+
+# Docker exposes connectivity information for the source container to the recipient container in two ways:
+# (1) Environment variables,
+# (2) Updating the /etc/hosts file.
+
+docker run --rm --name web --link db:webdb ubuntu:base env
+#PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+#HOSTNAME=82d4ecf5234a
+#WEBDB_NAME=/web/webdb
+#HOME=/root
+
+docker run --rm --name web --link db:webdb ubuntu:base cat /etc/hosts
+
+#172.17.0.37     4cce7e5b46b8
+#ff02::1 ip6-allnodes
+#ff02::2 ip6-allrouters
+#127.0.0.1       localhost
+#::1     localhost ip6-localhost ip6-loopback
+#fe00::0 ip6-localnet
+#ff00::0 ip6-mcastprefix
+#172.17.0.33     webdb
+
+
+# ping source container from dest container
+docker run -i -t --name web --link db:webdb ubuntu:base 
+root@a180d2cc47aa:/# ping webdb
+#PING webdb (172.17.0.33) 56(84) bytes of data.
+#64 bytes from webdb (172.17.0.33): icmp_seq=1 ttl=64 time=0.099 ms
+#64 bytes from webdb (172.17.0.33): icmp_seq=2 ttl=64 time=0.056 ms
+#^C
+#--- webdb ping statistics ---
+#2 packets transmitted, 2 received, 0% packet loss, time 999ms
+#rtt min/avg/max/mdev = 0.056/0.077/0.099/0.023 ms
+
+
+#You can link multiple recipient containers to a single source. For example, you could have multiple (differently named) web containers attached to your db container.
+# db--->web1, db--->web2, db--->web3
+
+#If you restart the source container, the linked containers /etc/hosts files will be automatically updated with the source container's new IP address, allowing linked communication to continue.
+docker restart db
+
+
+#**************************************************
+# Part 3. Managing data in containers 
+#**************************************************
+# Adding a data volume
+docker run --name tmp -h myhost -v /webapp -i -t ubuntu:base
+
+# Volume mapping (host:container)
+docker run --name tmp -h myhost -v /home/virgeo/ke/:/home/ke/ -i -t ubuntu:base
+# File mapping (host:container)
+docker run -i -t --name tmp -h myhost -v ~/.bashrc:~/.bashrc ubuntu:base
+
+# Volume read-write or read-only      (:rw   :ro)
+docker run --name tmp -h myhost -v /home/virgeo/ke/:/home/ke/:ro -i -t ubuntu:base
+root@myhost:/home/ke# touch hello
+#touch: cannot touch 'hello': Read-only file system
+
+docker run --name tmp -h myhost -v /home/virgeo/ke/:/home/ke/:rw -i -t ubuntu:base
+root@myhost:/home/ke# touch hello
+
+# on container
+root@myhost:/home/ke# ls -l hello 
+#-rw-r--r-- 1 root root 0 Dec  9 03:14 hello
+
+# on host
+root@pkulab:/home/virgeo/ke# ls -l hello 
+#-rw-r--r-- 1 root root 0 Dec  9 11:14 hello
+
+
+# Data Volume Container
+docker run --name dv -h myhost -v /home/virgeo/ke/:/home/ke/ -d ubuntu:base
+
+# --volumes-from   <container_name>
+docker run --name db1 -i -t --volumes-from dv ubuntu:db
+docker run --name db2 -i -t --volumes-from dv ubuntu:db
+
+
+
+#!/bin/bash
+# Delete all containers
+docker rm $(docker ps -a -q)
+# Delete all images
+docker rmi $(docker images -q)

@@ -1,0 +1,3 @@
+KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=true \
+	--machines=minion1,minion2,minion3,minion4 \
+	--master=http://master:8080"

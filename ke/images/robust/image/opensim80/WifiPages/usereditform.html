@@ -1,0 +1,41 @@
+<h3>修改用户信息</h3>
+<form action="/wifi/admin/users/edit/<!-- #get field=PrincipalID-->" method="post">
+	<input type="hidden" name="form" value="1">
+	<table>
+		<tbody>
+			<tr>
+				<td>First Name</td>
+				<td><input name="first" type="text" value="<!-- #get field=FirstName-->" /></td>
+			</tr>
+			<tr>
+				<td>Last Name</td>
+				<td><input name="last" type="text" value="<!-- #get field=LastName-->" /></td>
+			</tr>
+			<tr>
+				<td>权限等级</td>
+				<td><input name="level" type="text" value="<!-- #get field=UserLevel-->" /></td>
+			</tr>
+			<tr>
+				<td>标题</td>
+				<td><input name="title" type="text" value="<!-- #get field=UserTitle-->" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<input type="submit" value="更新" class="button" />
+</form>
+<br />
+
+<h3>重置密码</h3>
+<form action="/wifi/admin/users/edit/<!-- #get field=PrincipalID-->" method="post">
+	<table>
+		<tbody>
+			<tr>
+				<td>新密码</td>
+				<td><input name="password" type="text" value="" /></td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="hidden" name="form" value="2">
+	<input type="submit" value="重置" />
+</form>

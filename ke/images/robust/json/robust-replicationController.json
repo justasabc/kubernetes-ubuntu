@@ -1,0 +1,44 @@
+{
+  "id": "robust-controller",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 1,
+    "replicaSelector": {"name": "robust-pod"},
+    "podTemplate": {
+      "desiredState": {
+         "manifest": {
+           "version": "v1beta1",
+           "id": "robust-pod",
+	   "volumes": [  
+             {"name":"robust-volumes", "source":{"hostDir":{"path":"/volumes/opensim_resources/ke"}}}
+            ],  
+           "containers": [{
+             "name": "robust",
+             "image": "docker-registry:5000/ubuntu:robust",
+	     "command": ["/bin/bash", "/home/opensim80/bin/ke/start_robust.sh"],
+	     "volumeMounts": [  
+               {"name":"robust-volumes", "mountPath":"/home/opensim80/bin/ke", "readOnly":false}  
+              ],  
+             "cpu": 500,
+	     "env": [
+			{"name": "SERVICE_NAME","value": "robust"},
+			{"name": "INI_FILE","value": "/home/opensim80/bin/ke/grid/conf/Robust.ini"},
+			{"name": "LOG_CONFIG","value": "/home/opensim80/bin/ke/grid/conf/Robust.exe.config"},
+			{"name": "PID_FILE","value": "/home/opensim80/bin/ke/grid/services/robust.pid"},
+			{"name": "LOG_FILE","value": "/home/opensim80/bin/ke/grid/services/robust.log"}
+	      ],
+             "ports": [
+			{"containerPort": 8002, "hostPort": 8002, "protocol": "TCP"},
+			{"containerPort": 8003, "hostPort": 8003, "protocol": "TCP"}
+	      ]
+           }]
+         }
+      },
+      "labels": {
+        "name": "robust-pod"
+      }
+    }
+  },
+  "labels": {"name": "robust-controller"}
+}

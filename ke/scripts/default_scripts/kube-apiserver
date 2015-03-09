@@ -1,0 +1,5 @@
+KUBE_APISERVER_OPTS="--logtostderr=true \
+	--etcd_servers=http://etcd:4001 \
+	--address=0.0.0.0 \
+	--port=8080 \
+	--portal_net=192.168.2.0/24"

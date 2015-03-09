@@ -1,0 +1,5 @@
+KUBELET_OPTS="--logtostderr=true \
+	--etcd_servers=http://etcd:4001 \
+	--address=0.0.0.0 \
+	--port=10250 \
+	--hostname_override=master"

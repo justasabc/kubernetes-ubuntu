@@ -1,0 +1,213 @@
+#/bin/sh
+# manager for robust
+
+# define available robust services
+# to be added in the future
+#SERVICES=(main asset voice)
+SERVICES=(main)
+
+function prepare_env() {
+	BIN=/home/opensim80/bin
+	cd $BIN
+
+	MONO="/usr/bin/mono"
+	SCREEN="/usr/bin/screen"
+	OPENSIM="$BIN/OpenSim.exe"
+	ROBUST="$BIN/Robust.exe"
+	export MONO_THREADS_PER_CPU=125
+}
+
+function show_help() {
+	echo "Usage:" 
+	echo "./robust {start|stop|restart|status} SERVICE "
+	echo -n "     where SERVICE is one of:"
+	echo ${SERVICES[*]}
+	echo "OR"
+	echo "./robust {summary|startall|stopall|restartall}"
+	exit 1
+}
+
+# --------------------------------------------------------------
+# for given SERVICE
+# --------------------------------------------------------------
+# whether SERVICE exists
+function service_exist() {
+# $1 servicename
+	for SERVICE in "${SERVICES[@]}"
+	do
+		if [ $SERVICE = $1 ];then
+			return 0 
+		fi
+	done
+	return 1
+}
+
+function service_check() {
+# $1 servicename
+	if [ ! $1 ];then
+		echo "SERVICE is empty"
+		show_help
+	fi
+
+	service_exist $1
+	if [ $? -ne 0 ];then
+		echo "$1 not exist"
+		show_help
+	fi
+}
+
+function service_env_setup() {
+# $1 servicename
+	export SERVICE_NAME=$1
+	export SERVICE_DIR="$BIN/ke/grid/services/$SERVICE_NAME"
+	export SERVICE_PID="$SERVICE_DIR/$SERVICE_NAME.pid"
+	# SERVICE_PID will be used in xxx.ini
+	export SERVICE_LOG_CONFIG="$SERVICE_DIR/$SERVICE_NAME.exe.config"
+	export SERVICE_LOG_FILE="$SERVICE_DIR/$SERVICE_NAME.log" 
+	# SERVICE_LOG_FILE will be used in xxx.exe.config
+
+	export MYSQL_IP=$VGEOMYSQL_PORT_3306_TCP_ADDR
+	# for robust
+	export LOCAL_IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+	export ROBUST_IP=$LOCAL_IP
+	echo $MYSQL_IP
+}
+
+function service_start() {
+	#$SCREEN -S $SERVICE_NAME -d -m -l $MONO $ROBUST -logconfig="$SERVICE_LOG_CONFIG" -inifile="$SERVICE_DIR/$SERVICE_NAME.ini"
+	$MONO $ROBUST -logconfig="$SERVICE_LOG_CONFIG" -inifile="$SERVICE_DIR/$SERVICE_NAME.ini"
+}
+
+function do_start() {
+# $1 servicename
+	service_check $1
+	service_env_setup $1
+	if [ -f $SERVICE_PID ];then
+		echo "$SERVICE_NAME has already been started..."
+		exit 1
+	fi
+	service_start # start
+	echo "$SERVICE_NAME is starting..."
+	sleep 1
+	$SCREEN -ls
+}
+
+#screen -S os1 -X stuff "shutdown"
+#screen -S os1 -X stuff "$(printf \\r)"
+
+function service_stop() {
+	#$SCREEN -S $SERVICE_NAME -X stuff "shutdown"
+	#$SCREEN -S $SERVICE_NAME -X stuff "$(printf \\r)"
+	kill -9 `cat $SERVICE_PID`
+	rm $SERVICE_PID
+	rm $SERVICE_LOG_FILE
+}
+
+function do_stop() {
+# $1 servicename
+	service_check $1
+	service_env_setup $1
+	if [ -f $SERVICE_PID ];then
+		service_stop # stop
+		echo "$SERVICE_NAME is stopping..."
+		sleep 1
+		#$SCREEN -ls
+	else
+		echo "$SERVICE_NAME has already been stopped"
+	fi
+}
+
+function service_status() {
+	if [ -f $SERVICE_PID ];then
+		echo "$SERVICE_NAME: running"	
+	else
+		echo "$SERVICE_NAME: stopped"	
+	fi
+}
+
+function do_status() {
+	service_check $1
+	service_env_setup $1
+	service_status
+}
+
+# --------------------------------------------------------------
+# for all SERVICEs
+# --------------------------------------------------------------
+function do_summary() {
+	for SERVICE in "${SERVICES[@]}"
+	do
+		service_env_setup $SERVICE
+		service_status
+	done
+}
+
+function do_startall() {
+	for SERVICE in "${SERVICES[@]}"
+	do
+		service_env_setup $SERVICE
+		if [ -f $SERVICE_PID ];then
+			echo "$SERVICE_NAME has already been started..."
+			continue
+		fi
+		service_start # start
+		echo "$SERVICE_NAME is starting..."
+	done
+	sleep 1
+	$SCREEN -ls
+}
+
+function do_stopall() {
+	for SERVICE in "${SERVICES[@]}"
+	do
+		service_env_setup $SERVICE
+		if [ -f $SERVICE_PID ];then
+			service_stop # stop
+			echo "$SERVICE_NAME is stopping..."
+		else
+			echo "$SERVICE_NAME has already been stopped"
+		fi
+	done
+	sleep 1
+	$SCREEN -ls
+}
+
+function main() {
+# $1 start|stop|restart|status
+# $2 servicename
+	prepare_env
+	case "$1" in
+	start)
+		do_start $2
+		;;
+	stop)
+		do_stop $2
+		;;
+	restart)
+		do_stop $2
+		do_start $2
+		;;
+	status)
+		do_status $2
+		;;
+	summary)
+		do_summary  
+		;;
+	startall)
+		do_startall  
+		;;
+	stopall)
+		do_stopall
+		;;
+	restartall)
+		do_stopall
+		do_startall  
+		;;
+	*)
+		show_help
+		;;
+	esac
+}
+
+# start main function with all arguments
+main $@

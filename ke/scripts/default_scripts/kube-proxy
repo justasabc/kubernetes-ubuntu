@@ -1,0 +1,2 @@
+KUBE_PROXY_OPTS="--logtostderr=true \
+	--etcd_servers=http://etcd:4001"

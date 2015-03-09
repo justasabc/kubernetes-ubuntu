@@ -1,0 +1,2 @@
+./runprebuild.sh vs2010
+xbuild

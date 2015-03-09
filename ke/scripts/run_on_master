@@ -1,0 +1,9 @@
+#/bin/bash
+./stop_master.sh
+./generate_conf.sh
+./master.sh
+./start_master.sh
+sleep 2
+
+./set_flanneld_network.sh
+echo "OK"

@@ -1,0 +1,110 @@
+body
+{
+	font-family: sans-serif;
+	font-size: 15px;
+	background: #FEF;
+	max-width: none;
+	padding: 0;
+}
+
+input
+{
+	border: 1px solid #999;
+	border-radius: 3px;
+}
+
+.mainbody
+{
+	max-width: 864px;
+	width: 864px;
+	position: relative;
+	margin: auto;
+}
+
+.header
+{
+	background: white url(/wifi/images/logo.jpg) no-repeat;
+	height: 116px;
+}
+
+.userinfo
+{
+	font-size: 10px;
+	background: #DDD;
+	height: 28px;
+	line-height: 28px;
+	text-align: right;
+	padding-right: 10px;
+}
+
+.userinfo input
+{
+	vertical-align: center;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+a, a:visited
+{
+	color: #00F;
+	text-decoration: none;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+.main
+{
+	width: 100%;
+	background: #FFF;
+	border-left: solid 2px #DDF;
+	border-right: solid 2px #DDF;
+	border-bottom: solid 2px #DDF;
+	padding: 20px;
+	text-align: center;
+	min-height: 360px;
+	margin: 0px;
+}
+
+.menu
+{
+	text-align: left;
+	vertical-align: top;
+	width: 160px;
+	min-width: 160px;
+	border-right: solid 1px #AAA;
+	height: auto;
+}
+
+.content
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+	background: url('/wifi/images/background-tex.jpg');
+	width: 100%;
+	text-align: center;
+}
+
+.content table, div
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.users td
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.footer
+{
+	background: transparent;
+	font-size: 10px;
+	color: #AAA;
+	text-align: center;
+}

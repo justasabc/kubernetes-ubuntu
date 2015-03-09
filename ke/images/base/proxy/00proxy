@@ -1,0 +1,1 @@
+Acquire::http::proxy "http://162.105.17.48:3128";

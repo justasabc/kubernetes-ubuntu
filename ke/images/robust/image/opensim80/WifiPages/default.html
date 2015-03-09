@@ -1,0 +1,117 @@
+<script type="text/javascript" src="/wifi/scripts/jquery.balloon.min.js"></script>
+<script type="text/javascript">
+var args = {};
+(function()
+{
+	var searches = location.search.split(/[&\?]/);
+	for (i in searches)
+	{
+		var s = searches[i];
+		if (!$.trim(s))
+			continue;
+		var strs = s.split('=');
+		if (strs.length == 1)
+			args[strs[0]] = '';
+		else
+			args[strs[0]] = strs[1];
+	}
+})();
+
+function balloonContents(data, i, point)
+{
+	return '<span style="font-size: 20px"><b>' + data.names[i] + '</b><hr /></span>'
+		+ '<p>' + data.descs[i] + ' (<a href="' + data.linkPrefix + data.links[i] + '">详细信息</a>)</p>'
+		+ '<div style="float: right">' + '<a href="'+data.urls[i]+'">开始虚拟体验</a></div>';
+}
+
+function setMap(data)
+{
+	$.balloon.defaults.classname = "info-balloon";
+	$('.info-balloon').remove();
+	$('#mapName').html(data.name + '地区');
+	var size = data.size || 100;
+	var map = document.createElement('div');
+	map.id = 'map';
+	$(map).css({
+		'position': 'relative',
+		'width': data.xSize * size,
+		'height': data.ySize * size,
+		'background-color': '#aaa',
+		'left': 'auto',
+		'right': 'auto',
+		'top': 'auto',
+		'bottom': 'auto'
+	});
+	
+	for (var y = 0; y < data.ySize; y++)
+	{
+		for (var x = 0; x < data.xSize; x++)
+		{
+			var img = document.createElement('img');
+			map.appendChild(img);
+			img.src = '/map-1-' + (data.xOrigin + x) + '-' + (data.yOrigin + y) + '-objects.jpg';
+			$(img).css({
+				'position': 'absolute',
+				'left': x * size,
+				'right': 'auto',
+				'top': (data.ySize - y - 1) * size,
+				'bottom': 'auto',
+				'width': size,
+				'height': size,
+			});
+		}
+	}
+	
+	for (var i = 0; i < data.count; i++)
+	{
+		var point = {x: data.points[i][0], y: data.points[i][1], z: data.points[i][2]};
+		var div = document.createElement('div');
+		var img = document.createElement('img');
+		img.src = '/wifi/images/marker.png';
+		div.appendChild(img);
+		map.appendChild(div);
+		$(div).css({
+			'position': 'absolute',
+			'left': point.x / 256 * size - 10,
+			'top': (data.ySize - point.y / 256) * size - 34,
+			'right': 'auto',
+			'bottom': 'auto'
+		});
+		$(div).balloon({
+			contents: balloonContents(data, i, point),
+			css: {
+				maxWidth: "300px"
+			}
+		});
+	}
+	
+	$('#mapContainer').html('');
+	$('#mapContainer').append(map);
+}
+
+function showMap(name)
+{
+	$.get('/wifi/mapdata/' + name,
+		function(d)
+		{
+			var data = eval(d);
+			$('#defaultContent').html('<h2>' + data.name + '区域</h2><br /><a href="#" onclick="defaultContent()">&lt;&lt;返回</a><div id="mapContainer" />');
+			setMap(data);
+		}
+	);
+}
+
+function defaultContent()
+{
+	$('.info-balloon').remove();
+	$('#defaultContent').load('/wifi/map.html');
+}
+
+</script>
+<div style="text-align: center; vertical-align: top">
+	<div id="defaultContent" />
+</div>
+
+<script>
+defaultContent();
+</script>

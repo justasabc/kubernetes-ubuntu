@@ -1,0 +1,9 @@
+id: redis-sentinel
+kind: Service
+apiVersion: v1beta1
+port: 26379
+selector:
+  name: redis
+labels:
+  name: sentinel 
+  role: service

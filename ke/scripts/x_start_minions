@@ -1,0 +1,41 @@
+#/bin/sh
+
+# add minion here
+minions=(minion1 minion2 minion3)
+kube_root=/root/kubernetes-ubuntu
+
+for m in "${minions[@]}" ;do
+	ssh $m rm -rf $kube_root
+	ssh $m rm -rf /opt/bin
+
+	ssh $m mkdir -p $kube_root/bin
+	ssh $m mkdir -p $kube_root/default_scripts/conf-generator
+	ssh $m mkdir -p $kube_root/initd_scripts
+	ssh $m mkdir -p $kube_root/init_conf
+
+	echo "copying files to $m..."
+
+	scp bin/kubelet $m:$kube_root/bin
+	scp bin/kube-proxy $m:$kube_root/bin
+	scp bin/flanneld $m:$kube_root/bin
+
+	scp default_scripts/conf-generator/kubelet.sh $m:$kube_root/default_scripts/conf-generator
+	scp default_scripts/conf-generator/kube-proxy.sh $m:$kube_root/default_scripts/conf-generator
+	scp default_scripts/conf-generator/flanneld.sh $m:$kube_root/default_scripts/conf-generator
+
+	scp initd_scripts/kubelet $m:$kube_root/initd_scripts
+	scp initd_scripts/kube-proxy $m:$kube_root/initd_scripts
+	scp initd_scripts/flanneld $m:$kube_root/initd_scripts
+	scp init_conf/kubelet.conf $m:$kube_root/init_conf
+	scp init_conf/kube-proxy.conf $m:$kube_root/init_conf
+	scp init_conf/flanneld_minion.conf $m:$kube_root/init_conf
+
+	scp generate_conf.sh $m:$kube_root
+	scp minion.sh $m:$kube_root
+	scp start_minion.sh $m:$kube_root
+	scp stop_minion.sh $m:$kube_root
+	scp run_on_minion $m:$kube_root
+	scp reconfigure_docker.sh $m:$kube_root
+
+	ssh $m  "cd $kube_root && ./run_on_minion"
+done

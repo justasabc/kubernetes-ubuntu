@@ -1,0 +1,14 @@
+#/bin/sh
+
+# add minion here
+minions=(minion1 minion2 minion3)
+kube_root=/root
+
+for m in "${minions[@]}" ;do
+	echo "====================================="
+	echo "update images on $m..."
+	# manually run scripts
+	scp update_images_on_minion.sh $m:$kube_root
+
+	ssh $m  "cd $kube_root && ./update_images_on_minion.sh"
+done

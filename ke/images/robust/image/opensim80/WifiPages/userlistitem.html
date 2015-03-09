@@ -1,0 +1,11 @@
+<tr>
+	<td class="usernamei"><!-- #get field=FirstName --> <!-- #get field=LastName --></td>
+	<td class="usertitlei"><!-- #get field=UserTitle --></td>
+	<td id="<!-- #get field=PrincipalID -->" class="userleveli"><!-- #get field=UserLevel --></td>
+	<td class="datei"><!-- #call method=GetAccountCreated --></td>
+	<td id="edit<!-- #get field=PrincipalID -->" class="commandi"><a href="/wifi/admin/users/edit/<!-- #get field=PrincipalID -->">编辑</a></td>
+	<td id="delete<!-- #get field=PrincipalID -->" class="commandi"><a href="/wifi/admin/users/delete/<!-- #get field=PrincipalID -->">删除</a></td>
+</tr>
+
+<!-- Recursion ! -->
+<!-- #include file=userlistitem.html -->

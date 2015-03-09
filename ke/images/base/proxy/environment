@@ -1,0 +1,5 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+http_proxy="http://162.105.17.48:3128"
+https_proxy="http://162.105.17.48:3128"
+HTTP_PROXY="http://162.105.17.48:3128" 
+HTTPS_PROXY="http://162.105.17.48:3128"
