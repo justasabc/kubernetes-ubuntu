@@ -32,8 +32,8 @@ function service_start() {
 	# console basic|local|rest
 	# http://opensimulator.org/wiki/ROBUST
 	# basic--->exception ???
-	$MONO $ROBUST -logconfig="$LOG_CONFIG" -inifile="$INI_FILE" -console="rest"
-	#$MONO $ROBUST -logconfig="$LOG_CONFIG" -inifile="$INI_FILE" 
+	#$MONO $ROBUST -logconfig="$LOG_CONFIG" -inifile="$INI_FILE" -console="basic"
+	$MONO $ROBUST -logconfig="$LOG_CONFIG" -inifile="$INI_FILE" 
 }
 
 function main() {
