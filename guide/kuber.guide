@@ -18,6 +18,11 @@
 # https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/design/networking.md
 # https://coreos.com/blog/running-kubernetes-example-on-CoreOS-part-2/
 # https://coreos.com/docs/cluster-management/setup/flannel-config/
+
+
+# http://andrewgorton.uk/blog/kubernetes-in-google-cloud-part-1-spinning-up-your-app/
+# http://andrewgorton.uk/blog/kubernetes-in-google-cloud-part-2-spinning-up-your-app/
+# http://andrewgorton.uk/blog/kubernetes-in-google-cloud-part-3-spinning-up-your-app/
 #===================================================================
 Ubuntu 14.04.1
 Kubernetes 0.8.2

@@ -6,4 +6,5 @@
 sleep 2
 
 ./set_flanneld_network.sh
+./get_flanneld_network.sh
 echo "OK"

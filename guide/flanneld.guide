@@ -8,6 +8,8 @@
 # https://docs.docker.com/articles/networking/
 # https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/design/networking.md
 # https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/ubuntu_multinodes_cluster.md
+# https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-kubernetes-on-top-of-a-coreos-cluster
+# http://stackoverflow.com/questions/27457641/networking-among-kubernetes-minions
 #===================================================================
 
 config='{ "Network": "10.10.0.0/16", "Backend": { "Type": "udp", "Port": 8285 }' 

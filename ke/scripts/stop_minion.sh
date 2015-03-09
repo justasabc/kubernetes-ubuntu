@@ -1,6 +1,4 @@
 #/bin/sh
-# remove logs
-rm -rf /var/log/upstart/*
 
 service flanneld stop
 #service kubelet stop

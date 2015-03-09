@@ -19,6 +19,11 @@ for m in "${minions[@]}" ;do
 	scp bin/kube-proxy $m:$kube_root/bin
 	scp bin/flanneld $m:$kube_root/bin
 
+	# ???
+	#scp bin/kubecfg $m:$kube_root/bin
+	#scp bin/kubectl $m:$kube_root/bin
+	#scp bin/kubernetes $m:$kube_root/bin
+
 	scp default_scripts/conf-generator/kubelet.sh $m:$kube_root/default_scripts/conf-generator
 	scp default_scripts/conf-generator/kube-proxy.sh $m:$kube_root/default_scripts/conf-generator
 	scp default_scripts/conf-generator/flanneld.sh $m:$kube_root/default_scripts/conf-generator

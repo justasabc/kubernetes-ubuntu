@@ -22,8 +22,13 @@ PATH=$PATH:/opt/bin:
 #=====================================================================================
 OPT_BIN=/opt/bin
 ! test -d $OPT_BIN && mkdir -p $OPT_BIN
-cp bin/kube-proxy $OPT_BIN
 cp bin/kubelet $OPT_BIN
+cp bin/kube-proxy $OPT_BIN
+
+# ??? need or not ???
+#cp bin/kubecfg $OPT_BIN
+#cp bin/kubectl $OPT_BIN
+#cp bin/kubernetes $OPT_BIN
 
 cp bin/flanneld $OPT_BIN
 #=====================================================================================

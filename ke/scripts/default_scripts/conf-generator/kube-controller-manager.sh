@@ -6,7 +6,7 @@ KUBE_LOGTOSTDERR=true
 KUBE_MASTER=http://master:8080
 
 # add minion address here
-MINION_ADDRESSES=minion1,minion2,minion3,minion4
+MINION_ADDRESSES=minion1,minion2,minion3
 #MINION_ADDRESSES=192.168.1.201,192.168.1.202,192.168.1.203
 
 cat <<EOF >../$BASE
