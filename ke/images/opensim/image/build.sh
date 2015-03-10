@@ -1,10 +1,8 @@
 #!/bin/bash
-name=robust
+name=opensim
 image=ubuntu:$name
 registry=docker-registry:5000
 
-#docker stop $name
-#docker rm $name
 docker rmi $image
 docker rmi $registry/$image
 

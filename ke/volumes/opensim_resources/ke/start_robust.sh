@@ -12,7 +12,6 @@ function prepare_env() {
 
 function service_env_setup() {
 	# for robust
-	#export MYSQL_IP=$VGEOMYSQL_PORT_3306_TCP_ADDR
 	export MYSQL_IP=$MYSQL_SERVICE_SERVICE_HOST
 	export LOCAL_IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 	export ROBUST_IP=$LOCAL_IP

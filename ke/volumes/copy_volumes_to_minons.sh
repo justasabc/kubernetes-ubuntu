@@ -7,10 +7,9 @@ master_path=../volumes
 minion_path=/volumes
 
 for m in "${minions[@]}" ;do
-	echo "copying volumes to $m..."
+	echo "=============================="
+	echo "copying var to $m..."
 	ssh $m rm -rf $minion_path
 
 	scp -r $master_path $m:$minion_path
-	ssh $m rm $minion_path/$filename
-	echo "=============================="
 done

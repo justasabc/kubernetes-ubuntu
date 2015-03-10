@@ -10,6 +10,6 @@
   },
   "labels": {
     "name": "mysql-service",
-    "provider": "virgeo"
+    "provider": "vge"
   }
 }

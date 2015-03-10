@@ -1,4 +1,4 @@
 #/bin/bash
-#curl -L <service_ip>:<service_port>
-ip_port=$(kubecfg list services | grep robust-service | awk '{print $4":"$5;}')
-echo "curl -L $ip_port"
+minion=$(kubecfg list pods | grep robust | awk '{print $3;}' | cut -f1 -d/)
+echo $minion
+test $minion && ssh $minion tail -f /volumes/opensim_resources/ke/grid/services/robust.log
