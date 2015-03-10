@@ -6,7 +6,8 @@ brctl delbr docker0
 
 echo "========================================"
 # source must occur with #/bin/bash
-source /run/flannel/subnet.env
+file=/run/flannel/subnet.env
+source $file
 echo $FLANNEL_SUBNET
 echo $FLANNEL_MTU
 HOSTNAME=$(cat /etc/hostname)
