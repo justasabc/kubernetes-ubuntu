@@ -1,0 +1,208 @@
+# manager for opensim
+
+# define available sim names
+# to be added in the future
+SIMS=(huyu xwd)
+
+function prepare_env() {
+	BIN=`dirname "$0"`
+	BIN=`cd "../$BIN"; pwd`
+	cd $BIN
+
+	MONO="/usr/bin/mono"
+	SCREEN="/usr/bin/screen"
+	OPENSIM="./OpenSim.exe"
+	ROBUST="./Robust.exe"
+	export MONO_THREADS_PER_CPU=125
+}
+
+function show_help() {
+	echo "Usage:" 
+	echo "./opensim {start|stop|restart|status} SIM "
+	echo -n "     where SIM is one of:"
+	echo ${SIMS[*]}
+	echo "OR"
+	echo "./opensim {summary|startall|stopall|restartall}"
+	exit 1
+}
+
+# --------------------------------------------------------------
+# for given SIM
+# --------------------------------------------------------------
+# whether sim exists
+function sim_exist() {
+# $1 simname
+	for sim in "${SIMS[@]}"
+	do
+		if [ $sim = $1 ];then
+			return 0 
+		fi
+	done
+	return 1
+}
+
+function sim_check() {
+# $1 simname
+	if [ ! $1 ];then
+		echo "SIM is empty"
+		show_help
+	fi
+
+	sim_exist $1
+	if [ $? -ne 0 ];then
+		echo "$1 not exist"
+		show_help
+	fi
+}
+
+function sim_env_setup() {
+# $1 simname
+	export SIM_NAME=$1
+	export SIM_DIR="$BIN/ke/grid/instances/$SIM_NAME"
+	export SIM_PID="$SIM_DIR/$SIM_NAME.pid"
+	# SIM_NAME SIM_DIR SIM_PID will be used in xxx.ini
+	export SIM_LOG_CONFIG="$SIM_DIR/$SIM_NAME.exe.config"
+	export SIM_LOG_FILE="$SIM_DIR/$SIM_NAME.log" 
+	# SIM_LOG_FILE will be used in xxx.exe.config
+}
+
+function sim_start() {
+	$SCREEN -S $SIM_NAME -d -m -l $MONO $OPENSIM -logconfig="$SIM_LOG_CONFIG" -inimaster="OpenSimDefaults.ini" -inifile="OpenSim.ini" -inidirectory="$SIM_DIR"
+}
+
+function do_start() {
+# $1 simname
+	sim_check $1
+	sim_env_setup $1
+	if [ -f $SIM_PID ];then
+	#if [ `sim_status` -eq 0 ];then
+		echo "$SIM_NAME has already been started..."
+		exit 1
+	fi
+	sim_start # start
+	echo "$SIM_NAME is starting..."
+	sleep 1
+	$SCREEN -ls
+}
+
+#screen -S os1 -X stuff "shutdown"
+#screen -S os1 -X stuff "$(printf \\r)"
+
+function sim_stop() {
+	$SCREEN -S $SIM_NAME -X stuff "shutdown"
+	$SCREEN -S $SIM_NAME -X stuff "$(printf \\r)"
+	sleep 3
+	kill -9 `cat $SIM_PID`
+	rm $SIM_PID
+	rm $SIM_LOG_FILE
+}
+
+function do_stop() {
+# $1 simname
+	sim_check $1
+	sim_env_setup $1
+	if [ -f $SIM_PID ];then
+	#if [ `sim_status` -eq 0 ];then
+		sim_stop # stop
+		echo "$SIM_NAME is stopping..."
+		sleep 1
+		$SCREEN -ls
+	else
+		echo "$SIM_NAME has already been stopped"
+	fi
+}
+
+function sim_status() {
+	if [ -f $SIM_PID ];then
+		echo "$SIM_NAME: running"	
+	else
+		echo "$SIM_NAME: stopped"	
+	fi
+}
+
+function do_status() {
+	sim_check $1
+	sim_env_setup $1
+	sim_status
+}
+
+# --------------------------------------------------------------
+# for all sims
+# --------------------------------------------------------------
+function do_summary() {
+	for sim in "${SIMS[@]}"
+	do
+		sim_env_setup $sim
+		sim_status
+	done
+}
+
+function do_startall() {
+	for sim in "${SIMS[@]}"
+	do
+		sim_env_setup $sim
+		if [ -f $SIM_PID ];then
+			echo "$SIM_NAME has already been started..."
+			continue
+		fi
+		sim_start # start
+		echo "$SIM_NAME is starting..."
+	done
+	sleep 1
+	$SCREEN -ls
+}
+
+function do_stopall() {
+	for sim in "${SIMS[@]}"
+	do
+		sim_env_setup $sim
+		if [ -f $SIM_PID ];then
+			sim_stop # stop
+			echo "$SIM_NAME is stopping..."
+		else
+			echo "$SIM_NAME has already been stopped"
+		fi
+	done
+	sleep 1
+	$SCREEN -ls
+}
+
+function main() {
+# $1 start|stop|restart|status
+# $2 simname
+	prepare_env
+	case "$1" in
+	start)
+		do_start $2
+		;;
+	stop)
+		do_stop $2
+		;;
+	restart)
+		do_stop $2
+		do_start $2
+		;;
+	status)
+		do_status $2
+		;;
+	summary)
+		do_summary  
+		;;
+	startall)
+		do_startall  
+		;;
+	stopall)
+		do_stopall
+		;;
+	restartall)
+		do_stopall
+		do_startall  
+		;;
+	*)
+		show_help
+		;;
+	esac
+}
+
+# start main function with all arguments
+main $@

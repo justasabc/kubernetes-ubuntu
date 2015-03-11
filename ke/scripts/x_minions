@@ -5,6 +5,7 @@ minions=(minion1 minion2 minion3)
 kube_root=/root/kubernetes-ubuntu
 
 for m in "${minions[@]}" ;do
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	ssh $m rm -rf $kube_root
 	ssh $m rm -rf /opt/bin
 
@@ -41,6 +42,7 @@ for m in "${minions[@]}" ;do
 	scp stop_minion.sh $m:$kube_root
 	scp run_on_minion $m:$kube_root
 	scp reconfigure_docker.sh $m:$kube_root
+
 
 	ssh $m  "cd $kube_root && ./run_on_minion"
 done

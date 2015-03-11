@@ -9,3 +9,5 @@ docker pull docker-registry:5000/ubuntu:apache
 docker pull docker-registry:5000/ubuntu:mysql
 docker pull docker-registry:5000/ubuntu:robust
 docker pull docker-registry:5000/ubuntu:opensim
+
+docker pull docker-registry:5000/cadvisor:latest

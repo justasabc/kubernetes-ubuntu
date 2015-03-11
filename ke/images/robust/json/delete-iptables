@@ -1,0 +1,27 @@
+#!/bin/bash
+#cat /proc/sys/net/ipv4/ip_forward
+
+# robust 8002/tcp
+PORT=8002
+REDIRECT_IP=192.168.1.202
+iptables -t nat -D PREROUTING -i eth0 -p tcp --dport $PORT -j DNAT --to $REDIRECT_IP:$PORT
+iptables -t filter -D FORWARD -p tcp -d $REDIRECT_IP --dport $PORT -j ACCEPT
+
+# opensim sim_port/tcp
+PORT=8801
+REDIRECT_IP=192.168.1.201
+iptables -t nat -D PREROUTING -i eth0 -p tcp --dport $PORT -j DNAT --to $REDIRECT_IP:$PORT
+iptables -t filter -D FORWARD -p tcp -d $REDIRECT_IP --dport $PORT -j ACCEPT
+
+# opensim regions_port/udp
+REDIRECT_IP=192.168.1.201
+
+REGION_PORTS=(9000 9001 9002 9003)
+for PORT in "${REGION_PORTS[@]}";do
+	iptables -t nat -D PREROUTING -i eth0 -p udp --dport $PORT -j DNAT --to $REDIRECT_IP:$PORT
+	iptables -t filter -D FORWARD -p udp -d $REDIRECT_IP --dport $PORT -j ACCEPT
+done
+
+# list 
+iptables -t filter -L FORWARD
+iptables -t nat -L PREROUTING

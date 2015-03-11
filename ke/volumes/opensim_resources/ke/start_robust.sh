@@ -14,7 +14,8 @@ function service_env_setup() {
 	# for robust
 	export MYSQL_IP=$MYSQL_SERVICE_SERVICE_HOST
 	export LOCAL_IP=$(/sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
-	export ROBUST_IP=$LOCAL_IP
+	export ROBUST_PUBLIC_IP=$ROBUST_EXTERNAL_IP
+	export ROBUST_INTERNAL_IP=$LOCAL_IP
 	echo "=================================================="
 	echo $SERVICE_NAME
 	echo $INI_FILE
@@ -22,7 +23,8 @@ function service_env_setup() {
 	echo $PID_FILE
 	echo $LOG_FILE
 	echo "mysql ip: $MYSQL_IP"
-	echo "robust ip: $ROBUST_IP"
+	echo "robust ip for client: $ROBUST_PUBLIC_IP"
+	echo "robust internal ip: $ROBUST_INTERNAL_IP"
 	echo "=================================================="
 
 }

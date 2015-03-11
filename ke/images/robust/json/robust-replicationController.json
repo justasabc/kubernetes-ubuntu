@@ -22,6 +22,7 @@
               ],  
              "cpu": 500,
 	     "env": [
+			{"name": "ROBUST_EXTERNAL_IP","value": "162.105.17.48"},
 			{"name": "SERVICE_NAME","value": "robust"},
 			{"name": "INI_FILE","value": "/home/opensim80/bin/ke/grid/conf/Robust.ini"},
 			{"name": "LOG_CONFIG","value": "/home/opensim80/bin/ke/grid/conf/Robust.exe.config"},

@@ -1,0 +1,15 @@
+{
+  "id": "opensim-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8801,
+  "containerPort": 8801,
+  "protocol": "TCP",
+  "selector": {
+    "name": "opensim-pod"
+  },
+  "labels": {
+    "name": "opensim-service",
+    "provider": "vge"
+  }
+}

@@ -3,6 +3,5 @@
 ./generate_conf.sh
 ./minion.sh
 ./start_minion.sh
-echo "OK"
 
 ./reconfigure_docker.sh
