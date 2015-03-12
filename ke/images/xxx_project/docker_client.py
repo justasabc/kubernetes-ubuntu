@@ -8,13 +8,13 @@
 
 #===================================
 # create 4 default users
+# create user [first] [last] [passw] [RegionX] [RegionY] [Email]
 # import oar/iar data
 # command-script ./opensim_data/oar/script/load_oar_huyu.txt
 # command-script ./opensim_data/oar/script/load_oar_xwd.txt
 
 # command-script ./opensim_data/iar/script/load_iar.txt
 # command-script ./opensim_data/test_user/load_iar.txt
-
 
 #  docker exec -i -t robust ls /home/opensim80/bin/opensim_data/maptiles
 #  ????????????

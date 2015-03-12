@@ -24,7 +24,7 @@
                {"name":"opensim-config", "mountPath":"/home/opensim80/bin/config-include", "readOnly":false},  
                {"name":"opensim-data", "mountPath":"/home/opensim80/bin/opensim_data", "readOnly":false}
               ],  
-             "cpu": 500,
+             "cpu": 800,
 	     "env": [
 			{"name": "SIM_NAME","value": "sim1"},
 			{"name": "SIM_PORT","value": "8801"},
