@@ -16,7 +16,7 @@
              {"name":"opensim-data", "source":{"hostDir":{"path":"/volumes/opensim_resources/opensim_data"}}}
             ],  
            "containers": [{
-             "name": "opensim",
+             "name": "sim1",
              "image": "docker-registry:5000/ubuntu:opensim",
 	     "command": ["/bin/bash", "/home/opensim80/bin/ke/start_opensim_xxx.sh"],
 	     "volumeMounts": [  
