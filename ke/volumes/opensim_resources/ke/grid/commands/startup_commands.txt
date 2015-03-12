@@ -1,0 +1,10 @@
+; Lines that start with ; are comments.
+; import oar/iar data
+; command-script ./opensim_data/oar/script/load_oar_huyu.txt
+; command-script ./opensim_data/oar/script/load_oar_xwd.txt
+
+; command-script ./opensim_data/iar/script/load_iar.txt
+; command-script ./opensim_data/test_user/load_iar.txt
+
+change region huyu00
+terrain fill 30
