@@ -8,5 +8,6 @@
 *.exe
 *.zip
 *.tif
+*.pyc
 *opensim_data
 

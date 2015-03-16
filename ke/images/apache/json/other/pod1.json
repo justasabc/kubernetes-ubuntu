@@ -1,0 +1,25 @@
+{
+  "id": "xxx1-pod",
+  "kind": "Pod",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "manifest": {
+      "version": "v1beta1",
+      "id": "xxx1-pod",
+      "containers": [{
+        "name": "apache",
+	"hostname": "apache",
+        "image": "docker-registry:5000/ubuntu:apache",
+	"command": ["/bin/bash", "/home/start_apache.sh"],
+        "cpu": 100,
+        "ports": [{
+          "containerPort": 991,
+          "hostPort": 880
+        }]
+      }]
+    }
+  },
+  "labels": {
+    "name": "apache-pod"
+  }
+}

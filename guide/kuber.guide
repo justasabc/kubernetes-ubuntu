@@ -145,3 +145,4 @@ kubecfg -h http://master:8080 list services
 # *******************************************************************
 kubecfg -h http://master:8080 -c redis-master.json create pods
 kubecfg -h http://master:8080 -c redis-master-service.json create services
+kubecfg

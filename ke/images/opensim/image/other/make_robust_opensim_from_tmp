@@ -1,6 +1,0 @@
-docker rm robust
-docker rm opensim
-docker rmi ubuntu:robust
-docker rmi ubuntu:opensim
-docker commit -a "zunlinke" -m "robust " tmp ubuntu:robust
-docker tag ubuntu:robust ubuntu:opensim

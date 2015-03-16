@@ -1,3 +1,0 @@
-#!/bin/bash
-CONTAINER='tmp'
-docker run -i -t -h $CONTAINER --link mysql:vgeomysql --name $CONTAINER ubuntu:vgeo
