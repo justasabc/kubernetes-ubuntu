@@ -11,17 +11,12 @@ class Cluster:
 	"""
 	a cluster has N simulators
 	"""
-	def __init__(self,cluster_name,region_pool):
-		self.filepath = CLUSTER_DATA_DIR+"cluster"
-
-		self.cluster_name = cluster_name
+	def __init__(self,region_pool):
 		self.region_pool = region_pool
+		self.filepath = CLUSTER_DATA_DIR+"cluster"
 
 		# simulator list
 		self.simulator_list = []
-
-	def get_cluster_name(self):
-		return self.cluster_name
 
 	def get_simulator_list(self):
 		return self.simulator_list
@@ -51,12 +46,12 @@ class Cluster:
 	#====================================================================================
 	def init_cluster(self):
 		if os.path.exists(self.filepath):
-			print "[CLUSTER]read cluster data from {0}...".format(self.filepath)
+			print "[Cluster] read cluster data from {0}...".format(self.filepath)
 			self.__read_cluster_data(self.filepath)
 		else:
-			print "[CLUSTER]create default cluster for the first time..."
+			print "[Cluster] create default cluster for the first time..."
 			self.__create_default_cluster()
-			print "[CLUSTER]save cluster data to {0}...".format(self.filepath)
+			print "[Cluster] save cluster data to {0}...".format(self.filepath)
 			self.__save_cluster_data(self.filepath)
 
 	def __new_simulator_name(self):
@@ -148,7 +143,7 @@ class Cluster:
 	def start(self):
 		for sim in self.get_simulator_list():
 			sim_pod = OpensimPod(sim)
-			sim_pod.start()
+			#sim_pod.start()
 
 	def stop(self):
 		for sim in self.get_simulator_list():

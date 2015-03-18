@@ -7,7 +7,7 @@ from commander import KubernetesCommander
 
 class Pod:
 
-	def __init__(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports):
+	def __init__(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports,labels):
 		self.pod_id = pod_id
 		self.volumes = volumes
 		self.volume_mounts = volume_mounts
@@ -18,8 +18,9 @@ class Pod:
 		self.memory = memory
 		self.env = env
 		self.ports = ports
+		self.labels = labels
 
-	def __to_dict(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports):
+	def __to_dict(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports,labels):
 		d = {}
 		d["id"] = pod_id
 		d["kind"] = "Pod"
@@ -46,11 +47,13 @@ class Pod:
 		manifest["containers"] = containers
 		desiredState["manifest"] = manifest
 		d["desiredState"] = desiredState
+
+		d["labels"] = labels
 		
 		return d
 
 	def to_dict(self):
-		return self.__to_dict(self.pod_id,self.volumes,self.volume_mounts,self.name,self.image,self.command,self.cpu,self.memory,self.env,self.ports)
+		return self.__to_dict(self.pod_id,self.volumes,self.volume_mounts,self.name,self.image,self.command,self.cpu,self.memory,self.env,self.ports,self.labels)
 
 	def get_pod_id(self):
 		return self.pod_id
@@ -82,6 +85,9 @@ class Pod:
 	def get_ports(self):
 		return self.ports
 
+	def get_labels(self):
+		return self.labels
+
 class Service:
 	pass
 
@@ -93,14 +99,14 @@ class OpensimPod(Pod):
 
 	def __init__(self,simulator):
 		self.simulator = simulator
-		self.__init_settings(simulator)
+		self.__init_setting(simulator)
 
-	def __init_settings(self,simulator):
+	def __init_setting(self,simulator):
 		sim_name = simulator.get_simulator_name()
 		sim_port = simulator.get_simulator_port()
 		region_port_list = simulator.get_region_port_list()
 
-		pod_id = sim_name+"-pod"
+		pod_id = sim_name
 		volumes = [  
 			{"name":"opensim-ke", "source":{"hostDir":{"path":"/volumes/opensim_resources/ke"}}},
 			{"name":"opensim-config", "source":{"hostDir":{"path":"/volumes/opensim_resources/config-include"}}},
@@ -137,8 +143,9 @@ class OpensimPod(Pod):
 		ports.append({"containerPort": sim_port, "hostPort": sim_port, "protocol": "TCP"})
 		for region_port in region_port_list:
 			ports.append({"containerPort": region_port, "hostPort": region_port, "protocol": "UDP"})
+		labels =  {"name": "opensim-pod"}
 		# init base
-		Pod.__init__(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports)
+		Pod.__init__(self,pod_id,volumes,volume_mounts,name,image,command,cpu,memory,env,ports,labels)
 
 		# fields
 		self.dict_data = Pod.to_dict(self)

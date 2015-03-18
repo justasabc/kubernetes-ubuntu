@@ -41,7 +41,7 @@ fi
 protocol=tcp
 src_port=8801
 dst_port=8801
-pod_name=opensim-pod
+pod_name=sim1
 minion=$(kubecfg list pods | grep $pod_name | awk '{print $3;}' | cut -f1 -d/)
 if [ "$minion" != "" ];then
 	dst_ip=$(resolveip -s $minion)
@@ -50,7 +50,7 @@ if [ "$minion" != "" ];then
 fi
 
 # 4) opensim region ports
-region_ports=(9000 9001 9002 9003)
+region_ports=(9000 9001 9010 9011)
 protocol=udp
 if [ "$minion" != "" ];then
 	for port in "${region_ports[@]}";do

@@ -10,6 +10,19 @@ ALLOW_ALTERNATE_PORTS = False
 MAX_AGENTS = 100
 MAX_PRIMS = 15000
 
+GLOBAL_REGION_DATA2 = {
+	"huyu":
+		{"orig":(1000,1000), "startPort":9000, "wh":(2,2)},
+	"xwd":
+		{"orig":(1005,1000), "startPort":9050, "wh":(2,2)},
+	"newhuyu":
+		{"orig":(1010,1000), "startPort":9100, "wh":(2,2)},
+	"newxwd":
+		{"orig":(1015,1000), "startPort":9150, "wh":(2,2)},
+	"newregion":
+		{"orig":(1020,1000), "startPort":9200, "wh":(2,2)}
+	}
+
 GLOBAL_REGION_DATA = {
 	"huyu":
 		{"orig":(1000,1000), "startPort":9000, "wh":(4,7)},
@@ -49,7 +62,7 @@ ROBUST_COMMAND = ["/bin/bash", "/home/opensim80/bin/ke/start_robust.sh"]
 OPENSIM_COMMAND = ["/bin/bash", "/home/opensim80/bin/ke/start_opensim_xxx.sh"]
 
 # cpu/memory
-CPU = 300
-MEMORY = 100000000
+CPU = 1024
+MEMORY = 1000000000
 
 JSON_FOLDER="./json/"

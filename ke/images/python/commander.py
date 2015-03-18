@@ -12,7 +12,7 @@ class BaseCommander:
 		self.name = name
 
 	def execute_external_command(self,command_str):
-		print "[BaseCommander] {0}".format(command_str)
+		#print "[BaseCommander] {0}".format(command_str)
 		p = subprocess.Popen(command_str, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		value = ""
 		for line in p.stdout.readlines():
@@ -230,7 +230,7 @@ class IptablesCommander(BaseCommander):
 		return BaseCommander.execute_external_command(self,command_str)
 
 	def nat_add_rule_to_postrouting_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
-		command_str = "iptables -t nat -A POSTROUTING -p {0} -d {1} --dport {2} -j SNAT --to-source {4}".format(protocol,dst_ip,dst_port,src_ip)
+		command_str = "iptables -t nat -A POSTROUTING -p {0} -d {1} --dport {2} -j SNAT --to-source {3}".format(protocol,dst_ip,dst_port,src_ip)
 		return BaseCommander.execute_external_command(self,command_str)
 
 	def nat_add_rule_to_input_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):

@@ -23,12 +23,12 @@ class RegionPool:
 	#====================================================================================
 	def init_region_pool(self):
 		if os.path.exists(self.filepath):
-			print "[REGION POOL]read region pool from {0}...".format(self.filepath)
+			print "[RegionPool] read region pool from {0}...".format(self.filepath)
 			self.__read_region_pool(self.filepath)
 		else:
-			print "[REGION POOL]create region pool for the first time..."
+			print "[RegionPool] create region pool for the first time..."
 			self.__create_region_pool()
-			print "[REGION POOL]save region pool to {0}...".format(self.filepath)
+			print "[RegionPool] save region pool to {0}...".format(self.filepath)
 			self.__save_region_pool(self.filepath)
 
 	def __create_region_pool(self):
@@ -125,5 +125,5 @@ class RegionPool:
 			if region.get_region_name() == region_name :
 				#print "[REGION POOL]{0} found.".format(region_name)
 				return region
-		print "[REGION POOL]{0} does not exist.".format(region_name)
+		print "[RegionPool] {0} does not exist.".format(region_name)
 		return None

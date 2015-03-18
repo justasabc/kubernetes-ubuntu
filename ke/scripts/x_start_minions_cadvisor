@@ -10,7 +10,12 @@ for m in "${minions[@]}" ;do
 	# manually run scripts
 	scp start_cadvisor.sh $m:$kube_root
 	scp stop_cadvisor.sh $m:$kube_root
+	scp start_dockerui.sh $m:$kube_root
+	scp stop_dockerui.sh $m:$kube_root
 
 	ssh $m  "cd $kube_root && ./stop_cadvisor.sh && ./start_cadvisor.sh"
 	echo "curl -L $m:881"
+	sleep 2
+	ssh $m  "cd $kube_root && ./stop_dockerui.sh && ./start_dockerui.sh"
+	echo "curl -L $m:882"
 done
