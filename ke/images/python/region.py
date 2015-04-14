@@ -1,3 +1,16 @@
+"""
+Class Hierarchy
+
+G{classtree: Region} 
+
+Package tree
+G{packagetree: region} 
+
+Import Graph
+G{importgraph: region} 
+
+"""
+
 #/usr/bin/python
 # -*- coding:utf-8 -*-
 
@@ -8,6 +21,7 @@ class Region:
 	region fields
 	"""
 	def __init__(self,name,uuid,loc_x,loc_y,internal_address,port,allow_alternate_ports,external_hostname,max_agents,max_prims):
+		#print "[Region] init region {0}".format(name)
 		self.name = name
 		self.uuid = uuid
 		self.loc_x = loc_x
@@ -70,3 +84,6 @@ class Region:
 	def get_max_prims(self):
 		return self.max_prims
 
+
+class RegionTesting(Region):
+	pass

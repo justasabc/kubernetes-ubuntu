@@ -5,8 +5,8 @@ IMAGE=docker-registry:5000/cadvisor:latest
 HOST_PORT=881
 CONTAINER_PORT=8080
 
-#docker stop $NAME
-#docker rm $NAME
+docker stop $NAME
+docker rm $NAME
 docker run \
   --volume=/:/rootfs:ro \
   --volume=/var/run:/var/run:rw \

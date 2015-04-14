@@ -12,5 +12,5 @@ class JsonGenerator:
 	def generate(self,dict_data,file_path):
 		with open(file_path, 'w') as fp:
     			json.dump(dict_data, fp, indent=4, separators=(',',':'),sort_keys=True)
-		print "Generate {0}!".format(file_path)
+		print "[JsonGenerator] generate {0}".format(file_path)
 

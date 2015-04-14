@@ -6,6 +6,7 @@ sh -c "echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.lis
 apt-get update
 
 #apt-cache search docker
-apt-get install lxc-docker-1.3.2
+#apt-get install lxc-docker-1.3.2
+apt-get install lxc-docker-1.5.0
 
 #docker version

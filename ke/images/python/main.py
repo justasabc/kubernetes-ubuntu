@@ -1,35 +1,41 @@
+"""
+Class Hierarchy
+
+G{classtree: Main} 
+
+Package tree
+G{packagetree: main} 
+
+Import Graph
+G{importgraph: main} 
+
+"""
 #/usr/bin/python
 # -*- coding:utf-8 -*-
 
-from setting import *
-from region_pool import RegionPool
-from cluster import Cluster
-from proxy import ProxyServer
+from cluster_server import ClusterServer
 
-def start_cluster():
-	region_pool = RegionPool(GLOBAL_REGION_DATA)
-	region_pool.init_region_pool()
+GLOBAL_REGION_DATA_DICT = {
+	"huyu": {"sim_port":8801, "region_orig":(1000,1000), "region_start_port":9000, "wh":(3,3)},
+	"xwd" : {"sim_port":8802, "region_orig":(1005,1000), "region_start_port":9050, "wh":(3,3)}
+	}
 
-	cluster = Cluster(region_pool)
-	cluster.init_cluster()
-	cluster.start()
 
-def start_proxy():
-	region_pool = RegionPool(GLOBAL_REGION_DATA)
-	region_pool.init_region_pool()
+class Main:
 
-	cluster = Cluster(region_pool)
-	cluster.init_cluster()
-	cluster.start()
+	def __init__(self,global_region_data_dict):
+		self.server = ClusterServer(global_region_data_dict)
+		""" @type: L{ClusterServer} """
 
-	# start up proxy server
-	simulator_list = cluster.get_simulator_list()
-	proxy_server = ProxyServer(simulator_list)
-	proxy_server.start()
+	def run(self):
+		self.server.start()
 
-def main():
-	#start_cluster()
-	start_proxy()
+class MainTesting(Main):
+	pass
+
+def main_entry():
+	g_main = Main(GLOBAL_REGION_DATA_DICT)
+	#start_proxy()
 
 if __name__=="__main__":
-	main()
+	main_entry()

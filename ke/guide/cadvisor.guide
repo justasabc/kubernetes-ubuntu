@@ -1,0 +1,9 @@
+#https://github.com/google/cadvisor/blob/master/docs/api.md
+
+curl -L http://master:881/api/v1.2/docker/ | python -m json.tool
+http://master:881/api/v1.2/machine
+http://master:881/api/v1.2/docker
+
+curl -L http://master:2375/v1/containers/docker-registry/stats
+
+

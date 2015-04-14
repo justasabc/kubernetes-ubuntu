@@ -1,32 +1,54 @@
+"""
+Class Hierarchy
+
+G{classtree: Simulator} 
+
+Package tree
+G{packagetree: simulator} 
+
+Import Graph
+G{importgraph: simulator} 
+
+"""
 #/usr/bin/python
 # -*- coding:utf-8 -*-
-
-from setting import *
+from region_pool import RegionPool
 
 class Simulator:
 	"""
 	a simulator hosts N regions
 	create a simulator ini/xml file containing N region ini/xml section
 	"""
-	def __init__(self,sim_name,sim_port,region_pool,region_name_list):
+	def __init__(self,sim_name,sim_port,region_name_list,region_pool):
+		print "[Simulator] init {0}...".format(sim_name)
 		self.sim_name = sim_name
+		""" @type: C{string} """
 		self.sim_port = sim_port
+		""" @type: C{integer} """
+		self.region_name_list = region_name_list
+		""" @type: C{list} """
 		self.region_pool = region_pool
+		""" @type: L{RegionPool} """
 
 		# simulator region list
 		self.region_list = []
+		""" @type: L{Region} """
+		print "[Simulator] get region(s) from pool & add region(s) to simulator"
 		for region_name in region_name_list:
 			self.add_region(region_name)
 
 		# simulator ini
-		self.simulator_ini_string = ""
 		self.simulator_ini_filename = self.sim_name + ".ini"
-		self.simulator_ini_filepath = APACHE_LOCAL_DIR + self.simulator_ini_filename
+		""" @type: C{string} """
+		self.simulator_ini_filepath = "./ini/"+ self.simulator_ini_filename
+		""" @type: C{string} """
 
 		# simulator xml
-		self.simulator_xml_string = ""
 		self.simulator_xml_filename = self.sim_name + ".xml"
-		self.simulator_xml_filepath = APACHE_LOCAL_DIR + self.simulator_xml_filename
+		""" @type: C{string} """
+		self.simulator_xml_filepath = "./xml/" + self.simulator_xml_filename
+		""" @type: C{string} """
+		print "[Simulator] {0} OK".format(sim_name)
 
 	def str(self):
 		# sim_name,sim_port,r1,r2,r3,r4...
@@ -37,17 +59,11 @@ class Simulator:
 			str_format += ","+region_name
 		return str_format
 
-	#================================================================================
-	# add region
-	#================================================================================
 	def add_region(self,region_name):
 		region = self.region_pool.get_region(region_name)
 		if region:
 			self.region_list.append(region)
 
-	#================================================================================
-	# remove region
-	#================================================================================
 	def remove_region(self,region_name):
 		region = self.region_pool.get_region(region_name)
 		if region:
@@ -59,8 +75,8 @@ class Simulator:
 	def get_simulator_port(self):
 		return self.sim_port 
 
-	def get_region_list(self):
-		return self.region_list
+	def get_region_name_list(self):
+		return self.region_name_list
 
 	#================================================================================
 	# get region port list
@@ -75,10 +91,10 @@ class Simulator:
 			self.region_port_list.append(port)
 		return self.region_port_list
 
-	def __save_file(self,filename,content):
+	def save_file(self,filename,content):
 		with open(filename,"w") as f:
 			f.write(content)
-		print filename + " generated"
+		print "[Simulator] write {0} to file".format(filename)
 
 	#================================================================================
 	# create ini file
@@ -87,7 +103,7 @@ class Simulator:
 		self.simulator_ini_string = ""
 		for region in self.region_list:
 			self.simulator_ini_string += region.to_ini()
-		self.__save_file(self.simulator_ini_filepath,self.simulator_ini_string)
+		self.save_file(self.simulator_ini_filepath,self.simulator_ini_string)
 
 	#================================================================================
 	# create xml file
@@ -100,5 +116,8 @@ class Simulator:
 			self.simulator_xml_string += region.to_xml()
 		# add xml tail
 		self.simulator_xml_string += "</Nini>"
-		self.__save_file(self.simulator_xml_filepath,self.simulator_xml_string)
+		self.save_file(self.simulator_xml_filepath,self.simulator_xml_string)
 
+
+class SimulatorTesting(Simulator):
+	pass

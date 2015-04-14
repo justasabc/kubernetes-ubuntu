@@ -1,18 +1,36 @@
+"""
+Class Hierarchy
+
+G{classtree: BaseTool} 
+
+Package tree
+G{packagetree: cluster_tool} 
+
+Import Graph
+G{importgraph: cluster_tool} 
+
+"""
+
 #/usr/bin/python
 # -*- coding:utf-8 -*-
 
 import subprocess
-import os
+from json_generator import JsonGenerator
+from container_client import ContainerClient
+DOCKER_SERVER_URL = 'tcp://master:2375'
 
-class BaseCommander:
+class BaseTool:
 	"""
-	execute external commands
+	base tool
 	"""
-	def __init__(self,name):
+	def __init__(self,name,docker_server_url=DOCKER_SERVER_URL):
 		self.name = name
+		""" @type: C{string} """
+		self.container_client = ContainerClient(docker_server_url)
+		""" @type: L{ContainerClient} """
 
-	def execute_external_command(self,command_str):
-		#print "[BaseCommander] {0}".format(command_str)
+	def execute_command(self,command_str):
+		#print "[BaseTool] {0}".format(command_str)
 		p = subprocess.Popen(command_str, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		value = ""
 		for line in p.stdout.readlines():
@@ -20,48 +38,56 @@ class BaseCommander:
 		return_code = p.wait()
 		return value.rstrip()
 
-class UtilityCommander(BaseCommander):
+class UtilityTool(BaseTool):
 	"""
-	utility commander
+	utility tool
 	"""
 
 	def __init__(self):
-		BaseCommander.__init__(self,"UtilityCommander")
+		print "[UtilityTool] init..."
+		BaseTool.__init__(self,"UtilityTool")
+		print "[UtilityTool] OK"
 
 	def get_host_ip(self):
 		command_str = "/sbin/ifconfig $ETH0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def get_container_ip(self,container_name):
 		command_str = "docker inspect -f '{{ .NetworkSettings.IPAddress }}' {0}".format(container_name)
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def copy_region_xml_to_minions(self,minions):
 		# scp -r xml/* minion1:/volumes/var/www/region_load/
 		for minion in minions:
 			print "copying xml to {0}...".format(minion)
 			command_str = "scp -r xml/* {0}:/volumes/var/www/region_load/".format(minion)
-			BaseCommander.execute_external_command(self,command_str)
+			BaseTool.execute_command(self,command_str)
 
-class KubernetesCommander(BaseCommander):
+	def stats_container(self,container,stats_file):
+		command_str = "docker stats {0}".format(container)
+		return BaseTool.execute_command(self,command_str)
+
+class KubernetesTool(BaseTool):
 	"""
-	kubernetes commander
+	kubernetes tool
 	"""
 
 	def __init__(self):
-		BaseCommander.__init__(self,"KubernetesCommander")
+		print "[KubernetesTool] init..."
+		BaseTool.__init__(self,"KubernetesTool")
+		print "[KubernetesTool] OK"
 
 	def __create(self,type_name,config_file):
 		command_str = "kubecfg -c {0} create {1}".format(config_file,type_name)
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def __list(self,type_name):
 		command_str = "kubecfg list {0}".format(type_name)
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def __delete(self,type_name,type_id):
 		command_str = "kubecfg delete {0}/{1}".format(type_name,type_id)
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	#=====================================================================
 	# create pod/service/replicationController/node/minion/event
@@ -76,18 +102,6 @@ class KubernetesCommander(BaseCommander):
 
 	def create_replication_controller(self,config_file):
 		type_name = "replicationControllers"
-		return self.__create(type_name,config_file)
-
-	def create_node(self,config_file):
-		type_name = "nodes"
-		return self.__create(type_name,config_file)
-
-	def create_minion(self,config_file):
-		type_name = "minions"
-		return self.__create(type_name,config_file)
-
-	def create_event(self,config_file):
-		type_name = "events"
 		return self.__create(type_name,config_file)
 
 	#=====================================================================
@@ -105,18 +119,6 @@ class KubernetesCommander(BaseCommander):
 		type_name = "replicationControllers"
 		return self.__list(type_name)
 
-	def list_nodes(self):
-		type_name = "nodes"
-		return self.__list(type_name)
-
-	def list_minions(self):
-		type_name = "minions"
-		return self.__list(type_name)
-
-	def list_events(self):
-		type_name = "events"
-		return self.__list(type_name)
-
 	#=====================================================================
 	# delete pod/service/replicationController/node/minion/event
 	#=====================================================================
@@ -132,54 +134,90 @@ class KubernetesCommander(BaseCommander):
 		type_name = "replicationControllers"
 		return self.__delete(type_name,type_id)
 
-	def delete_node(self,type_id):
-		type_name = "nodes"
-		return self.__delete(type_name,type_id)
-
-	def delete_minion(self,type_id):
-		type_name = "minions"
-		return self.__delete(type_name,type_id)
-
-	def delete_event(self,type_id):
-		type_name = "events"
-		return self.__delete(type_name,type_id)
-
 	#=====================================================================
 	# get pod hostname
 	#=====================================================================
 	def get_pod_hostname(self,pod_id):
 		command_str = "kubecfg list pods | grep "+pod_id+ " | awk '{print $3;}' | cut -f1 -d/"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def hostname_to_ip(self,hostname):
 		command_str = "resolveip -s {0}".format(hostname)
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
-class IptablesCommander(BaseCommander):
+	def get_pod_ip(self,pod_id):
+		hostname = self.get_pod_hostname(pod_id)
+		return self.hostname_to_ip(hostname)
+
+	def save_json_to_file(self,dict_data,file_path):
+		generator = JsonGenerator('generator')
+		generator.generate(dict_data,file_path)
+
+class IptablesTool(BaseTool):
 	"""
-	iptables commander
+	iptables tool
 	"""
 	def __init__(self):
-		BaseCommander.__init__(self,"BaseCommander")
+		#print "[IptablesTool] init..."
+		BaseTool.__init__(self,"IptablesTool")
+		#print "[IptablesTool] OK"
+
+	#==========================================================
+	# nat add rules to PREROUTING/POSTROUTING/INPUT/OUTPUT chains
+	#==========================================================
+	def nat_add_rule_to_prerouting_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
+		command_str = "iptables -t nat -A PREROUTING -p {0} --dport {1} -j DNAT --to-destination {2}:{3}".format(protocol,dst_port,dst_ip,dst_port)
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_add_rule_to_postrouting_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
+		command_str = "iptables -t nat -A POSTROUTING -p {0} -d {1} --dport {2} -j SNAT --to-source {3}".format(protocol,dst_ip,dst_port,src_ip)
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_add_rule_to_input_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
+		command_str = "ls"
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_add_rule_to_output_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
+		command_str = "ls"
+		return BaseTool.execute_command(self,command_str)
+
+	#==========================================================
+	# nat delete rules to PREROUTING/POSTROUTING/INPUT/OUTPUT chains
+	#==========================================================
+	def nat_delete_rule_from_prerouting_chain(self,rule_number):
+		command_str = "iptables -t nat -D PREROUTING {0}".format(rule_number)
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_delete_rule_from_postrouting_chain(self,rule_number):
+		command_str = "iptables -t nat -D POSTROUTING {0}".format(rule_number)
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_delete_rule_from_input_chain(self,rule_number):
+		command_str = "iptables -t nat -D INPUT {0}".format(rule_number)
+		return BaseTool.execute_command(self,command_str)
+
+	def nat_delete_rule_from_output_chain(self,rule_number):
+		command_str = "iptables -t nat -D OUTPUT {0}".format(rule_number)
+		return BaseTool.execute_command(self,command_str)
 
 	#==========================================================
 	# nat flush PREROUTING/POSTROUTING/INPUT/OUTPUT chains
 	#==========================================================
 	def nat_flush_prerouting_chain(self):
 		command_str = "iptables -t nat -F PREROUTING"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_flush_postrouting_chain(self):
 		command_str = "iptables -t nat -F POSTROUTING"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_flush_input_chain(self):
 		command_str = "iptables -t nat -F INPUT"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_flush_output_chain(self):
 		command_str = "iptables -t nat -F OUTPUT"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_flush_all_chains(self):
 		self.nat_flush_prerouting_chain()
@@ -194,25 +232,25 @@ class IptablesCommander(BaseCommander):
 		command_str = "iptables -t nat -L PREROUTING"
 		if with_line_numbers:
 			command_str += " --line-numbers"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_list_postrouting_chain(self,with_line_numbers=False):
 		command_str = "iptables -t nat -L POSTROUTING"
 		if with_line_numbers:
 			command_str += " --line-numbers"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_list_input_chain(self,with_line_numbers=False):
 		command_str = "iptables -t nat -L INPUT"
 		if with_line_numbers:
 			command_str += " --line-numbers"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_list_output_chain(self,with_line_numbers=False):
 		command_str = "iptables -t nat -L OUTPUT"
 		if with_line_numbers:
 			command_str += " --line-numbers"
-		return BaseCommander.execute_external_command(self,command_str)
+		return BaseTool.execute_command(self,command_str)
 
 	def nat_list_all_chains(self):
 		result = ""
@@ -222,53 +260,18 @@ class IptablesCommander(BaseCommander):
 		result += (self.nat_list_output_chain() + "\n")
 		return result.rstrip()
 
-	#==========================================================
-	# nat add rules to PREROUTING/POSTROUTING/INPUT/OUTPUT chains
-	#==========================================================
-	def nat_add_rule_to_prerouting_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
-		command_str = "iptables -t nat -A PREROUTING -p {0} --dport {1} -j DNAT --to-destination {2}:{3}".format(protocol,dst_port,dst_ip,dst_port)
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_add_rule_to_postrouting_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
-		command_str = "iptables -t nat -A POSTROUTING -p {0} -d {1} --dport {2} -j SNAT --to-source {3}".format(protocol,dst_ip,dst_port,src_ip)
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_add_rule_to_input_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
-		command_str = "ls"
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_add_rule_to_output_chain(self,protocol,src_port,dst_port,src_ip,dst_ip):
-		command_str = "ls"
-		return BaseCommander.execute_external_command(self,command_str)
-
-	#==========================================================
-	# nat delete rules to PREROUTING/POSTROUTING/INPUT/OUTPUT chains
-	#==========================================================
-	def nat_delete_rule_from_prerouting_chain(self,rule_number):
-		command_str = "iptables -t nat -D PREROUTING {0}".format(rule_number)
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_delete_rule_from_postrouting_chain(self,rule_number):
-		command_str = "iptables -t nat -D POSTROUTING {0}".format(rule_number)
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_delete_rule_from_input_chain(self,rule_number):
-		command_str = "iptables -t nat -D INPUT {0}".format(rule_number)
-		return BaseCommander.execute_external_command(self,command_str)
-
-	def nat_delete_rule_from_output_chain(self,rule_number):
-		command_str = "iptables -t nat -D OUTPUT {0}".format(rule_number)
-		return BaseCommander.execute_external_command(self,command_str)
+class ToolTesting(UtilityTool,KubernetesTool,IptablesTool):
+	pass
 
 def test(): 
-	cmd = IptablesCommander()
+	cmd = IptablesTool()
 	cmd.nat_flush_prerouting_chain()
 	print cmd.nat_list_all_chains()
 	print "OK"
-	cmd = UtilityCommander()
+	cmd = UtilityTool()
 	print cmd.get_host_ip()
 	print "OK"
-	cmd = KubernetesCommander()
+	cmd = KubernetesTool()
 	hostname = cmd.get_pod_hostname("apache-pod")
 	print cmd.hostname_to_ip(hostname)
 	print "OK"

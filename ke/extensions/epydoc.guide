@@ -1,0 +1,13 @@
+wget -q http://prdownloads.sourceforge.net/epydoc/epydoc-3.0.1.tar.gz
+tar -xzvf epydoc-3.0.1.tar
+cd epydoc-3.0.1
+python setup.py install
+
+apt-get -y install graphviz
+
+
+# usage
+epydoc --html -o temp --graph all docker_client.py
+
+
+ecpdoc --config  myconfig

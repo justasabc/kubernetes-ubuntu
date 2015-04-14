@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM docker-registry:5000/ubuntu:14.04
 MAINTAINER Zunlin Ke <zunlinke@example.com>
 # non interactive
 ENV DEBIAN_FRONTEND noninteractive

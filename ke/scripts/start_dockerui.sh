@@ -12,7 +12,6 @@ IMAGE=docker-registry:5000/dockerui:latest
 HOST_PORT=882
 CONTAINER_PORT=9000
 
-#docker stop $NAME
-#docker rm $NAME
-
+docker stop $NAME
+docker rm $NAME
 docker run -d --name=$NAME -p $HOST_PORT:$CONTAINER_PORT -v /var/run/docker.sock:/var/run/docker.sock $IMAGE
