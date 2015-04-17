@@ -1,0 +1,42 @@
+<Nini>
+  <Section Name="xwd00" >
+	<Key Name ="RegionUUID" Value = "a37fcbbc-e326-11e4-94f3-f80f41fa369f" />
+	<Key Name ="Location" Value = "1005,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9050" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "162.105.17.48" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="xwd01" >
+	<Key Name ="RegionUUID" Value = "a3800d34-e326-11e4-94f3-f80f41fa369f" />
+	<Key Name ="Location" Value = "1005,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9051" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "162.105.17.48" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="xwd10" >
+	<Key Name ="RegionUUID" Value = "a3805dc0-e326-11e4-94f3-f80f41fa369f" />
+	<Key Name ="Location" Value = "1006,1000" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9060" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "162.105.17.48" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+  <Section Name="xwd11" >
+	<Key Name ="RegionUUID" Value = "a380afdc-e326-11e4-94f3-f80f41fa369f" />
+	<Key Name ="Location" Value = "1006,1001" />
+ 	<Key Name ="InternalAddress" Value = "0.0.0.0" />
+ 	<Key Name ="InternalPort" Value = "9061" />
+ 	<Key Name ="AllowAlternatePorts" Value = "True" />
+ 	<Key Name ="ExternalHostName" Value = "162.105.17.48" />
+ 	<Key Name ="MaxAgents" Value = "100" />
+ 	<Key Name ="MaxPrims" Value = "15000" />
+  </Section>
+</Nini>

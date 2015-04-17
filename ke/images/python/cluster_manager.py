@@ -12,92 +12,72 @@ G{importgraph: cluster_manager}
 """
 #/usr/bin/python
 # -*- coding:utf-8 -*-
-from controller import *
-from service import *
-from pod import *
 from pod_manager import *
+from service_manager import *
+from controller_manager import *
+from execute_engine import *
 
 class ClusterManager:
 
 	def __init__(self,global_region_data_dict):
 		print "[ClusterManager] init ..." 
+		# service
+		self.service_manager = ServiceManager()
+		""" @type: L{ServiceManager} """
 
-		# apache
-		self.apache_controller = ApacheController()
-		""" @type: L{ApacheController} """
-		self.apache_service = ApacheService()
-		""" @type: L{ApacheService} """
-		# mysql
-		self.mysql_controller = MysqlController()
-		""" @type: L{MysqlController} """
-		self.mysql_service = MysqlService()
-		""" @type: L{MysqlService} """
 		# robust
-		self.robust_controller = RobustController()
+		self.controller_manager = ControllerManager()
 		""" @type: L{RobustController} """
-		robust_service = RobustService()
-		""" @type: L{RobustService} """
-		print "="*60
-		# opensim 
-		self.opensim_pod_manager = OpensimPodManager(global_region_data_dict)
-		""" @type: L{OpensimPodManager} """
 
 		print "="*60
+		# pod
+		self.pod_manager = PodManager(global_region_data_dict)
+		""" @type: L{PodManager} """
+		print "="*60
+
+		self.execute_engine = ExecuteEngine()
+		""" @type: L{ExecuteEngine} """
+		self.init_execute_engine()
 		print "[ClusterManager] OK" 
 
-	def get_apache_controller(self):
-		return self.apache_controller
+	def init_execute_engine(self):
+		print "[ClusterManager] init execute engine..."
 
-	def get_apache_service(self):
-		return self.apache_service
+		# 1) apache controller
+		self.execute_engine.add_command(self.controller_manager.get_apache_controller())
+		# 2) apache service
+		self.execute_engine.add_command(self.service_manager.get_apache_service())
+		# 3) mysql controller
+		self.execute_engine.add_command(self.controller_manager.get_mysql_controller())
+		# 4) mysql service
+		self.execute_engine.add_command(self.service_manager.get_mysql_service())
+		# 5) robust controller
+		self.execute_engine.add_command(self.controller_manager.get_robust_controller())
+		# 6) robust public service
+		self.execute_engine.add_command(self.service_manager.get_robust_public_service())
+		# 7) robust private service
+		self.execute_engine.add_command(self.service_manager.get_robust_private_service())
 
-	def get_mysql_controller(self):
-		return self.mysql_controller
+		# 8) opensim pod
+		self.execute_engine.add_command(self.pod_manager)
 
-	def get_mysql_service(self):
-		return self.mysql_service
+	def get_execute_engine(self):
+		return self.execute_engine
 
-	def get_robust_controller(self):
-		return self.robust_controller
+	def get_service_manager(self):
+		return self.service_manager
 
-	def get_robust_service(self):
-		return self.robust_service
+	def get_controller_manager(self):
+		return self.controller_manager
 
-	def get_opensim_pod_manager(self):
-		return self.opensim_pod_manager
+	def get_pod_manager(self):
+		return self.pod_manager
 
 	def start(self):
-		# 1) apache 
-		self.apache_controller.start()
-		self.apache_service.start()
-
-		# 2) mysql
-		self.mysql_controller.start()
-		self.mysql_service.start()
-
-		# 3) robust
-		self.robust_controller.start()
-		self.robust_service.start()
-
-		# 4) opensim
-		self.opensim_pod_manager.start()
+		self.execute_engine.start()
 
 	def stop(self):
-		# 4) opensim
-		self.opensim_pod_manager.stop()
-
-		# 3) robust
-		self.robust_controller.stop()
-		self.robust_service.stop()
-
-		# 2) mysql
-		self.mysql_controller.stop()
-		self.mysql_service.stop()
-
-		# 1) apache 
-		self.apache_controller.stop()
-		self.apache_service.stop()
+		self.execute_engine.stop()
 
 class ClusterManagerTesting(ClusterManager):
 	pass
-

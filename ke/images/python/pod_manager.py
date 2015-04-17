@@ -1,7 +1,7 @@
 """
 Class Hierarchy
 
-G{classtree: OpensimPodManager} 
+G{classtree: PodManager} 
 
 Package tree
 G{packagetree: pod_manager} 
@@ -11,50 +11,51 @@ G{importgraph: pod_manager}
 
 """
 
-from pod import OpensimPod
+from pod import *
 from simulator_manager import SimulatorManager
 
-class OpensimPodManager:
+class PodManager:
 
 	def __init__(self,global_region_data_dict):
-		print "[OpensimPodManager] init ..." 
+		print "[PodManager] init ..." 
 		self.simulator_manager = SimulatorManager(global_region_data_dict)
 		""" @type: L{SimulatorManager} """
 
-		self.opensim_pod_list = []
-		""" @type: L{OpensimPod} """
+		self.pod_list = []
+		""" @type: L{BasePod} """
 
-		self.init_opensim_pod_manager()
-		print "[OpensimPodManager] OK"
+		self.init_pod_manager()
+		print "[PodManager] OK"
 
-	def init_opensim_pod_manager(self):
+	def init_pod_manager(self):
 		sim_list = self.simulator_manager.get_simulator_list()
 		for sim in sim_list:
+			# opensim pod
 			pod = OpensimPod(sim)
-			self.add_opensim_pod(pod)
+			self.add_pod(pod)
 
 	def get_simulator_manager(self):
 		return self.simulator_manager
 
-	def add_opensim_pod(self,pod):
-		self.opensim_pod_list.append(pod)
+	def add_pod(self,pod):
+		self.pod_list.append(pod)
 
-	def remove_opensim_pod(self,pod):
-		self.opensim_pod_list.remove(pod)
+	def remove_pod(self,pod):
+		self.pod_list.remove(pod)
 
-	def get_opensim_pod_list(self):
-		return self.opensim_pod_list
+	def get_pod_list(self):
+		return self.pod_list
 
-	def get_opensim_pod_count(self):
-		return len(self.opensim_pod_list)
+	def get_pod_count(self):
+		return len(self.pod_list)
 
 	def start(self):
-		for pod in self.opensim_pod_list:
+		for pod in self.pod_list:
 			pod.start()
 
 	def stop(self):
-		for pod in self.opensim_pod_list:
+		for pod in self.pod_list:
 			pod.stop()
 
-class OpensimPodManagerTesting(OpensimPodManager):
+class PodManagerTesting(PodManager):
 	pass

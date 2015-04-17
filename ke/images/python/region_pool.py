@@ -14,7 +14,7 @@ G{importgraph: region_pool}
 #/usr/bin/python
 # -*- coding:utf-8 -*-
 import uuid
-import os
+import os 
 from setting import *
 from region import Region
 from global_region_data import GlobalRegionData
@@ -58,12 +58,12 @@ class RegionPool:
 			#wh = global_region_data[region_group]["wh"]
 			#xmax = wh[0]
 			#ymax = wh[1]
-			xmax = self.get_region_width(region_group)
-			ymax = self.get_region_height(region_group)
+			xmax = self.global_region_data.get_region_width(region_group)
+			ymax = self.global_region_data.get_region_height(region_group)
 			for x in range(xmax):
 				for y  in range(ymax):
 					# create a region
-					region = self.create_region(region_group,x,y,global_region_data)
+					region = self.create_region(region_group,x,y)
 					self.region_list.append(region)
 
 	def save_region_pool(self,filepath):

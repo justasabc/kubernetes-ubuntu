@@ -11,3 +11,15 @@ class ControllerParam:
 		self.pod_template = pod_template
 		""" @type: L{PodParam} """
 
+	def get_name(self):
+		return self.name
+
+	def get_replicas(self):
+		return self.replicas
+
+	def get_replicas_selector(self):
+		return self.replicas_selector
+
+	def get_pod_template(self):
+		return self.pod_template
+

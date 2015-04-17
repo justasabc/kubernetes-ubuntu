@@ -39,10 +39,16 @@ class BaseController:
 		return self.tool
 
 	def start(self):
-		self.tool.create_controller(self.config_path)
+		self.tool.create_replication_controller(self.config_path)
 
 	def stop(self):
-		self.tool.delete_controller(self.controller_id)
+		self.tool.delete_replication_controller(self.controller_id)
+
+	def expand(self,new_replicas):
+		self.tool.resize_replication_controller(self.controller_id,new_replicas)
+
+	def shrink(self,new_replicas):
+		self.tool.resize_replication_controller(self.controller_id,new_replicas)
 
 class ApacheController(BaseController):
 
@@ -55,6 +61,9 @@ class ApacheController(BaseController):
 		controller_id = 'apache-controller'
 		config_path = 'json/apache-controller.json'
 		BaseController.__init__(self,controller_id,config_path)
+
+		# init controller_param
+		self.controller_param = ControllerParam(controller_id,1,"apache-pod",None)
 
 	def start(self):
 		print "[ApacheController] start..."

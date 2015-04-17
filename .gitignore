@@ -11,5 +11,5 @@
 *.pyc
 *opensim_data
 *.log
-apidocs/*
-xml/*
+*apidocs/*
+*xml/*

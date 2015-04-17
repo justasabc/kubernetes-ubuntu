@@ -10,9 +10,12 @@ Import Graph
 G{importgraph: simulator_manager} 
 
 """
-from cluster_tool import UtilityTool
+from cluster_tool import KubernetesTool
 from region_pool import RegionPool
 from simulator import Simulator
+
+# minions related
+MINIONS=["minion1","minion2","minion3"]
 
 class SimulatorManager:
 
@@ -24,8 +27,8 @@ class SimulatorManager:
 		self.simulator_list = []
 		""" @type: L{Simulator} """
 
-		self.tool = UtilityTool()		
-		""" @type: L{UtilityTool} """
+		self.tool = KubernetesTool()		
+		""" @type: L{KubernetesTool} """
 
 		self.init_simulator_manager()
 		print "[SimulatorManager] OK"
@@ -46,7 +49,7 @@ class SimulatorManager:
 			#print sim.get_region_port_list()
 
 		# copy xml files to minions
-		#self.tool.copy_region_xml_to_minions(MINIONS)
+		self.tool.copy_region_xml_to_minions(MINIONS)
 
 	def get_region_pool(self):
 		return self.region_pool

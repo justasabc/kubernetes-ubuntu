@@ -1,0 +1,15 @@
+{
+  "id": "robust-internal-service",
+  "kind": "Service",
+  "apiVersion": "v1beta1",
+  "port": 8003,
+  "containerPort": 8003,
+  "protocol": "TCP",
+  "selector": {
+    "name": "robust-pod"
+  },
+  "labels": {
+    "name": "robust-internal-service",
+    "provider": "vge"
+  }
+}

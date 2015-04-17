@@ -1,5 +1,5 @@
 #/bin/bash
-name=sim3
+name=robust
 
 minion=
 # get minion
@@ -20,4 +20,4 @@ do
 done
 echo "========================================================"
 
-ssh $minion tail -f "/volumes/opensim_resources/ke/grid/instances/$name.log"
+ssh $minion tail -f /volumes/opensim_resources/ke/grid/services/robust.log

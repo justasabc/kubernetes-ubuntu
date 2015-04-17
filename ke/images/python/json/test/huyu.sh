@@ -1,5 +1,5 @@
 #/bin/bash
-name=sim2
+name=huyu
 
 minion=
 # get minion

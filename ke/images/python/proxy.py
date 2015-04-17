@@ -15,10 +15,10 @@ G{importgraph: proxy}
 
 #from simulator import Simulator
 from proxy_param import ProxyParam
-from cluster_tool import UtilityTool,IptablesTool,KubernetesTool
-g_utility_tool = UtilityTool()
-HOST_IP = g_utility_tool.get_host_ip()
+from cluster_tool import IptablesTool,KubernetesTool
+
 g_kubernetes_tool = KubernetesTool()
+HOST_IP = g_kubernetes_tool.get_host_ip()
 
 class BaseProxy:
 	"""
@@ -58,8 +58,14 @@ class BaseProxy:
 		self.tool.nat_add_rule_to_prerouting_chain(protocol,src_port,dst_port,src_ip,dst_ip)
 		self.tool.nat_add_rule_to_postrouting_chain(protocol,src_port,dst_port,src_ip,dst_ip)
 
+	def __stop_proxy(self,proxy_param):
+		self.tool.nat_flush_all_chains()
+
 	def start(self):
 		self.__start_proxy(self.proxy_param)
+
+	def stop(self):
+		self.__stop_proxy(self.proxy_param)
 
 class ApacheProxy(BaseProxy):
 	"""
@@ -79,6 +85,7 @@ class ApacheProxy(BaseProxy):
 
 		pod_id = "apache-pod"
 		dst_ip = g_kubernetes_tool.get_pod_ip(pod_id)
+		print "[ApacheProxy] dst_ip = {0}".format(dst_ip)
 		proxy_param = ProxyParam(protocol,src_port,dst_port,src_ip,dst_ip)
 		BaseProxy.__init__(self,proxy_param)
 
@@ -104,6 +111,7 @@ class MysqlProxy(BaseProxy):
 
 		pod_id = "mysql-pod"
 		dst_ip = g_kubernetes_tool.get_pod_ip(pod_id)
+		print "[MysqlProxy] dst_ip = {0}".format(dst_ip)
 		proxy_param = ProxyParam(protocol,src_port,dst_port,src_ip,dst_ip)
 		BaseProxy.__init__(self,proxy_param)
 
@@ -129,6 +137,7 @@ class RobustProxy(BaseProxy):
 
 		pod_id = "robust-pod"
 		dst_ip = g_kubernetes_tool.get_pod_ip(pod_id)
+		print "[RobustProxy] dst_ip = {0}".format(dst_ip)
 		proxy_param = ProxyParam(protocol,src_port,dst_port,src_ip,dst_ip)
 		BaseProxy.__init__(self,proxy_param)
 
@@ -183,6 +192,7 @@ class OpensimProxy:
 		src_ip =  HOST_IP
 		pod_id = sim_name
 		dst_ip = g_kubernetes_tool.get_pod_ip(pod_id)
+		print "[OpensimProxy] dst_ip = {0}".format(dst_ip)
 
 		# create simulator proxy
 		src_port = dst_port = sim_port

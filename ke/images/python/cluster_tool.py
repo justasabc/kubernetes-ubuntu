@@ -38,44 +38,15 @@ class BaseTool:
 		return_code = p.wait()
 		return value.rstrip()
 
-class UtilityTool(BaseTool):
-	"""
-	utility tool
-	"""
-
-	def __init__(self):
-		print "[UtilityTool] init..."
-		BaseTool.__init__(self,"UtilityTool")
-		print "[UtilityTool] OK"
-
-	def get_host_ip(self):
-		command_str = "/sbin/ifconfig $ETH0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'"
-		return BaseTool.execute_command(self,command_str)
-
-	def get_container_ip(self,container_name):
-		command_str = "docker inspect -f '{{ .NetworkSettings.IPAddress }}' {0}".format(container_name)
-		return BaseTool.execute_command(self,command_str)
-
-	def copy_region_xml_to_minions(self,minions):
-		# scp -r xml/* minion1:/volumes/var/www/region_load/
-		for minion in minions:
-			print "copying xml to {0}...".format(minion)
-			command_str = "scp -r xml/* {0}:/volumes/var/www/region_load/".format(minion)
-			BaseTool.execute_command(self,command_str)
-
-	def stats_container(self,container,stats_file):
-		command_str = "docker stats {0}".format(container)
-		return BaseTool.execute_command(self,command_str)
-
 class KubernetesTool(BaseTool):
 	"""
 	kubernetes tool
 	"""
 
 	def __init__(self):
-		print "[KubernetesTool] init..."
+		#print "[KubernetesTool] init..."
 		BaseTool.__init__(self,"KubernetesTool")
-		print "[KubernetesTool] OK"
+		#print "[KubernetesTool] OK"
 
 	def __create(self,type_name,config_file):
 		command_str = "kubecfg -c {0} create {1}".format(config_file,type_name)
@@ -142,6 +113,12 @@ class KubernetesTool(BaseTool):
 		return BaseTool.execute_command(self,command_str)
 
 	def hostname_to_ip(self,hostname):
+		if hostname == "":
+			print "*"*50
+			print "[KubernetesTool] hostname is empty! "
+			print "[KubernetesTool] use master node instead! "
+			print "*"*50
+			hostname = "master"
 		command_str = "resolveip -s {0}".format(hostname)
 		return BaseTool.execute_command(self,command_str)
 
@@ -149,9 +126,35 @@ class KubernetesTool(BaseTool):
 		hostname = self.get_pod_hostname(pod_id)
 		return self.hostname_to_ip(hostname)
 
+	def stats_container(self,container):
+		command_str = "docker stats {0}".format(container)
+		return BaseTool.execute_command(self,command_str)
+
+	def get_host_ip(self):
+		command_str = "/sbin/ifconfig $ETH0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'"
+		return BaseTool.execute_command(self,command_str)
+
+	def get_container_ip(self,container_name):
+		command_str = "docker inspect -f '{{ .NetworkSettings.IPAddress }}' {0}".format(container_name)
+		return BaseTool.execute_command(self,command_str)
+
+	def copy_region_xml_to_minions(self,minions):
+		# scp -r xml/* minion1:/volumes/var/www/region_load/
+		for minion in minions:
+			print "copying xml to {0}...".format(minion)
+			command_str = "scp -r xml/* {0}:/volumes/var/www/region_load/".format(minion)
+			BaseTool.execute_command(self,command_str)
+
 	def save_json_to_file(self,dict_data,file_path):
 		generator = JsonGenerator('generator')
 		generator.generate(dict_data,file_path)
+
+	#=====================================================================
+	# resize replicationController
+	#=====================================================================
+	def resize_replication_controller(self,controller_id,replicas):
+		command_str = "kubecfg resize {0} {1}".format(controller_id,replicas)
+		return BaseTool.execute_command(self,command_str)
 
 class IptablesTool(BaseTool):
 	"""
@@ -260,16 +263,13 @@ class IptablesTool(BaseTool):
 		result += (self.nat_list_output_chain() + "\n")
 		return result.rstrip()
 
-class ToolTesting(UtilityTool,KubernetesTool,IptablesTool):
+class ToolTesting(KubernetesTool,IptablesTool):
 	pass
 
 def test(): 
 	cmd = IptablesTool()
 	cmd.nat_flush_prerouting_chain()
 	print cmd.nat_list_all_chains()
-	print "OK"
-	cmd = UtilityTool()
-	print cmd.get_host_ip()
 	print "OK"
 	cmd = KubernetesTool()
 	hostname = cmd.get_pod_hostname("apache-pod")

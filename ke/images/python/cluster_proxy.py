@@ -1,30 +1,26 @@
 """
 Class Hierarchy
 
-G{classtree: ProxyServer} 
+G{classtree: ClusterProxy} 
 
 Package tree
-G{packagetree: proxy_server} 
+G{packagetree: cluster_proxy} 
 
 Import Graph
-G{importgraph: proxy_server} 
+G{importgraph: cluster_proxy} 
 
 """
 from proxy import *
-from cluster_tool import IptablesTool
 
-class ProxyServer:
+class ClusterProxy:
 	"""
 	1 ApacheProxy + 1 MysqlProxy + 1 RobustProxy + N OpensimProxy
 	"""
 
 	def __init__(self,simulator_manager):
-	 	print "[ProxyServer] init..."
+	 	print "[ClusterProxy] init..."
 		self.simulator_manager = simulator_manager
 		#""" @type: L{SimulatorManager} """
-
-		self.tool = IptablesTool()
-		#""" @type: L{IptablesTool} """
 
 		self.apache_proxy = ApacheProxy()
 		""" @type: L{ApacheProxy} """
@@ -36,7 +32,7 @@ class ProxyServer:
 		""" @type: L{OpensimProxy} """
 
 		self.init_proxy_server()
-	 	print "[ProxyServer] OK"
+	 	print "[ClusterProxy] OK"
 
 	def init_proxy_server(self):
 		for sim in self.simulator_manager.get_simulator_list():
@@ -59,7 +55,9 @@ class ProxyServer:
 		return self.opensim_proxy_list
 
 	def start(self):
-	 	print "[ProxyServer] start..."
+		self.stop()
+
+	 	print "[ClusterProxy] start..."
 		self.apache_proxy.start()
 		self.mysql_proxy.start()
 		self.robust_proxy.start()
@@ -67,9 +65,12 @@ class ProxyServer:
 			opensim_proxy.start()
 
 	def stop(self):
-	 	print "[ProxyServer] stop..."
-		self.tool.nat_flush_all_chains()
-		print self.tool.nat_list_all_chains()
+	 	print "[ClusterProxy] stop..."
+		self.apache_proxy.stop()
+		#self.mysql_proxy.stop()
+		#self.robust_proxy.stop()
+		#for opensim_proxy in self.get_opensim_proxy_list():
+		#	opensim_proxy.stop()
 
-class ProxyServerTesting(ProxyServer):
+class ClusterProxyTesting(ClusterProxy):
 	pass

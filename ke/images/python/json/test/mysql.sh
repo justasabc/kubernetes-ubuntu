@@ -1,5 +1,7 @@
 #/bin/bash
-name=sim1
+name=mysql
+ip=$(kubecfg list services | grep $name-service | awk '{print $4;}')
+port=$(kubecfg list services | grep $name-service | awk '{print $5;}')
 
 minion=
 # get minion
@@ -20,4 +22,4 @@ do
 done
 echo "========================================================"
 
-ssh $minion tail -f "/volumes/opensim_resources/ke/grid/instances/$name.log"
+echo "mysql -u adminuser -padminpass -P $port -h $ip"

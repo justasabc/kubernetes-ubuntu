@@ -77,21 +77,37 @@ class MysqlService(BaseService):
 		print "[MysqlService] start..."
 		BaseService.start(self)
 
-class RobustService(BaseService):
+class RobustPublicService(BaseService):
 
 	def __init__(self):
-		print "[RobustService] init ..."
+		print "[RobustPublicService] init ..."
 		self.create_service_param()
-		print "[RobustService] OK"
+		print "[RobustPublicService] OK"
 
 	def create_service_param(self):
-		service_id = 'robust-service'
-		config_path = 'json/robust-service.json'
+		service_id = 'robust-public-service'
+		config_path = 'json/robust-public-service.json'
 		BaseService.__init__(self,service_id,config_path)
 
 	def start(self):
-		print "[RobustService] start..."
+		print "[RobustPublicService] start..."
 		BaseService.start(self)
 
-class ServiceTesting(ApacheService,MysqlService,RobustService):
+class RobustPrivateService(BaseService):
+
+	def __init__(self):
+		print "[RobustPrivateService] init ..."
+		self.create_service_param()
+		print "[RobustPrivateService] OK"
+
+	def create_service_param(self):
+		service_id = 'robust-internal-service'
+		config_path = 'json/robust-internal-service.json'
+		BaseService.__init__(self,service_id,config_path)
+
+	def start(self):
+		print "[RobustPrivateService] start..."
+		BaseService.start(self)
+
+class ServiceTesting(ApacheService,MysqlService,RobustPublicService,RobustPrivateService):
 	pass
