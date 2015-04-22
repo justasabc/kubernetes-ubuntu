@@ -23,11 +23,9 @@ class BaseTool:
 	"""
 	base tool
 	"""
-	def __init__(self,name,docker_server_url=DOCKER_SERVER_URL):
+	def __init__(self,name):
 		self.name = name
 		""" @type: C{string} """
-		self.container_client = ContainerClient(docker_server_url)
-		""" @type: L{ContainerClient} """
 
 	def execute_command(self,command_str):
 		#print "[BaseTool] {0}".format(command_str)
@@ -46,6 +44,8 @@ class KubernetesTool(BaseTool):
 	def __init__(self):
 		#print "[KubernetesTool] init..."
 		BaseTool.__init__(self,"KubernetesTool")
+		self.container_client = ContainerClient(DOCKER_SERVER_URL)
+		""" @type: L{ContainerClient} """
 		#print "[KubernetesTool] OK"
 
 	def __create(self,type_name,config_file):

@@ -13,7 +13,6 @@ G{importgraph: proxy}
 #/usr/bin/python
 # -*- coding:utf-8 -*-
 
-#from simulator import Simulator
 from proxy_param import ProxyParam
 from cluster_tool import IptablesTool,KubernetesTool
 
@@ -233,5 +232,6 @@ class OpensimProxy:
 		region_proxy = RegionProxy(proxy_param)
 		return region_proxy
 
+#class ProxyTesting(ApacheProxy,MysqlProxy,RobustProxy,SimulatorProxy,RegionProxy,OpensimProxy):
 class ProxyTesting(ApacheProxy,MysqlProxy,RobustProxy,OpensimProxy):
 	pass

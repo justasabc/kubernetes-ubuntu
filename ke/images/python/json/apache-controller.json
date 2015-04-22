@@ -21,11 +21,7 @@
                {"name":"apache-volumes", "mountPath":"/var/www", "readOnly":true}  
               ],  
              "cpu": 200,
-             //"memory": 128000000,
-	     "env": [
-			{"name": "XXX_PATH","value": "/xxx/to/path"},
-			{"name": "XXX_PATH2","value": "/xxx/to/path2"}
-	      ],
+             "memory": 128000000,
              "ports": [
 			{"containerPort": 880, "hostPort": 880, "protocol": "TCP"}
 	      ]

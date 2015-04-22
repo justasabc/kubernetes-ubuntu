@@ -27,7 +27,7 @@ LOAD_INTERVAL = 15*60
 WEIGHT = (0.6,0.4)
 CPU_WEIGHT = 0.6
 MEM_WEIGHT = 0.4
-CHECK_INTERVAL = 10
+LOAD_CHECK_INTERVAL = 10
 
 LOAD_LEVEL_NORMAL = 0
 LOAD_LEVEL_EXPAND = 1
@@ -35,7 +35,7 @@ LOAD_LEVEL_SHRINK = 2
 
 class BaseMonitor(Thread):
 
-	def __init__(self,name,base_controller,load_calculator,check_interval=CHECK_INTERVAL):
+	def __init__(self,name,base_controller,load_calculator,check_interval=LOAD_CHECK_INTERVAL):
         	Thread.__init__(self)
 		self.stopped = Event()
 		""" @type: L{Event} """

@@ -21,7 +21,7 @@ class ClusterMonitor:
 		#""" @type: L{ControllerManager} """
 
 		self.load_calculator = LoadCalculator(global_load_data_dict)
-		""" @type: L{LoadCalculator} """
+		#""" @type: L{LoadCalculator} """
 
 		self.apache_monitor = ApacheMonitor(self.controller_manager.get_apache_controller(),self.load_calculator)
 		""" @type: L{ApacheMonitor} """

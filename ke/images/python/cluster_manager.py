@@ -27,13 +27,13 @@ class ClusterManager:
 
 		# robust
 		self.controller_manager = ControllerManager()
-		""" @type: L{RobustController} """
+		""" @type: L{ControllerManager} """
 
-		print "="*60
+		print "."*60
 		# pod
 		self.pod_manager = PodManager(global_region_data_dict)
 		""" @type: L{PodManager} """
-		print "="*60
+		print "."*60
 
 		self.execute_engine = ExecuteEngine()
 		""" @type: L{ExecuteEngine} """

@@ -242,19 +242,19 @@ class BaseContainer(ContainerClient):
 class ApacheContainer(BaseContainer):
 
 	def __init__(self,docker_base_url):
-		container_param = self.create_apache_container_param()
+		container_param = self.create_container_param()
 		BaseContainer.__init__(self,docker_base_url,container_param)
 
-	def create_apache_container_param(self):
+	def create_container_param(self):
 		pass
 
 class MysqlContainer(BaseContainer):
 
 	def __init__(self,docker_base_url):
-		container_param = self.create_mysql_container_param()
+		container_param = self.create_container_param()
 		BaseContainer.__init__(self,docker_base_url,container_param)
 
-	def create_mysql_container_param(self):
+	def create_container_param(self):
 		pass
 
 class VgeoContainer(BaseContainer):
@@ -265,23 +265,23 @@ class VgeoContainer(BaseContainer):
 class RobustContainer(VgeoContainer):
 
 	def __init__(self,docker_base_url):
-		container_param = self.create_robust_container_param()
+		container_param = self.create_container_param()
 		VgeoContainer.__init__(self,docker_base_url,container_param)
 
-	def create_robust_container_param(self):
+	def create_container_param(self):
 		pass
 
 class OpensimContainer(VgeoContainer):
 
 	def __init__(self,docker_base_url):
-		container_param = self.create_opensim_container_param()
+		container_param = self.create_container_param()
 		VgeoContainer.__init__(self,docker_base_url,container_param)
 
-	def create_opensim_container_param(self):
+	def create_container_param(self):
 		pass
 
-class ContainerTesting(ApacheContainer,MysqlContainer,RobustContainer,OpensimContainer):
-	pass
+#class ContainerTesting(ApacheContainer,MysqlContainer,RobustContainer,OpensimContainer):
+#	pass
 
 def test_docker_client():
 	client = ContainerClient(DOCKER_SERVER_URL)
