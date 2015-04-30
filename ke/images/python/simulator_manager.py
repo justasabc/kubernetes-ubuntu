@@ -28,7 +28,7 @@ class SimulatorManager:
 		""" @type: L{Simulator} """
 
 		self.tool = KubernetesTool()		
-		""" @type: L{KubernetesTool} """
+		#""" @type: L{KubernetesTool} """
 
 		self.init_simulator_manager()
 		print "[SimulatorManager] OK"
