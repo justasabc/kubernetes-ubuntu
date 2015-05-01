@@ -1,0 +1,5 @@
+cd requests
+python setup.py install
+
+apt-get -y install python-lxml
+apt-get install python-bs4 
