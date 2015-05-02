@@ -23,7 +23,7 @@ class MyFile:
 		if (exist and overwrite) or not exist :
 	    		r = requests.get(url,stream=True)
 			if r.status_code == 200:
-    				with open(filepath, 'wb') as f:
+    				with open(filepath, 'wb+') as f:
 					print "Saving {0}...".format(filepath)
         				for chunk in r.iter_content(IMAGE_CHUNK_SIZE):
             					f.write(chunk)

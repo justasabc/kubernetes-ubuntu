@@ -3,6 +3,7 @@ import requests
 import lxml.html 
 from datetime import datetime,timedelta
 import time
+from threading import Timer 
 
 from match import *
 from setting import *
@@ -163,8 +164,6 @@ def parse_page_core(match_type,sid,page,viewstate):
 		# 3) MatchInfo
 		match = MatchInfo(match_type,sid,spdex_match,betfair_1x2,betfair_overunder)
 		print match.unicode()
-		if SAVE_CHARTS:
-			match.save_charts()
 		print "="*100
 
 		# 4 add to match list
@@ -172,8 +171,8 @@ def parse_page_core(match_type,sid,page,viewstate):
 	return match_list
 
 def parse_viewerqq_page_content(tid):
-	url_viewerqq = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id=27428370"
-	url_viewerqq_fmt = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id={0}"
+	#url_viewerqq = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id=27428370"
+	#url_viewerqq_fmt = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id={0}"
 	url = url_viewerqq_fmt.format(tid)
 	r = requests.get(url)
 	html = lxml.html.document_fromstring(r.text)
@@ -263,8 +262,6 @@ def parse_main(match_type):
 	# get id list
 	id_list,viewstate = get_id_list_viewstate(match_type)
 
-	id_list = ['20150502']
-
 	# process all id
 	for sid in id_list:
 		print "*"*100
@@ -277,7 +274,7 @@ def parse_main(match_type):
 		page_count = get_page_count(match_type,sid,viewstate)
 
 		# 3) process all pages
-		page_count = 1
+		#page_count = 4
 		for page in xrange(page_count):
 			# [0,1,2,3]
 			# 3.1) parse jc page
@@ -285,33 +282,12 @@ def parse_main(match_type):
 
 			# 3.2) add to collection
 			mc.add_match_list(match_list)
-		print mc.match_count()
-		save_image_on_time(mc)
-
-def save_image_on_time(mc):
-	for match in mc.get_match_list():
-		match_id = "20150502008"
-		if match.spdex.match_id == match_id:
-			match_time = match.spdex.match_time
-			#time_delta = timedelta(minutes=5)
-
-def triger_save_image_before_match(start_time):
-	# 17:30 17:25  5m=300s
-	now = datetime.now()
-	default_delta = timedelta(seconds=5)
-	if now < start_time :
-		delta = start_time - now
-		if delta.seconds == default_delta.seconds:
-			return True
-	return False
-
-def triger_save_image_after_match(start_time):
-	pass
+		#print mc.match_count()
 
 def main_core():
 	t1 = time.time()
 	parse_main(MATCH_TYPE_JC)
-	#parse_main(MATCH_TYPE_M14)
+	parse_main(MATCH_TYPE_M14)
 	total_time = time.time()-t1
 	print "Time used: %f(s)" % total_time
 

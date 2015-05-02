@@ -10,7 +10,7 @@ url_betfair_chart_fmt = "http://84.20.200.11/betting/LoadRunnerInfoChartAction.d
 IMAGE_CHUNK_SIZE = 256
 ROOT_DIR = "./charts/"
 
-SAVE_CHARTS = True
+SAVE_CHARTS = False
 IMAGE_OVERWRITE = True
 # if true, program will download images and overwrite local images
 
@@ -22,3 +22,5 @@ GLOBAL_MATCH_PARAMS = {
 	MATCH_TYPE_M14 : {"URL":url_m14,"UI_SELECT_ID":"DropLotteryId","PER_PAGE":14,"ROOT_DIR":"./charts/m14/"}
 }
 GDATA = GLOBAL_MATCH_PARAMS
+
+MATCH_TOTLA_MINUTES = 105+5

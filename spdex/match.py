@@ -2,6 +2,10 @@
 from myfile import *
 from setting import *
 
+from datetime import datetime,timedelta
+import time
+from threading import Timer 
+
 class SpdexMatchInfo:
 	"""
 	20150501,001,aaa,bbb,2015/5/1 17:30,27431148
@@ -142,6 +146,35 @@ class MatchInfo:
 		self.spdex = spdex
 		self.betfair_1x2 = betfair_1x2
 		self.betfair_overunder = betfair_overunder
+
+		# timer to save charts
+		self.set_timer()
+
+	def set_timer(self):
+		now = datetime.now()
+		start_time = self.spdex.match_time
+		end_time = start_time + timedelta(minutes=MATCH_TOTLA_MINUTES)
+
+		# 1) now_timer
+		if now < start_time:
+			sleep_time = 0
+			now_timer = Timer(sleep_time,self.save_charts)
+			#now_timer.start()
+
+		# 2) before_timer
+		if now < start_time:
+			sleep_time = (start_time - now).seconds
+			print "Match will start in {0} minutes...".format(sleep_time/60)
+			before_timer = Timer(sleep_time,self.save_charts)
+			before_timer.start()
+		# 3) after_timer
+		elif now < end_time:
+			sleep_time = (end_time - now).seconds
+			print "Match has {0} minutes left...".format(sleep_time/60)
+			after_timer = Timer(sleep_time,self.save_charts)
+			after_timer.start()
+		else:
+			print "Match {0} has finished!".format(self.spdex.match_id)
 
 	def get_spdex(self):
 		return self.spdex
