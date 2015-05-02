@@ -2,10 +2,10 @@
 __author__ = "kezunlin"
 import requests
 import os
+from setting import *
 
 # https://github.com/justasabc/python_tutorials/blob/master/project/download/getimages.py
 #IMAGE_CHUNK_SIZE = 20*1024
-IMAGE_CHUNK_SIZE = 256
 
 class MyFile:
 
@@ -15,7 +15,8 @@ class MyFile:
 			os.makedirs(d)
 	
 	def download_image(self,url,filepath,overwrite=False):
-		# charts/20150501_001_home.jpg
+		# ./charts/jc/20150501/20150501001_home.jpg
+		# ./charts/m14/15067/15067001_home.jpg
 		root_dir = os.path.dirname(filepath)
 		self.ensure_dir(root_dir)
 		exist = os.path.exists(filepath)

@@ -1,249 +1,128 @@
 # -*- coding:utf-8 -*-
 import requests
 import lxml.html 
-from datetime import datetime
+from datetime import datetime,timedelta
 import time
-from myfile import *
 
-url_m14 = "http://c.spdex.com/spdex500a"
-url_jc = "http://c.spdex.com/spdex500b"
-url_viewerqq_fmt = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id={0}"
-url_betfair_fmt = "http://84.20.200.11/betting/LoadRunnerInfoAction.do?marketId={0}&selectionId={1}"
-url_betfair_chart_fmt = "http://84.20.200.11/betting/LoadRunnerInfoChartAction.do?marketId={0}&selectionId={1}&logarithmic={2}"
+from match import *
+from setting import *
 
-# page_count
-# jcid
-# VIEWSTATE
-def get_params_jc(url):
-	#print r.encoding # utf-8
-	#print type(r.text) # unicode
-	#html element methods
-	#http://lxml.de/lxmlhtml.html#html-element-methods
-	r = requests.get(url)
-	html = lxml.html.document_fromstring(r.text)
-	# 1) page_count
-	page_select = html.xpath('//*[@id="AspNetPager1_input"]')[0]
-	page_options = page_select.getchildren()
-	page_count = len(page_options)
-	# 2) jcid
-	jcid_select = html.xpath('//*[@id="DropJcId"]')[0]
-	jcid = unicode(jcid_select.findtext('option'))
-	# 3) viewstate
-	viewstate_input = html.xpath('//*[@id="__VIEWSTATE"]')[0]
-	viewstate = viewstate_input.attrib['value']
-	return page_count,jcid,viewstate
-
-def get_params_m14(url):
-	r = requests.get(url)
-	html = lxml.html.document_fromstring(r.text)
-	# 1) m14id
-	# //*[@id="DropLotteryId"]/option[1]
-	m14id_select = html.xpath('//*[@id="DropLotteryId"]')[0]
-	m14id = unicode(m14id_select.findtext('option'))
-	# 2) viewstate
-	viewstate_input = html.xpath('//*[@id="__VIEWSTATE"]')[0]
-	viewstate = viewstate_input.attrib['value']
-	return m14id,viewstate
-
-"""
-__EVENTTARGET:AspNetPager1
-__EVENTARGUMENT:2
-__LASTFOCUS:
-__VIEWSTATE: 
-DropJcId:20150430
-AspNetPager1_input:2
-"""
-def get_post_payload(jcid,page,viewstate):
-	payload = {}
-	payload['__EVENTTARGET'] = 'AspNetPager1'
-	payload['__EVENTARGUMENT'] = page
-	payload['__LASTFOCUS'] = None
-	payload['__VIEWSTATE'] = viewstate
-	payload['DropJcId'] = jcid
-	payload['AspNetPager1_input'] = page
-	return payload
-
-class SpdexMatchInfo:
-	"""
-	20150501,001,aaa,bbb,2015/5/1 17:30,27431148
-	"""
-	def __init__(self,match_id,home_name,away_name,match_time,tid):
-		self.match_id = match_id
-		self.home_name = home_name
-		self.away_name = away_name
-		self.match_time = match_time
-		self.tid = tid
-		#print type(match_id),type(home_name),type(away_name),type(match_time),type(tid)
-		#unicode,unicode,unicode,datetime.datetime,unicode
-
-	def unicode(self):
-		return u"{0},{1} VS {2},{3},{4}".format(self.match_id,self.home_name,self.away_name,self.match_time,self.tid)
-
-class BetfairMatchInfo_1X2:
-
-	def __init__(self,match_id,market_id,home_id,away_id,draw_id,home_eng_name,away_eng_name):
-		self.match_id = match_id
-		self.market_id = market_id
-		self.home_id = home_id
-		self.away_id = away_id
-		self.draw_id = draw_id
-		self.home_eng_name = home_eng_name
-		self.away_eng_name = away_eng_name
-
-		self.charts = BetfairCharts_1X2(self)
-
-	def unicode(self):
-		return "{0}-{1},{2},{3},{4},{5}".format(self.home_eng_name,self.away_eng_name,self.market_id,self.home_id,self.away_id,self.draw_id)
-
-	def get_home_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.home_id,log)
-		return url
-	def get_away_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.away_id,log)
-		return url
-	def get_draw_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.draw_id,log)
-		return url
-
-	def save_charts(self):
-		overwrite = False
-		myfile = MyFile()
-		url_path_mapping = [
-			(self.charts.url_odd_home,self.charts.file_odd_home),
-			(self.charts.url_odd_away,self.charts.file_odd_away),
-			(self.charts.url_odd_draw,self.charts.file_odd_draw),
-			(self.charts.url_prob_home,self.charts.file_prob_home),
-			(self.charts.url_prob_away,self.charts.file_prob_away),
-			(self.charts.url_prob_draw,self.charts.file_prob_draw)
-		]
-		for (url,filepath) in url_path_mapping:
-			myfile.download_image(url,filepath,overwrite)
-
-class BetfairCharts_1X2:
-
-	def __init__(self,betfair_1x2):
-		self.betfair_1x2 = betfair_1x2
-		match_id = betfair_1x2.match_id
-		# url odd
-		self.url_odd_home = betfair_1x2.get_home_chart_url(False)
-		self.url_odd_away = betfair_1x2.get_away_chart_url(False)
-		self.url_odd_draw = betfair_1x2.get_draw_chart_url(False)
-		# url prob
-		self.url_prob_home = betfair_1x2.get_home_chart_url(True)
-		self.url_prob_away = betfair_1x2.get_away_chart_url(True)
-		self.url_prob_draw = betfair_1x2.get_draw_chart_url(True)
-
-		# file odd
-		self.file_odd_home = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"odd_home.jpg")
-		self.file_odd_away = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"odd_away.jpg")
-		self.file_odd_draw = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"odd_draw.jpg")
-		# file prob
-		self.file_prob_home = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"prob_home.jpg")
-		self.file_prob_away = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"prob_away.jpg")
-		self.file_prob_draw = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"prob_draw.jpg")
-
-class BetfairCharts_OverUnder:
-
-	def __init__(self,betfair_overunder):
-		self.betfair_overunder = betfair_overunder
-		match_id = betfair_overunder.match_id
-		# url odd
-		self.url_odd_over = betfair_overunder.get_over_chart_url(False)
-		self.url_odd_under = betfair_overunder.get_under_chart_url(False)
-		# url prob
-		self.url_prob_over = betfair_overunder.get_over_chart_url(True)
-		self.url_prob_under = betfair_overunder.get_under_chart_url(True)
-
-		# file odd
-		self.file_odd_over = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"odd_over.jpg")
-		self.file_odd_under = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"odd_under.jpg")
-		# file prob
-		self.file_prob_over = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"prob_over.jpg")
-		self.file_prob_under = "{0}/{1}_{2}".format(ROOT_DIR,match_id,"prob_under.jpg")
-
-class BetfairMatchInfo_OverUnder:
-
-	def __init__(self,match_id,market_id,over_id,under_id,over_name,under_name):
-		self.match_id = match_id
-		self.market_id = market_id
-		self.over_id = over_id
-		self.under_id = under_id
-		self.over_name = over_name
-		self.under_name = under_name
-
-		self.charts = BetfairCharts_OverUnder(self)
-
-	def unicode(self):
-		return "{0}-{1},{2},{3},{4}".format(self.over_name,self.under_name,self.market_id,self.over_id,self.under_id)
-
-	def get_over_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.over_id,log)
-		return url
-	def get_under_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.under_id,log)
-		return url
-
-	def save_charts(self):
-		overwrite = False
-		myfile = MyFile()
-		url_path_mapping = [
-			(self.charts.url_odd_over,self.charts.file_odd_over),
-			(self.charts.url_odd_under,self.charts.file_odd_under),
-			(self.charts.url_prob_over,self.charts.file_prob_over),
-			(self.charts.url_prob_under,self.charts.file_prob_under)
-		]
-		for (url,filepath) in url_path_mapping:
-			myfile.download_image(url,filepath,overwrite)
-
-MATCH_COUNT_PER_PAGE = 8
 def number_pad_left(seq):
 	fmt = u'%03d'
 	return fmt % seq
 
-class MatchInfo:
 
-	def __init__(self,spdex,betfair_1x2,betfair_overunder):
-		self.spdex = spdex
-		self.betfair_1x2 = betfair_1x2
-		self.betfair_overunder = betfair_overunder
+class PageUIParams:
 
-	def unicode(self):
-		u1 = u""
-		u2 = u"Betfair market has closed!"
-		u3 = u"Betfair market has closed!"
-		if self.spdex:
-			u1 = self.spdex.unicode()
-		if self.betfair_1x2:
-			u2 = self.betfair_1x2.unicode()
-		if self.betfair_overunder:
-			u3 = self.betfair_overunder.unicode()
-		return u"{0}\n{1}\n{2}".format(u1,u2,u3)
+	def __init__(self):
+		# 20150501,20150502,20150503  ---> one viewstate
+		# 4,10,10
+		# 15067,15068 ---> one viewstate
+		# 1,1
+		self.params = {}
 
-	def save_charts(self):
-		if self.betfair_1x2:
-			betfair_1x2.save_charts()
-		if self.betfair_overunder:
-			betfair_overunder.save_charts()
+# GLOBAL
+# JC M14
+def get_id_list_viewstate(match_type):
+	url = GDATA[match_type].get("URL")
+	ui_select_id = GDATA[match_type].get("UI_SELECT_ID")
+	r = requests.get(url)
+	html = lxml.html.document_fromstring(r.text)
 
-class MatchCollectionBydate:
+	# 1) id list
+	#path = '//*[@id="DropJcId"]'
+	path = '//*[@id="{0}"]'.format(ui_select_id)
+	id_select = html.xpath(path)
+	id_list = []
+	if len(id_select) == 0:
+		print "Empyt id list!"
+		return id_list,None
+	id_select = id_select[0]
+	for c in id_select.getchildren():
+		id = c.text.strip()
+		id_list.append(id)
 
-	def __init__(self,id):
-		self.id = id
-		self.match_list = []
+	# 2) viewstate
+	path = '//*[@id="__VIEWSTATE"]'
+	viewstate_input = html.xpath(path)[0]
+	viewstate = viewstate_input.attrib['value']
+	return id_list,viewstate
 
-	def add_match(self,match):
-		self.match_list.append(match)
+def get_page_count_jc(url,sid,viewstate):
+	payload = get_post_payload_jc(sid,1,viewstate)
+	r = requests.post(url,data=payload)
+	html = lxml.html.document_fromstring(r.text)
+	path = '//*[@id="AspNetPager1_input"]'
+	# page_count
+	page_select = html.xpath(path)[0]
+	page_options = page_select.getchildren()
+	page_count = len(page_options)
+	return page_count
 
-	def add_match_list(self,match_list):
-		for match in match_list:
-			self.add_match(match)
+def get_page_count_m14(url,sid,viewstate):
+	return 1
 
-	def match_count(self):
-		return len(self.match_list)
+def get_page_count(match_type,sid,viewstate):
+	url = GDATA[match_type].get("URL")
+	if match_type == MATCH_TYPE_JC:
+		return get_page_count_jc(url,sid,viewstate)
+	elif match_type == MATCH_TYPE_M14:
+		return get_page_count_m14(url,sid,viewstate)
 
-def parse_page_core(html,page,mid):
+"""
+__EVENTTARGET:AspNetPager1
+__EVENTARGUMENT:
+__LASTFOCUS:
+__VIEWSTATE: xxx
+DropJcId:20150430
+AspNetPager1_input:2
+"""
+def get_post_payload_jc(sid,page,viewstate):
+	payload = {}
+	payload['__EVENTTARGET'] = 'AspNetPager1'
+	payload['__EVENTARGUMENT'] = None
+	payload['__LASTFOCUS'] = None
+	payload['__VIEWSTATE'] = viewstate
+	payload['DropJcId'] = sid
+	payload['AspNetPager1_input'] = page
+	return payload
+
+"""
+_EVENTTARGET:DropLotteryId
+__EVENTARGUMENT:
+__LASTFOCUS:
+__VIEWSTATE: xxx
+DropLotteryId:15068
+"""
+def get_post_payload_m14(sid,page,viewstate):
+	payload = {}
+	payload['__EVENTTARGET'] = 'DropLotteryId'
+	payload['__EVENTARGUMENT'] = None
+	payload['__LASTFOCUS'] = None
+	payload['__VIEWSTATE'] = viewstate
+	payload['DropLotteryId'] = sid
+	return payload
+
+def get_post_payload(match_type,sid,page,viewstate):
+	if match_type == MATCH_TYPE_JC:
+		return get_post_payload_jc(sid,page,viewstate)
+	elif match_type == MATCH_TYPE_M14:
+		return get_post_payload_m14(sid,page,viewstate)
+
+# sid 20150501
+# seq 001
+# mid 20150501001
+def parse_page_core(match_type,sid,page,viewstate):
+	# get html
+	url = GDATA[match_type].get("URL")
+	per_page = GDATA[match_type].get("PER_PAGE")
+	payload = get_post_payload(match_type,sid,page,viewstate)
+	r = requests.post(url,data=payload)
+	html = lxml.html.document_fromstring(r.text)
+
 	# parse html (jc or m14)
-	datatitle_list = html.xpath('//*[@id="form1"]/div[@class="container"]/div[@class="datatitle"]')
+	path = '//*[@id="form1"]/div[@class="container"]/div[@class="datatitle"]'
+	datatitle_list = html.xpath(path)
 	match_count = len(datatitle_list)
 	match_list = []
 	for i in xrange(match_count):
@@ -262,7 +141,7 @@ def parse_page_core(html,page,mid):
 		vsinfo = h3.text
 		start_time = span.text
 
-		seq = MATCH_COUNT_PER_PAGE*(page-1)+(i+1)
+		seq = per_page*(page-1)+(i+1)
 		seq = number_pad_left(seq)
 		vs = vsinfo.split(u'\\')[1]
 		parts = vs.split(u'VS')
@@ -271,7 +150,7 @@ def parse_page_core(html,page,mid):
 		# 2015/5/2 8:30
 		time_fmt = '%Y/%m/%d %H:%M'
 		match_time = datetime.strptime(start_time[5:],time_fmt)
-		match_id = "{0}{1}".format(mid,seq)
+		match_id = "{0}{1}".format(sid,seq)
 
 		# 1) SpdexMatchInfo
 		spdex_match = SpdexMatchInfo(match_id,home_name,away_name,match_time,tid)
@@ -282,28 +161,15 @@ def parse_page_core(html,page,mid):
 		betfair_overunder = parse_betfair_page_overunder(href_overunder,match_id)
 
 		# 3) MatchInfo
-		match = MatchInfo(spdex_match,betfair_1x2,betfair_overunder)
+		match = MatchInfo(match_type,sid,spdex_match,betfair_1x2,betfair_overunder)
 		print match.unicode()
-		#match.save_charts()
+		if SAVE_CHARTS:
+			match.save_charts()
 		print "="*100
 
 		# 4 add to match list
 		match_list.append(match)
 	return match_list
-
-def parse_page_jc(url,jcid,page,viewstate):
-	# payload and post
-	payload = get_post_payload(jcid,page,viewstate)
-	r = requests.post(url,data=payload)
-	html = lxml.html.document_fromstring(r.text)
-	return parse_page_core(html,page,jcid)
-
-def parse_page_m14(url,m14id):
-	# get 
-	r = requests.get(url)
-	html = lxml.html.document_fromstring(r.text)
-	page = 1
-	return parse_page_core(html,page,m14id)
 
 def parse_viewerqq_page_content(tid):
 	url_viewerqq = "http://c.spdex.com/iframe/IframeViewerQQ.aspx?id=27428370"
@@ -393,45 +259,64 @@ def parse_betfair_page_overunder(href_overunder,match_id):
 	#print betfair_match_info_overunder.unicode()
 	return betfair_match_info_overunder
 	
-def parse_main_jc(url):
-	# 1) get params
-	page_count,jcid,viewstate = get_params_jc(url)
+def parse_main(match_type):
+	# get id list
+	id_list,viewstate = get_id_list_viewstate(match_type)
 
-	# 2) init match collection
-	jc = MatchCollectionBydate(jcid)
+	id_list = ['20150502']
 
-	# 3) process all pages
-	for page in xrange(page_count):
-		# [0,1,2,3]
-		# 3.1) parse jc page
-		match_list = parse_page_jc(url,jcid,page+1,viewstate)
+	# process all id
+	for sid in id_list:
+		print "*"*100
+		print "Processing {0}...".format(sid)
+		print "*"*100
+		# 1) init match collection
+		mc = MatchCollectionBydate(sid)
 
-		# 3.2) add to collection
-		jc.add_match_list(match_list)
-	print jc.match_count()
+		# 2) get page count for sid
+		page_count = get_page_count(match_type,sid,viewstate)
 
-ROOT_DIR = "charts"
+		# 3) process all pages
+		page_count = 1
+		for page in xrange(page_count):
+			# [0,1,2,3]
+			# 3.1) parse jc page
+			match_list = parse_page_core(match_type,sid,page+1,viewstate)
 
-def parse_main_m14(url):
-	# 1) get params
-	m14id,viewstate = get_params_m14(url)
+			# 3.2) add to collection
+			mc.add_match_list(match_list)
+		print mc.match_count()
+		save_image_on_time(mc)
 
-	# 2) init match collection
-	m14 = MatchCollectionBydate(m14id)
+def save_image_on_time(mc):
+	for match in mc.get_match_list():
+		match_id = "20150502008"
+		if match.spdex.match_id == match_id:
+			match_time = match.spdex.match_time
+			#time_delta = timedelta(minutes=5)
 
-	# 3) parse m14 page
-	match_list = parse_page_m14(url,m14id)
-	
-	# 4) add to collection
-	m14.add_match_list(match_list)
-	print m14.match_count()
+def triger_save_image_before_match(start_time):
+	# 17:30 17:25  5m=300s
+	now = datetime.now()
+	default_delta = timedelta(seconds=5)
+	if now < start_time :
+		delta = start_time - now
+		if delta.seconds == default_delta.seconds:
+			return True
+	return False
 
-def main():
+def triger_save_image_after_match(start_time):
+	pass
+
+def main_core():
 	t1 = time.time()
-	#parse_main_jc(url_jc)
-	parse_main_m14(url_m14)
+	parse_main(MATCH_TYPE_JC)
+	#parse_main(MATCH_TYPE_M14)
 	total_time = time.time()-t1
 	print "Time used: %f(s)" % total_time
+
+def main():
+	main_core()
 
 if __name__ == "__main__":
 	main()
