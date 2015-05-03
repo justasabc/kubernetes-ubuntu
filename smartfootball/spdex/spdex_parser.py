@@ -5,28 +5,16 @@ from datetime import datetime,timedelta
 import time
 from threading import Timer 
 
-from match import *
+from utility import *
 from setting import *
-
-def number_pad_left(seq):
-	fmt = u'%03d'
-	return fmt % seq
-
-
-class PageUIParams:
-
-	def __init__(self):
-		# 20150501,20150502,20150503  ---> one viewstate
-		# 4,10,10
-		# 15067,15068 ---> one viewstate
-		# 1,1
-		self.params = {}
+from spdex.spdex_setting import *
+from spdex.spdex_match import *
 
 # GLOBAL
 # JC M14
 def get_id_list_viewstate(match_type):
-	url = GDATA[match_type].get("URL")
-	ui_select_id = GDATA[match_type].get("UI_SELECT_ID")
+	url = GSPDEX[match_type].get("URL")
+	ui_select_id = GSPDEX[match_type].get("UI_SELECT_ID")
 	r = requests.get(url)
 	html = lxml.html.document_fromstring(r.text)
 
@@ -64,7 +52,7 @@ def get_page_count_m14(url,sid,viewstate):
 	return 1
 
 def get_page_count(match_type,sid,viewstate):
-	url = GDATA[match_type].get("URL")
+	url = GSPDEX[match_type].get("URL")
 	if match_type == MATCH_TYPE_JC:
 		return get_page_count_jc(url,sid,viewstate)
 	elif match_type == MATCH_TYPE_M14:
@@ -115,8 +103,8 @@ def get_post_payload(match_type,sid,page,viewstate):
 # mid 20150501001
 def parse_page_core(match_type,sid,page,viewstate):
 	# get html
-	url = GDATA[match_type].get("URL")
-	per_page = GDATA[match_type].get("PER_PAGE")
+	url = GSPDEX[match_type].get("URL")
+	per_page = GSPDEX[match_type].get("PER_PAGE")
 	payload = get_post_payload(match_type,sid,page,viewstate)
 	r = requests.post(url,data=payload)
 	html = lxml.html.document_fromstring(r.text)
@@ -143,7 +131,7 @@ def parse_page_core(match_type,sid,page,viewstate):
 		start_time = span.text
 
 		seq = per_page*(page-1)+(i+1)
-		seq = number_pad_left(seq)
+		seq = pad_seq(seq)
 		vs = vsinfo.split(u'\\')[1]
 		parts = vs.split(u'VS')
 		home_name = parts[0].strip()
@@ -163,7 +151,6 @@ def parse_page_core(match_type,sid,page,viewstate):
 
 		# 3) MatchInfo
 		match = MatchInfo(match_type,sid,spdex_match,betfair_1x2,betfair_overunder)
-		print match.unicode()
 		print "="*100
 
 		# 4 add to match list
@@ -224,7 +211,6 @@ def parse_betfair_page_1x2(href_1x2,match_id):
 
 	# object
 	betfair_match_info_1x2 = BetfairMatchInfo_1X2(match_id,market_id,home_id,away_id,draw_id,home_eng_name,away_eng_name)
-	#print betfair_match_info_1x2.unicode()
 	return betfair_match_info_1x2
 	
 def parse_betfair_page_overunder(href_overunder,match_id):
@@ -236,7 +222,6 @@ def parse_betfair_page_overunder(href_overunder,match_id):
 	html = lxml.html.document_fromstring(r.text)
 	vs_select = html.xpath('//*[@id="myBetsBetView"]')
 	if len(vs_select) == 0:
-		#print "Betfair market has closed!"
 		return None
 	vs_select = vs_select[0]
 	"""
@@ -255,13 +240,21 @@ def parse_betfair_page_overunder(href_overunder,match_id):
 
 	# object
 	betfair_match_info_overunder = BetfairMatchInfo_OverUnder(match_id,market_id,over_id,under_id,over_name,under_name)
-	#print betfair_match_info_overunder.unicode()
 	return betfair_match_info_overunder
-	
+
 def parse_main(match_type):
 	# get id list
 	id_list,viewstate = get_id_list_viewstate(match_type)
+	print id_list
 
+	# process the first sid only
+	if len(id_list) :
+		id_list  = id_list[:1]
+	if match_type == MATCH_TYPE_JC:
+		sid = get_today_sid_jc()
+		id_list = [sid]
+	
+	print id_list
 	# process all id
 	for sid in id_list:
 		print "*"*100
@@ -282,17 +275,11 @@ def parse_main(match_type):
 
 			# 3.2) add to collection
 			mc.add_match_list(match_list)
-		#print mc.match_count()
+		print mc.match_count()
 
-def main_core():
+def spdex_main():
 	t1 = time.time()
 	parse_main(MATCH_TYPE_JC)
 	parse_main(MATCH_TYPE_M14)
 	total_time = time.time()-t1
 	print "Time used: %f(s)" % total_time
-
-def main():
-	main_core()
-
-if __name__ == "__main__":
-	main()

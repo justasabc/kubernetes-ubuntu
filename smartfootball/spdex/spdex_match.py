@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
+from datetime import datetime,timedelta
+from threading import Timer
+
 from myfile import *
 from setting import *
-
-from datetime import datetime,timedelta
-import time
-from threading import Timer 
+from spdex.spdex_setting import *
 
 class SpdexMatchInfo:
 	"""
@@ -38,18 +38,7 @@ class BetfairMatchInfo_1X2:
 	def unicode(self):
 		return "{0}-{1},{2},{3},{4},{5}".format(self.home_eng_name,self.away_eng_name,self.market_id,self.home_id,self.away_id,self.draw_id)
 
-	def get_home_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.home_id,log)
-		return url
-	def get_away_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.away_id,log)
-		return url
-	def get_draw_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.draw_id,log)
-		return url
-
-	def save_charts(self,root_dir):
-		overwrite = IMAGE_OVERWRITE
+	def save_charts(self,root_dir,overwrite):
 		myfile = MyFile()
 		url_path_mapping = [
 			(self.charts.url_odd_home,root_dir+self.charts.file_odd_home),
@@ -78,16 +67,8 @@ class BetfairMatchInfo_OverUnder:
 	def unicode(self):
 		return "{0}-{1},{2},{3},{4}".format(self.over_name,self.under_name,self.market_id,self.over_id,self.under_id)
 
-	def get_over_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.over_id,log)
-		return url
-	def get_under_chart_url(self,log):
-		url = url_betfair_chart_fmt.format(self.market_id,self.under_id,log)
-		return url
-
-	def save_charts(self,root_dir):
+	def save_charts(self,root_dir,overwrite):
 		# charts/jc/20150501/  charts/m14/15068/
-		overwrite = IMAGE_OVERWRITE
 		myfile = MyFile()
 		url_path_mapping = [
 			(self.charts.url_odd_over,root_dir+self.charts.file_odd_over),
@@ -101,15 +82,17 @@ class BetfairMatchInfo_OverUnder:
 class BetfairCharts_1X2:
 
 	def __init__(self,betfair_1x2):
-		match_id = betfair_1x2.match_id
+		self.parent = betfair_1x2
+
+		match_id = self.parent.match_id
 		# url odd
-		self.url_odd_home = betfair_1x2.get_home_chart_url(False)
-		self.url_odd_away = betfair_1x2.get_away_chart_url(False)
-		self.url_odd_draw = betfair_1x2.get_draw_chart_url(False)
+		self.url_odd_home = self.get_home_chart_url(False)
+		self.url_odd_away = self.get_away_chart_url(False)
+		self.url_odd_draw = self.get_draw_chart_url(False)
 		# url prob
-		self.url_prob_home = betfair_1x2.get_home_chart_url(True)
-		self.url_prob_away = betfair_1x2.get_away_chart_url(True)
-		self.url_prob_draw = betfair_1x2.get_draw_chart_url(True)
+		self.url_prob_home = self.get_home_chart_url(True)
+		self.url_prob_away = self.get_away_chart_url(True)
+		self.url_prob_draw = self.get_draw_chart_url(True)
 
 		# file odd
 		self.file_odd_home = "{0}_{1}".format(match_id,"odd_home.jpg")
@@ -120,16 +103,27 @@ class BetfairCharts_1X2:
 		self.file_prob_away = "{0}_{1}".format(match_id,"prob_away.jpg")
 		self.file_prob_draw = "{0}_{1}".format(match_id,"prob_draw.jpg")
 
+	def get_home_chart_url(self,log):
+		return get_betfair_chart_url(self.parent.market_id,self.parent.home_id,log)
+
+	def get_away_chart_url(self,log):
+		return get_betfair_chart_url(self.parent.market_id,self.parent.away_id,log)
+
+	def get_draw_chart_url(self,log):
+		return get_betfair_chart_url(self.parent.market_id,self.parent.draw_id,log)
+
 class BetfairCharts_OverUnder:
 
 	def __init__(self,betfair_overunder):
-		match_id = betfair_overunder.match_id
+		self.parent = betfair_overunder
+
+		match_id = self.parent.match_id
 		# url odd
-		self.url_odd_over = betfair_overunder.get_over_chart_url(False)
-		self.url_odd_under = betfair_overunder.get_under_chart_url(False)
+		self.url_odd_over = self.get_over_chart_url(False)
+		self.url_odd_under = self.get_under_chart_url(False)
 		# url prob
-		self.url_prob_over = betfair_overunder.get_over_chart_url(True)
-		self.url_prob_under = betfair_overunder.get_under_chart_url(True)
+		self.url_prob_over = self.get_over_chart_url(True)
+		self.url_prob_under = self.get_under_chart_url(True)
 
 		# file odd
 		self.file_odd_over = "{0}_{1}".format(match_id,"odd_over.jpg")
@@ -137,6 +131,12 @@ class BetfairCharts_OverUnder:
 		# file prob
 		self.file_prob_over = "{0}_{1}".format(match_id,"prob_over.jpg")
 		self.file_prob_under = "{0}_{1}".format(match_id,"prob_under.jpg")
+
+	def get_over_chart_url(self,log):
+		return get_betfair_chart_url(self.parent.market_id,self.parent.over_id,log)
+
+	def get_under_chart_url(self,log):
+		return get_betfair_chart_url(self.parent.market_id,self.parent.under_id,log)
 
 class MatchInfo:
 
@@ -154,25 +154,33 @@ class MatchInfo:
 		now = datetime.now()
 		start_time = self.spdex.match_time
 		end_time = start_time + timedelta(minutes=MATCH_TOTLA_MINUTES)
+		match_status = get_match_status(now,start_time,end_time)
 
-		# 1) now_timer
-		if now < start_time:
-			sleep_time = 0
-			now_timer = Timer(sleep_time,self.save_charts)
-			#now_timer.start()
+		if match_status == MATCH_STATUS_NOT_STARTED:
+			if SPDEX_SAVE_RIGHTNOW:
+				now_timer = Timer(0,self.save_charts)
+				now_timer.start()
 
-		# 2) before_timer
-		if now < start_time:
 			sleep_time = (start_time - now).seconds
 			print "Match will start in {0} minutes...".format(sleep_time/60)
+
 			before_timer = Timer(sleep_time,self.save_charts)
 			before_timer.start()
-		# 3) after_timer
-		elif now < end_time:
+
 			sleep_time = (end_time - now).seconds
-			print "Match has {0} minutes left...".format(sleep_time/60)
 			after_timer = Timer(sleep_time,self.save_charts)
 			after_timer.start()
+
+			# print match info
+			print self.unicode()
+		elif match_status == MATCH_STATUS_RUNNING:
+			sleep_time = (end_time - now).seconds
+			after_timer = Timer(sleep_time,self.save_charts)
+			after_timer.start()
+			print "Match has {0} minutes left...".format(sleep_time/60)
+
+			# print match info
+			print self.unicode()
 		else:
 			print "Match {0} has finished!".format(self.spdex.match_id)
 
@@ -198,17 +206,12 @@ class MatchInfo:
 		return u"{0}\n{1}\n{2}".format(u1,u2,u3)
 
 	def save_charts(self):
-		root_dir = get_match_chart_root_dir(self.match_type,self.sid)
+		root_dir = get_betfair_chart_root_dir(self.match_type,self.sid)
+		overwrite = SPDEX_CHART_OVERWRITE
 		if self.betfair_1x2:
-			self.betfair_1x2.save_charts(root_dir)
+			self.betfair_1x2.save_charts(root_dir,overwrite)
 		if self.betfair_overunder:
-			self.betfair_overunder.save_charts(root_dir)
-
-def get_match_chart_root_dir(match_type,sid):
-	# ./charts/jc/    20150501
-	# ./charts/m14/    15067
-	root_dir = GDATA[match_type].get("ROOT_DIR")+sid+"/"
-	return root_dir
+			self.betfair_overunder.save_charts(root_dir,overwrite)
 
 class MatchCollectionBydate:
 
