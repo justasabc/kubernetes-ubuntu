@@ -43,7 +43,12 @@ def get_page_count_jc(url,sid,viewstate):
 	html = lxml.html.document_fromstring(r.text)
 	path = '//*[@id="AspNetPager1_input"]'
 	# page_count
-	page_select = html.xpath(path)[0]
+	page_select = html.xpath(path)
+	page_count = 1
+	# default page count if no pager
+	if len(page_select) == 0:
+		return page_count
+	page_select = page_select[0]
 	page_options = page_select.getchildren()
 	page_count = len(page_options)
 	return page_count
@@ -248,13 +253,14 @@ def parse_main(match_type):
 	print id_list
 
 	# process the first sid only
+	"""
 	if len(id_list) :
 		id_list  = id_list[:1]
 	if match_type == MATCH_TYPE_JC:
 		sid = get_today_sid_jc()
 		id_list = [sid]
-	
-	print id_list
+	"""
+
 	# process all id
 	for sid in id_list:
 		print "*"*100

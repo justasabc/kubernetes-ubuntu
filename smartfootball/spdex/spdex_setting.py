@@ -1,7 +1,8 @@
 from setting import MATCH_TYPE_JC,MATCH_TYPE_M14
 
 SPDEX_CHART_OVERWRITE = True
-SPDEX_SAVE_RIGHTNOW = False
+# overwrite charts
+SPDEX_SAVE_RIGHTNOW = True
 # triger now timer to save charts for the first time
 
 url_m14 = "http://c.spdex.com/spdex500a"
