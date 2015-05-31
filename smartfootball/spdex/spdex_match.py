@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+#from termcolor import colored
 from datetime import datetime,timedelta
 from threading import Timer
 
@@ -162,7 +163,8 @@ class MatchInfo:
 				now_timer.start()
 
 			sleep_time = (start_time - now).seconds
-			print "Match will start in {0} minutes...".format(sleep_time/60)
+			p_str = "Match will start in {0} minutes...".format(sleep_time/60)
+			print p_str
 
 			before_timer = Timer(sleep_time,self.save_charts)
 			before_timer.start()
@@ -172,17 +174,21 @@ class MatchInfo:
 			after_timer.start()
 
 			# print match info
-			print self.unicode()
+			p_str = self.unicode()
+			print p_str
 		elif match_status == MATCH_STATUS_RUNNING:
 			sleep_time = (end_time - now).seconds
 			after_timer = Timer(sleep_time,self.save_charts)
 			after_timer.start()
-			print "Match has {0} minutes left...".format(sleep_time/60)
+			p_str = "Match has {0} minutes left...".format(sleep_time/60)
+			print p_str
 
 			# print match info
-			print self.unicode()
+			p_str = self.unicode()
+			print p_str
 		else:
-			print "Match {0} has finished!".format(self.spdex.match_id)
+			p_str = "Match {0} has finished!".format(self.spdex.match_id)
+			print p_str
 
 	def get_spdex(self):
 		return self.spdex

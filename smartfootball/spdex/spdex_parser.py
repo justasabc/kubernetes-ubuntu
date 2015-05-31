@@ -16,7 +16,8 @@ def get_id_list_viewstate(match_type):
 	url = GSPDEX[match_type].get("URL")
 	ui_select_id = GSPDEX[match_type].get("UI_SELECT_ID")
 	r = requests.get(url)
-	html = lxml.html.document_fromstring(r.text)
+	text = r.text
+	html = lxml.html.document_fromstring(text)
 
 	# 1) id list
 	#path = '//*[@id="DropJcId"]'
@@ -40,7 +41,9 @@ def get_id_list_viewstate(match_type):
 def get_page_count_jc(url,sid,viewstate):
 	payload = get_post_payload_jc(sid,1,viewstate)
 	r = requests.post(url,data=payload)
-	html = lxml.html.document_fromstring(r.text)
+	text = r.text
+	html = lxml.html.document_fromstring(text)
+
 	path = '//*[@id="AspNetPager1_input"]'
 	# page_count
 	page_select = html.xpath(path)
@@ -112,7 +115,11 @@ def parse_page_core(match_type,sid,page,viewstate):
 	per_page = GSPDEX[match_type].get("PER_PAGE")
 	payload = get_post_payload(match_type,sid,page,viewstate)
 	r = requests.post(url,data=payload)
-	html = lxml.html.document_fromstring(r.text)
+	text = r.text
+	if r.encoding != "utf-8":
+		print "[Warning] page is not utf-8 encoding, so encode it."
+		text = r.text.encode(r.encoding)
+	html = lxml.html.document_fromstring(text)
 
 	# parse html (jc or m14)
 	path = '//*[@id="form1"]/div[@class="container"]/div[@class="datatitle"]'
@@ -279,7 +286,7 @@ def parse_main(match_type):
 			# 3.1) parse jc page
 			match_list = parse_page_core(match_type,sid,page+1,viewstate)
 
-			# 3.2) add to collection
+			# 3.2) add #to collection
 			mc.add_match_list(match_list)
 		print mc.match_count()
 
